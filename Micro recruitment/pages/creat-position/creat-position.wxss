@@ -1,0 +1,190 @@
+/* pages/position_info/position_info.wxss */
+@import "../common/chooseaddress.wxss";
+page{
+  border-top: 1px solid #eeeff1;
+  background: #eeeff4;
+}
+.company_apply_wrap{
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+.company_apply_wrap:first-child{
+  margin-top: 0;
+}
+.company_apply_wrap:nth-child(3){
+  margin-bottom: 20rpx;
+}
+.company_apply{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eeeff1;
+  margin:0 0 0 30rpx;
+}
+.company_apply .company_name{
+  width: 25%;
+  display: inline-block;
+  vertical-align: top; 
+  padding: 0;
+  margin: 0;
+  line-height: 52.5rpx;
+}
+.company_apply .contact{
+  vertical-align: middle;
+}
+.company_apply input{
+  width: 65%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply image{
+  width: 14rpx;
+  height: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply .fill_money{
+  width: 125rpx;
+  text-align: center;
+}
+.add_wrap{
+  display: inline-block;
+  width:70%;
+}
+.company_apply .add-experience{
+  display: inline-block;
+  border: 1rpx solid #507feb;
+  color: #507feb;
+  text-align:center;
+  /* line-height:58rpx; */
+  /* margin:10rpx 0 0 30%; */
+  border-radius: 5rpx;
+}
+.add-experience text{
+    font-size: 30rpx;
+    padding: 0 8rpx;
+}
+.company_apply .address_detail{
+  width: 65%;
+  display: inline-block; 
+  vertical-align: top;
+  height: 110rpx;
+  margin-top: 5rpx;
+}
+.company_apply .position_explain{
+  width: 96%;
+  margin-top: 10rpx;
+}
+.company_apply .form-item-content{
+  width: 65%;
+}
+.form-item-content .picker{
+  width: 100%;
+}
+.address-text{
+  color: #808080;
+}
+.company_apply .trade_item{
+  background: linear-gradient(to right,#38cff9,#4f80eb); 
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  font-size: 25rpx;
+  padding: 7rpx 40rpx 7rpx 20rpx;
+  color: #ffffff;
+  display: inline-block;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.trade_item image{
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  padding-left:10rpx;
+}
+.trade_item_wrap{
+  display: inline-block;
+}
+.trade_item .cross_img{
+  width: 30rpx;
+  height: 37rpx;
+  background: url('http://shenzhen.weisanyun.cn/weixinpl/sustain/back/Application/Workroom_admin/upload/2017103015422387085.png') no-repeat;
+  background-size: 30rpx 37rpx;
+  position: absolute;
+  top: 7rpx;
+  right: 5rpx;
+  line-height: 50rpx;
+}
+input[hidden] {
+  display:none;
+}
+.company_apply .phonenumber{
+  width: 280rpx;
+}
+.company_apply .getphone{
+  display: inline-block;
+  width: 35%;
+  border: none;
+  font-size: 30rpx;
+  position: static;
+  overflow: visible;
+  line-height: 60rpx;
+  background: #fff;
+  color: #5080EC; 
+}
+.getphone::after {
+    width: 0rpx;
+    height: 0rpx;
+    border: none;
+}
+.clear {
+    clear: both;
+}
+/*保存  */
+.save_wrap{
+  width: 100%;
+  padding: 20rpx 4%;
+  background: #ffffff;
+  border-top:1px solid #eeeff1;
+  box-shadow: -3rpx -3rpx 3rpx #dadbdd;
+  box-sizing: border-box;
+}
+.save{
+  display: inline-block;
+  width: 47%;
+  margin-right:6%;
+  background: linear-gradient(to right,#38cff9,#4f80eb);
+  color: #ffffff;
+}
+.save_publish{
+  display: inline-block;
+  width: 47%;
+  background: linear-gradient(to right,#38cff9,#4f80eb);
+  color:#ffffff;
+}
+
+
+.form-item-content{
+    width:63%;
+}
+.form-item-content input{
+    font-size: 36rpx;
+    margin-top:10px;
+}
+.form-item-content radio-group{
+    margin-top: 10px;
+}
+.form-item-content .form-radio{
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    border:1rpx solid #ccc;
+}
+.add-experience .picker{
+  width: 100%;
+}
+.picker-text{
+    color:#507feb;
+}
+.address_picker{
+  color: #808080;
+}
+

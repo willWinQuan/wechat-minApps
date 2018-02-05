@@ -1,0 +1,61 @@
+<!--pages/company-detail/company-detail.wxml-->
+<import src="../common/resume-list.wxml" />
+
+<view class='content'>
+    <view class='img_box'>
+        <image src='{{pic_url}}'></image>
+    </view>
+    <!-- <view class='clear'></view> -->
+    <view class='text_box'>
+        <view class='top'>
+            <view class='lf company'>{{name}}</view>
+            <view class='rt jubao' bindtap='jubao' wx:if="{{is_report==1}}">举报</view>
+            <!-- <view wx:if="myShow ==true? "true" : 'false' >显示隐藏</view> -->
+            <view class='clear'></view>
+        </view>
+        <text class='nopd' wx:for="{{industry_rs}}" wx:key="{index{}}">{{industry_rs[index].name}}</text>
+    </view>
+    <view class='clear'></view>
+</view>
+<!-- 顶部线条 -->
+ <view class='min_line'></view> 
+<!-- 公司介绍 -->
+ <view class='content'>
+    <view class='gsjs'>
+        <view>
+            <image src='../../image/company_introduction.png' />
+            <text>公司介绍</text>
+        </view>
+        <view class='text'>
+            <view class='company_des' style='-webkit-line-clamp:{{line_number}};'>{{discription}}</view>
+            <view class='show' bindtap='setLoading' style='display:{{show_all}}'>查看全部</view>
+        </view>
+    </view>
+</view>
+<view class='max_line'></view>
+
+<view class='content'>
+    <view class='gsjs'>
+        <view>
+            <image src='../../image/work_address.png' />
+            <text>详细地址</text>
+        </view>
+        <view class='gzdz_txt'>
+            <text>{{address==''?'暂无信息':address}}</text>
+        </view>
+        <view class='font' bindtap='getLoacation' wx:if="{{address!=''}}">
+            <text class='position' bindtap='get_location'>查看位置</text>
+            <image src='../../image/icon_05.png' class='gzdz_img' />
+        </view>
+    </view>
+</view>
+<view class='max_line'></view> 
+
+<view class='publish_position'>
+    <image class='post_position' src='../../image/post_position.png'></image>
+    <text>发布职位</text>
+  </view>
+<block wx:for='{{company_detail_data}}'>
+  <template is="resumelist" data="{{...item,index}}"/>
+</block>
+<button class='loading' wx:if="{{company_detail_data.length!=0}}" loading='{{loading_state}}' >{{loading_state==true?'正在加载中':'没有更多了'}}</button>   

@@ -1,0 +1,39 @@
+<!--pages/send_msg/send_msg.wxml-->
+
+<view class='heard-nav'>
+     <text bindtap='bindnoread' style="color:{{tabread?'#4ba3f1':'#000'}};border-bottom:{{tabread?'5rpx solid #4ba3f1':'0'}};">未查看</text>
+     <text bindtap='bindreaded' style="color:{{tabread?'#000':'#4ba3f1'}};border-bottom:{{tabread?'0':'5rpx solid #4ba3f1'}};">已查看</text>
+</view>
+
+<view class='nodata' wx:if="{{detail_list == ''}}">
+     <image src='../../image/email_empty.png'></image>
+</view>
+
+<block wx:if="{{detail_list != ''}}" wx:for='{{detail_list}}' wx:key="index">
+    <!-- <form report-submit='true' bindsubmit='bindresume'>
+    <input hidden='true' name='id' value='{{item.id}}'></input>
+    <input hidden='true' name='resumeid' value='{{item.resume_id}}'></input> -->
+     <!-- <input hidden='true' name='weixinuserid' value='{{item.weixin_userid}}'></input> -->
+    <!-- <button formType="submit" class='savebtn'> -->
+    <view class='myresume-personal-h' data-resumeid='{{item.resume_id}}' data-id='{{item.id}}' bindtap='bindresume'>
+        <image src='{{http_host}}{{item.pic_url}}'></image>
+        <view class='myresume-personal-hr'>
+            <view class='myresume-personal-hrn'>{{item.name}}</view>
+            <view class='myresume-personal-hrss'>
+                {{item.edu_type}}
+                <text> | </text>
+                {{item.birthday}}
+                <text> | </text> 
+                {{item.contact}}
+            </view>
+            <view class='myresume-personal-address'>
+                {{item.job_name}}
+            </view>
+        </view>
+         <view class='jiantou'>></view>
+    </view> 
+    <!-- </button>
+    </form> -->
+</block> 
+
+<view wx:if="{{isnomore}}" class='nomore'>没有更多数据了...</view>

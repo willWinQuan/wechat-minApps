@@ -1,0 +1,108 @@
+<!--pages/company_info/company_info.wxml-->
+<import src="../common/chooseaddress.wxml" />
+<form bindsubmit="formSubmit">
+  <view class='company_apply_wrap'>
+    <view class='company_apply'>
+      <view class='logo'>企业LOGO</view>
+      <image class='company_logo' src="{{enterprise_id != undefined?logo_img_src:logo_img}}" bindtap="company_logo"></image>
+      <input hidden='true' name="logoimg" value="{{logo_img}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view>企业名称</view>
+      <input placeholder='请输入您的企业名称' name="company_name" value="{{company_apply}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view>联系电话</view>
+      <input class='phonenumber' placeholder='手机或固话' name="phonenumber" value="{{phone_number}}"></input>
+      <button class='getphone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button>
+    </view>
+    <view class='company_apply'>
+      <view>邮箱地址</view>
+      <input placeholder='电子邮箱' name="mail_address" value="{{mail_address}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view>所属行业</view>
+      <!-- <input placeholder='选择行业' name="select_trade"></input> -->
+      <view class='trade_wrap'>
+        <picker bindchange="bindtradeChange" value="{{trade}}"  range="{{trade_array}}">
+            <view class="picker">
+                 {{trade_value}} 
+                <input hidden='true' type='text'></input>
+                <text class='picker-text' wx:if="{{trade_value ==''}}">选择行业</text>
+            </view>
+        </picker>
+      </view>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+    <view class='company_apply'>
+      <view>从业时间</view>
+      <view class='form-item-content' bindtap='binddatepicker'>
+        <!-- <picker value="{{enddatevalue}}"  bindchange="binddatepicker" name="trade_time">
+           <view class="picker">
+              {{enddatevalue}}
+              <text class='picker-text' wx:if="{{enddatevalue ==''}}">选择从业时间</text>
+          </view> 
+        </picker> -->
+        <view class="picker">
+              <input hidden='true' name="workbegindate" value='{{year}}-{{month}}'></input>
+              <text wx:if="{{year !='' && month!=''}}">{{year}}-{{month}}</text>
+              <text class='picker-text' wx:if="{{year =='' || month==''}}">选择从业时间</text>
+          </view>
+      </view>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+    <view class='company_apply'>
+      <view>企业成员</view>
+      <input class='company_member' type='number' placeholder='请输入人数' name="person_number" value="{{person_number}}"></input>
+      <text>人</text>
+    </view>
+    <view class='company_apply' bindtap="tabchooseaddress">
+      <view>地址</view>
+      <view class='form-item-content company_name'>
+        <view class='picker'>
+            <input hidden='true' name="addressvalue" value='{{addressprovince}} - {{addresscity}} - {{addresscounty}}'></input>
+            <text wx:if="{{addressprovince!=''}}">{{addressprovince}} - {{addresscity}} - {{addresscounty}} </text>
+            <text class='picker-text address_picker' wx:if="{{addressprovince ==''}}">省份-城市-区(县)</text>
+        </view>
+      </view>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+    <view class='company_apply'>
+      <view class="address_text">详细地址</view>
+        <textarea wx:if="{{address_status}}" class='address_detail' style='margin-top:{{margin_top}}' placeholder='街道门牌信息' name="detail_address" value="{{detail_address=='街道门牌信息'?'':detail_address}}" bindinput='detail_address' show-confirm-bar="{{false}}"></textarea>   
+      <view wx:if="{{detail_status}}" class='address_detail' name="detail_address" value="{{detail_address}}" style="color:{{detail_address=='街道门牌信息'?'#bababa':'#000'}}">{{detail_address}}</view>
+    </view>
+    <view class='company_apply'>
+      <view>企业简介</view>
+      <textarea class='company_des' wx:if="{{destribe_status}}" placeholder='介绍一下您的企业...' maxlength="200" bindinput='destribe_change' name="company_des" value="{{company_des}}" show-confirm-bar="{{false}}">
+        <text>{{destribe_text}}/200</text>
+      </textarea>
+    </view>
+  </view>
+  <!--取消 保存  -->
+  <view class='cancel_submit'>
+    <button class='cancel' bindtap='bindCancel'>取消</button>
+    <button class='submit' form-type='submit' bindtap='bindcompanyinfosubmit'>保存</button>
+  </view>
+</form>
+
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}</toast>
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:1;" hover-style="none"/>   
+<mask hidden="{{hiddendetamask}}" bindtap="binddetamask" style="z-index:1;" hover-style="none" />
+<!-- <template is="chooseaddress" data="{{provincesvalue,citysvalue,countysvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" /> -->
+<template is="chooseaddress" data="{{addressvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" />
+
+
+  <view class='picker-view' style='bottom:{{datepickershow}};'>
+        <view class='picker-view-l' bindtap='canceldate'>取消</view>
+        <view class='picker-view-r' bindtap='suredate'>确定</view>
+        <view class='clear xian'></view>
+    <picker-view indicator-style="height: 50rpx;" mask-style='z-index:1;' style=" position:absolute; z-index:9; width: 100%; height: 500rpx;background:#fff;" value="{{value}}" bindchange="binddetaChange">
+        <picker-view-column style="text-align:center;">
+            <view wx:for="{{years}}" wx:key="index" style="line-height: 50rpx">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column style="text-align:center;">
+            <view wx:for="{{months}}" wx:key="index" style="line-height: 50rpx">{{item}}月</view>
+        </picker-view-column>
+    </picker-view>
+  </view> 

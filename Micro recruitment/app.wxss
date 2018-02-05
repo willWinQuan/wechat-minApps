@@ -1,0 +1,8 @@
+/**app.wxss**/
+page{
+  font-size: 30rpx;
+}
+::-webkit-scrollbar { 
+  content: "write by chq";
+  width: 5rpx;  
+}  

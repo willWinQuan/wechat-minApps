@@ -1,0 +1,66 @@
+.content_content {
+    position: relative;
+}
+
+.content_xinxi {
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.xinxi_nav {
+    width: 94%;
+    margin-left: 3%;
+    overflow: hidden;
+}
+
+.nav_text1 {
+    margin-top: 20rpx;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+}
+
+.xinxi_nav .nav_text1 .text1_left {
+    float: left;
+    font-size: 35rpx;
+}
+
+.xinxi_nav .nav_text1 .text1_right {
+    float: right;
+    color: #c9c9c9;
+    font-size: 28rpx;
+}
+
+.nav_text3 {
+    margin-top: 15rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.nav_text3 text {
+    display: inline-block;
+    font-size: 26rpx;
+    color: #4ba3f1;
+    padding: 5rpx 10rpx;
+    border: 1px solid #4ba3f1;
+    border-radius: 5rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.nav_text4 {
+    line-height: 90rpx;
+    overflow: hidden;
+}
+
+.xinxi_nav .nav_text4 .text1_left {
+    float: left;
+    font-size: 28rpx;
+    color: #c9c9c9;
+}
+
+.xinxi_nav .nav_text4 .text1_right {
+    float: right;
+    color: #c9c9c9;
+    font-size: 28rpx;
+}

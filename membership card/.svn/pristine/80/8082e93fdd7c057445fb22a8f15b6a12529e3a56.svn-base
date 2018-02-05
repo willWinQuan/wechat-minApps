@@ -1,0 +1,12 @@
+/* pages/phone_number/phone_number.wxss */
+.phone_num{
+  width: 95%;
+  padding: 20rpx;
+  margin-top: 50rpx;
+}
+.register{
+  width: 95%;
+  margin: 0 auto;
+  background: #04BE01;
+  color: #ffffff;
+}

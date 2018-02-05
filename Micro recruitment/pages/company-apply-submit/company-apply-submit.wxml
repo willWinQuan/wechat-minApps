@@ -1,0 +1,8 @@
+<!--pages/company-apply-submit/company-apply-submit.wxml-->
+
+<view class='nodata'>
+     <image src='../../image/apply_success.png'></image>
+     <view>{{apply_status==0?'恭喜你，提交成功~':'申请正在审核中~'}}</view>
+</view>
+
+ <view class='creat-btn' bindtap='bindmine'>确定</view>

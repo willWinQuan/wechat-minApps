@@ -1,0 +1,18 @@
+<view class="store_info_wrap" wx:key="{{index}}" id="{{store_index}}" wx:for="{{store_count}}">
+  <view class="store_name">{{item.name}}</view>
+  <view class="store_info">
+    <view class="store_left">
+      <image src="{{item.img}}"></image>
+    </view>
+    <view class="store_right">
+      <view class="store_address" bindtap="locationtap" data-id="{{item.id}}">
+        <image src="../../image/location.png"></image>
+        <text>地址：{{item.address}}</text>
+      </view>
+      <view class="store_phone" data-tel="{{item.tel}}" bindtap="store_tel">
+        <image src="../../image/tel_phone.png"></image>
+        <text>电话：{{item.tel}}</text>
+      </view>
+    </view>
+  </view>
+</view>

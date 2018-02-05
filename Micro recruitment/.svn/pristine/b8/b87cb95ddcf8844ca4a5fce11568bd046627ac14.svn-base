@@ -1,0 +1,58 @@
+<!--pages/company-msg/company-msg.wxml-->
+<view class='content'>
+    <view class='img_box'>
+        <image src='{{pic_url}}'></image>
+    </view>
+    <!-- <view class='clear'></view> -->
+    <view class='text_box'>
+        <view class='top'>
+            <view class='lf company'>{{name}}</view>
+            <view class='clear'></view>
+        </view>
+        <text class='nopd' wx:for="{{industry_rs}}" wx:key="{{index}}">{{industry_rs[index].name}}</text>
+        <!-- <text>{{list.internet}}</text>
+        <text>{{list.jinrong}}</text>
+        <text class='noborder'>{{list.human}}</text> -->
+    </view>
+    <view class='clear'></view>
+</view>
+<!-- 顶部线条 -->
+ <view class='min_line'></view> 
+<!-- 公司介绍 -->
+ <view class='content'>
+    <view class='gsjs'>
+        <view>
+            <image src='../../image/company_introduction.png' />
+            <text>公司介绍</text>
+        </view>
+        <view class='text'>
+            <text class='company_des' style='-webkit-line-clamp:{{line_number}};' decode="{{true}}">{{discription}}</text>
+            <view class='show' bindtap='setLoading' style='display:{{show_all}}'>查看全部</view>
+        </view>
+    </view>
+</view>
+<view class='max_line'></view>
+
+<view class='content'>
+    <view class='gsjs'>
+        <view>
+            <image src='../../image/work_address.png' />
+            <text>工作地址</text>
+        </view>
+        <view class='gzdz_txt'>
+            <text>{{address}}</text>
+        </view>
+        <view class='font' bindtap='getLoacation'>
+            <text class='position' bindtap='get_location'>查看位置</text>
+            <image src='../../image/icon_05.png' class='gzdz_img' />
+        </view>
+    </view>
+</view>
+<view class='max_line'></view> 
+
+ <view class='add-experience-navigator'> 
+  <view class='add-experience-content' data-id="{{company_id}}" bindtap='edit_company_info'>
+      编辑
+  </view>
+ </view> 
+

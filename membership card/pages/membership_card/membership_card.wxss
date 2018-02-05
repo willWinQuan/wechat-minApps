@@ -1,0 +1,11 @@
+/* pages/membership_card/membership_card.wxss */
+page{
+  background: #f0eff5;
+}
+.membership{
+  padding: 10px;
+  background: #ffffff;
+  line-height: 60rpx;
+  color:#666;
+  font-size:35rpx;
+}

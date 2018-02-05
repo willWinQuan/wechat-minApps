@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mall/mall",
+    "pages/mine/mine",    
+    "pages/member_recharge/member_recharge",
+    "pages/recharge_record/recharge_record",
+    "pages/regulation/regulation",
+    "pages/buy_time/buy_time",
+    "pages/integral_query/integral_query",
+    "pages/person_info/person_info",
+    "pages/self_pay/self_pay",
+    "pages/store_apply/store_apply",
+    "pages/map/map",
+    "pages/new_password/new_password",
+    "pages/phone_number/phone_number",
+    "pages/my_ticket/my_ticket",
+    "pages/buy_detail/buy_detail",
+    "pages/verification/verification",
+    "pages/alter_info/alter_info",
+    "pages/my_calculate/my_calculate",
+    "pages/consume_record/consume_record",
+    "pages/membership_card/membership_card",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/add_manager/add_manager",
+    "pages/new_phone/new_phone"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "selectedColor": "#3c94ff",
+    "list": %json_here%
+  }
+}

@@ -1,0 +1,2 @@
+<!--pages/membership_card/membership_card.wxml-->
+<view class="membership" >{{data}}</view>

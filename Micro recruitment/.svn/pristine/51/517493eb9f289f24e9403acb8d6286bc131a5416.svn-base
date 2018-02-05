@@ -1,0 +1,68 @@
+<!--pages/mine/mine.wxml-->
+<!--头像 ID  -->
+<view class='personal_wrap'>
+  <image class='avatar' src="{{avatarUrl==''?'../../image/jianli_tx.png':avatarUrl}}"></image>
+  <view>{{nickName}}</view>
+  <!-- <view>ID:{{id}}</view> -->
+</view>
+<!--我的信息列表  -->
+<view class='personal_list'>
+  <view class='personal_item' bindtap='bindmyresume'>
+    <image class='my_resume' src='../../image/my_resume.png'></image>
+    <view class='item_right'>
+      <text>我的简历</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+
+  <view class='personal_item' bindtap='bindmycollection'>
+    <image class='my_collect' src='../../image/my_collect.png'></image>
+    <view class='item_right'>
+      <text>我的收藏</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+
+  <view class='personal_item person_item_position' bindtap='bindsendbox'>
+    <image class='my_email' src='../../image/my_email.png'></image>
+    <view class='item_right'>
+      <text>投递箱</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+ 
+   <view class='personal_item ' wx:if="{{type==1 && is_enter==1}}" > 
+    <image class='post_position' src='../../image/post_position.png'></image>
+    <view class='item_right'>
+      <text bindtap='bindcompanyapply' data-eid="{{eid}}">我也要发布职位</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+</view>
+<!--企业申请通过  -->
+<!-- <view class='personal_list' wx:if="{{apply_pass==0&&type==2}}"> -->
+<view class='personal_list' wx:if="{{type==2}}">
+
+  <view class='personal_item' bindtap='bindpostingposition'>
+    <image class='post_position' src='../../image/post_position.png'></image>
+    <view class='item_right'>
+      <text>发布职位</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+  <view class='personal_item' bindtap='bindcompanymsg'>
+    <image class='my_collect' src='../../image/company_manage.png'></image>
+    <view class='item_right'>
+      <text>企业管理</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+  <view class='personal_item' bindtap='bindsendmsg'>
+    <image class='my_collect' src='../../image/send_message.png'></image>
+    <view class='item_right'>
+      <text>投递信息</text>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,57 @@
+page{
+  background: #f0eff5;
+}
+.store_info_wrap{
+  width: 100%;
+  background: #ffffff;
+  margin-top: 50rpx;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.store_name{
+  padding: 20rpx;
+  font-weight: bold;
+}
+.store_info{
+  padding-bottom: 20rpx;
+}
+.store_left{
+  width: 32%;
+  margin-left: 5%; 
+  display: inline-block;
+  vertical-align: top;
+}
+.store_left image{
+  width: 238rpx;
+  height: 161rpx;
+  border-radius: 10px;
+}
+.store_right{
+  width: 63%;
+  display: inline-block;
+  vertical-align: top;
+}
+.store_address{
+  border-bottom: 1px solid #d9d9d9;
+  padding-left: 3%;
+}
+.store_address image,.store_phone image{
+  width: 29rpx;
+  height: 29rpx;
+  display: inline-block;
+  /* vertical-align: top; */
+}
+.store_address text,.store_phone text{
+  width: 85%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 27rpx;
+  padding:0rpx 0rpx 10rpx 20rpx;
+}
+.store_phone text,.store_phone image{
+  vertical-align: middle;
+  padding-bottom: 0rpx;
+}
+.store_phone{
+  padding:20rpx 3%;
+}

@@ -1,0 +1,33 @@
+<!--pages/buy_detail/buy_detail.wxml-->
+
+<!--会员卡信息  -->
+<view class="buy_detail_wrap">
+  <view wx:if="{{img == null}}" class="member_card" style="background:{{card_color}};background-size:640rpx 360rpx;"> 
+    <text class="card_name">{{title}}</text>
+    <text class="card_number">卡号：{{card_number}}</text>
+  </view>
+  <view wx:if="{{img != null}}" class="member_card" style="background:url({{img}});background-size:640rpx 360rpx;">
+    <text class="card_name">{{title}}</text>
+    <text class="card_number">卡号：{{card_number}}</text>
+  </view> 
+  <view class="card_title">{{name}}</view>
+  <view class="card_info">
+    <view class="card_price">￥<text>{{price}}</text></view>
+  </view>
+  <view class="card_info">
+    <view class="card_indate">有效期：{{time}}</view>
+    <view class="resto_time">剩余:{{times}}</view>
+  </view>
+</view>
+<!--购买须知  -->
+<view class="buy_notice">
+  <view class="notice_title">购买须知:</view>
+  <view class="notice_content">
+      <rich-text nodes="{{content}}" bindtap="tap"></rich-text>
+  </view>
+</view>
+<!--立即支付  -->
+<input hidden='true' name="id" value='{{id}}' ></input>
+<view class="pay_now_wrap">
+  <button class="pay_now" bindtap='formSubmitTopay' style="background:{{color=='#FFFFFF'?'#3c94ff':color}}" >立即购买</button>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/company/company.wxml-->
+<view class='top'>
+  <view class='top_wrap'>
+    <input placeholder='搜索企业关键字' bindinput='search'></input>
+    <text wx:if="{{name==''}}" class='bg' style="display:block;width:26rpx;height:26rpx;background:url('{{http_host}}/mini_program/minvite/back/Public/back/img/icon_02.png') no-repeat;background-size:26rpx 26rpx;" ></text>
+  </view>
+</view>
+
+<view style='margin-top: 130rpx;'>
+<block wx:for="{{company_search_data}}" wx:key="{{index}}">
+
+  <view class='content' bindtap='bindcompanydetail'  data-id="{{item.id}}">
+    <view class='img_box'>
+      <image src='{{item.pic_url}}'></image>
+    </view>
+    <view class='text_box'>
+      <view class='company' >{{item.name}}</view>
+      <view class='jr'>
+        <text class='nopd' wx:for="{{item.labels}}" >{{item}}</text>
+      </view>
+      
+      <view class='fab' bindtap="show">已经发布{{item.jobs}}个职位</view>
+    </view>
+    <view class='empty'></view>
+    
+  </view>
+  <view class='clear'></view>
+  <!--加载中  wx:if="{{company_detail_data.length!=0}}"-->
+  
+
+</block>
+<button class='loading' wx:if="{{company_search_data.length!=0}}" loading='{{loading_state}}' >{{loading_state==true?'正在加载中':'没有更多了'}}
+  </button> 
+     <view wx:if="{{company_search_data.length==0}}" class='no_data'>--暂无数据--</view> 
+ 
+</view>
+
+
+

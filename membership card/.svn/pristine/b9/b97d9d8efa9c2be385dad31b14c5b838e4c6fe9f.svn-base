@@ -1,0 +1,62 @@
+/* pages/add_manager/add_manager.wxss */
+.person_info{
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20rpx;
+}
+.person_info text,.phone_number_wrap>text{
+  width: 70%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.name_input,.phone_input{
+  width: 32%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.name_input image,.phone_input image{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 15rpx;
+  right: 0;
+  z-index: 2;
+}
+
+/*手机号码  */
+.phone_number_wrap,.birthday_select{
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20rpx;
+}
+.phone_number_wrap>text{
+  width: 60%;
+}
+.phone_input{
+  width: 40%;
+}
+
+/*保存  */
+.save_info{
+  width: 95%;
+  color: #ffffff;
+  background: #3c94ff;
+  position: absolute;
+  bottom: 50rpx;
+  left: 2.5%;
+}
+
+.message{
+  border-bottom: none;
+}
+.phone_number_wrap textarea{
+  width:100%;
+  position: relative;
+  margin-top: 20rpx;
+}
+.phone_number_wrap textarea text{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #bababa;
+}

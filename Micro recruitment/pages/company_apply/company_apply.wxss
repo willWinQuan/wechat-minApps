@@ -1,0 +1,140 @@
+/* pages/company_apply/company_apply.wxss */
+@import "../common/chooseaddress.wxss";
+page{
+  border-top: 1px solid #eeeff1;
+  background: #eeeff4;
+}
+.company_apply_wrap{
+  background: #ffffff;
+}
+.company_apply{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eeeff1;
+  margin:0 0 0 30rpx;
+}
+.company_apply view{
+  width: 25%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height:52.5rpx;
+}
+.company_apply input{
+  width: 65%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply image{
+  width: 14rpx;
+  height: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply .phonenumber{
+  width: 280rpx;
+}
+.company_apply .getphone{
+  display: inline-block;
+  width: 35%;
+  border: none;
+  font-size: 30rpx;
+  position: static;
+  overflow: visible;
+  line-height: 60rpx;
+  background: #fff;
+  color: #5080EC; 
+}
+.getphone::after {
+    width: 0rpx;
+    height: 0rpx;
+    border: none;
+}
+.company_apply .form-item-content{
+  width: 70%;
+}
+.form-item-content .picker{
+  width: 100%;
+}
+.picker-text{
+  color: #808080;
+}
+.company_apply .license_text{
+  display: block;
+}
+.company_apply .business_license{
+  width: 324rpx;
+  height: 202rpx;
+  border: 1px dotted #c2c2c2;
+  border-radius: 5px;
+  /* display: block ; */
+  margin-top: 20rpx;
+  display: inline-block;
+  margin-right: 4%;
+  position: relative;
+}
+.business_license .license_del{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,.2);
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+}
+.company_apply .business_license_wrap{
+  width: 50%;
+  vertical-align:top;
+}
+.business_license_wrap>view{
+  width:100%;
+  text-align:center;
+  color:#bababa;
+}
+.business_license .license{
+  /* width: 105rpx;
+  height: 69rpx; */
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  border-radius: 5px;
+  /* margin: 60rpx auto; */
+}
+.company_apply .address_detail{
+  width: 65%;
+  display: inline-block;
+  height: 50px;
+  vertical-align: top;
+}
+.company_apply .address_text{
+  display: inline-block;
+  vertical-align: top;
+  margin-top:10rpx;
+}
+.company_apply .position_explain{
+  margin-top: 10rpx;
+}
+input[hidden] {
+  display:none;
+}
+.clear {
+    clear: both;
+}
+/*提交申请  */
+.submit_apply{
+  width: 100%;
+  background: #ffffff;
+  margin-top: 50rpx;
+  padding: 20rpx;
+  border-top: 1px solid #eeeff1;
+  box-shadow: -3px -3px 3px #dadbdd;
+  box-sizing: border-box;
+}
+.submit_apply button{
+  width: 70%;
+  margin: 0 auto;
+  background: linear-gradient(to right,#38cff9,#4f80eb);
+  color:#ffffff;
+}
+.xian{
+  margin-top: 78rpx;
+}

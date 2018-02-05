@@ -1,0 +1,44 @@
+
+
+<form bindsubmit="formSubmit">
+  <view class='top'>
+    <view class="content">
+    <view class='jbsm'>举报说明</view>
+  <textarea name="textarea" class='area' maxlength='200'  placeholder='请在此输入您的举报说明...' value="{{jubao}}"  bindinput="change"></textarea>
+  <view class='rt'>
+    <text>{{jubsm}}</text><text>/</text><text>200</text>
+  </view>
+  </view>
+  <!-- <view class="content"> -->
+  <view class="top_city">
+    <view class='myphone'>
+      <text>联系方式</text>
+      <input type="text" name="phone_numb" bindinput="changePhone" value="{{phone_number}}" placeholder='请输入您的联系方式' maxlength='11' required />
+    </view>
+  </view>
+  <!-- </view> -->
+
+   <!-- 上传图片  -->
+  <view class='sctp'>
+    <view class='yyzz'>上传图片</view>
+    <view class='imgList'>
+    <view  class="upload" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+        <input hidden='true' name="logoimg" value='{{imgs}}' ></input>
+        <image src="{{item}}"  data-index="{{index}}" mode="aspectFill"  bindtap="previewImg"></image>
+      <text class="delete-btn" data-index="{{index}}" catchtap="deleteImg">删除图片</text>
+    </view>
+    <view  class="upload" bindtap="chooseImg">
+      <image src="../../image/add_picture.png" /> 
+    <text>最多9张</text>
+    </view>
+  </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <view class='bottom'>
+    
+  </view> 
+  <button class='btn' bindtap='bindtipsuccess' form-type='submit' >确认举报</button>
+
+</form>
+<toast hidden="{{lenMore}}" icon="warn" duration="1000" >最多只能上传9张图片</toast>

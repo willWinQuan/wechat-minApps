@@ -1,0 +1,30 @@
+<view class="address">
+  <view class="top_city">
+    <input type="text" placeholder="{{placeholder}}" bindinput="search_input" placeholder-class="psection" style="height: 70rpx;"/>
+  </view>
+  <image src="../../image/icon_02.png" class="search_icon" wx:if="{{search_icon}}"></image>
+</view>  
+  <!-- content-->
+  <scroll-view class='content' scroll-into-view='{{go}}' scroll-y="true" scroll-with-animation="true" >
+  <view class='box_box'>
+    <view class="boxNav" wx:for="{{data}}" wx:key="{{index}}">
+      <view class='box1' data-id="{{item.title.id}}" id="{{'inToView'+index}}">
+        <text>{{item.title.name}}</text>
+      </view>
+      <view class='box3' wx:for="{{item.content}}" wx:key="{{index}}" wx:for-item="content" bindtap="cityChoice" data-id="{{content.id}}">
+        <text>{{content.name}}</text>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+  <!-- 没有对应的搜索信息 -->
+    <view class="no_img" wx:if="{{no_xinxi}}">
+      <image src="../../image/search_empty.png"></image>
+    </view>
+  <view class="right">
+    <view class='right_next' wx:for="{{data}}" wx:key="{{index}}">
+      <view class="orientation_city" bindtap="scrollToViewFn" data-id='{{index}}' >
+        {{item.title.name}}
+      </view>
+    </view>
+  </view>    

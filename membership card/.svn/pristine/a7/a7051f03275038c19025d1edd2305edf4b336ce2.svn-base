@@ -1,0 +1,170 @@
+/* pages/person_info/person_info.wxss */
+page{
+  background: #f0eff5;
+}
+.person_info{
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20rpx;
+}
+.personal-left{
+  width: 42%;
+}
+.xinhao{
+  color: red;
+}
+.person_info text,.phone_number_wrap>text{
+  width: 70%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.name_input,.phone_input{
+  width:55%;
+  display:inline-block;
+  vertical-align:middle;
+  position:relative;
+  text-align:right;
+}
+.name_input image,.phone_input image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 6rpx;
+  right: -50rpx;
+  z-index: 2;
+}
+.address-input image{
+  width:30rpx;
+  height:30rpx;
+  position:absolute;
+  top:15rpx;
+  right:0;
+  z-index:2;
+}
+/*性别  */
+.sex_select{
+  border-bottom: 1px solid #d9d9d9;
+  padding-left: 20rpx;
+}
+.sex_select>text{
+  width:55%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:5%;
+}
+/*radio*/
+radio-group{
+  width: 55%;
+  display: inline-block;
+  vertical-align: middle;
+  height:60rpx;
+  line-height:60rpx;
+}
+.flex_box{
+  display: flex;
+  width: 100%;
+}
+.flex_item{
+  flex: 1;
+  text-align: right;
+}
+.flex_item label{
+  width: 100%;
+  display: inline-block;
+  /* width: 50%; */
+  position: relative;
+}
+.flex_item label text:nth-child(2){
+  width:15px;
+  height: 15px;
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  border-radius: 20px;
+  position: absolute;
+  top: 5px;
+  left:48px;
+}
+.flex_item label text:nth-child(3){
+  width: 16px;
+  height: 16px;
+  background: black;
+  position: absolute;
+  top: 5px;
+  left: 48px;
+  display: none;
+  border-radius: 10px;
+}
+.flex_item label text:nth-child(3).active{
+  display: inline-block;
+  background: #3c94ff;
+}
+/*手机号码  */
+.phone_number_wrap,.birthday_select{
+  border-bottom: 1px solid #d9d9d9;
+  padding: 30rpx 5%;
+  display: flex;
+  background: #ffffff;
+}
+.phone_number_wrap>text{
+  width: 40%;
+}
+.phone_input{
+  width: 40%;
+}
+/*生日  */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.birthday_select text{
+  width: 65%;
+  display: inline-block;
+}
+.birthday_select picker{
+  width: 35%;
+  display: inline-block;
+  
+}
+.birthday_select picker image{
+  width: 23rpx;
+  height: 28rpx;
+}
+/*保存  */
+.save_info_wrap{
+  border-top: 1px solid #d9d9d9;
+  width:100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  padding: 20rpx 0;
+}
+.save_info{
+  width: 95%;
+  color: #ffffff;
+}
+.address-input{
+  width:55%;
+  float:right;
+  text-align:right;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  word-wrap:normal;
+  word-break:break-all;
+}

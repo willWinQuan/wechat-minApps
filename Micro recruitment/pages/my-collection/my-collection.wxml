@@ -1,0 +1,27 @@
+<view class='nodata' wx:if="{{send_box_data.length==0}}">
+     <image src='../../image/my-collection.png'></image>
+</view> 
+<block wx:for="{{send_box_data}}"  wx:key="{{index}}" >
+    <!-- <navigator url='../details/details?id={{item.job_id}}'>     -->
+         <view class="content_xinxi" bindtap="classification" data-is_see="{{item.is_see}}" data-id="{{item.job_id}}">
+            <view  class="xinxi_nav" data-is_see="{{item.is_see}}" data-j_status="{{item.j_status}}" data-id="{{item.job_id}}">
+                <view class="nav_text1" data-is_see="{{item.is_see}}" data-id="{{item.job_id}}">
+                    <text class="text1_left">{{item.job_name}}</text>
+                    <text class="text1_right">{{item.collect_time}}</text>
+                </view>
+                <view class="nav_text2" data-is_see="{{item.is_see}}" data-id="{{item.job_id}}">
+                    <text style="color:#f72a5a"><text>{{item.min}}</text>-<text>{{item.max}}</text></text>
+                </view>
+
+                <view class="nav_text3" data-is_see="{{item.is_see}}" data-id="{{item.job_id}}">
+                    <text wx:for="{{item.labels}}" wx:key="">{{item.label}}</text>
+                </view>
+                <view class="nav_text4" data-is_see="{{item.is_see}}" data-id="{{item.job_id}}">
+                    <text class="text1_left">{{item.company_name}}</text>
+                    <text class="text1_right">{{item.area}}</text>
+                </view>
+            </view>
+        </view> 
+    <!-- </navigator>     -->
+</block>
+

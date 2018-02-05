@@ -1,0 +1,96 @@
+page{
+  background: #f0eff5;
+}
+/*会员卡信息  */
+.member_card_wrap{
+  background: #ffffff;
+  padding: 30rpx 0rpx;
+}
+.member_card{
+  width: 640rpx;
+  height: 330rpx;
+  background-size: 640rpx 360rpx;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20rpx;
+}
+.card_name{
+  color: #ffffff;
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+.card_number{
+  color: #ffffff;
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+/*商家暂未开通充值  */
+.not_open{
+  width: 90%;
+  margin: 10rpx auto;
+  color: #bababa;
+  font-size: 30rpx;
+}
+.not_open_image{
+  width: 25rpx;
+  height: 25rpx;
+}
+/*充值金额选择  */
+.count_item{
+  width: 47%;
+  margin: 20rpx 0 0rpx 2%;
+  padding: 20rpx 0rpx;
+  background: #ffffff;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  box-sizing: border-box; 
+  position: relative;
+}
+.count_item s{
+  text-decoration: line-through;
+  font-size: 25rpx;
+}
+.recharge_now{
+  color: #3c94ff;
+  border-width: 1px;
+  border-style: solid;
+}
+.recharge_bg{
+  width: 45rpx;
+  height: 45rpx;
+  background-size: 45rpx 45rpx;
+  position: absolute;
+  bottom: -1rpx;
+  right: -1rpx;
+  border-bottom-right-radius: 5px;
+}
+.recharge_check{
+  width: 45rpx;
+  height: 45rpx;
+  background: url('https://822.dev.wsy010.cn/mini_program/sustain/back/Application/Workroom_admin/upload/2017101714524434431.png') no-repeat;
+  background-size: 45rpx 45rpx;
+  position: absolute;
+  bottom: -1rpx;
+  right: -1rpx;
+  z-index: 5;
+}
+/*确认支付  */
+.confirm_wrap{
+  width: 100%;
+  border-top: 1px solid #d9d9d9;
+  background: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20rpx 0;
+}
+.recharge_confirm{
+  width: 95%;
+  color: #ffffff;  
+}

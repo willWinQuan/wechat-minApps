@@ -1,0 +1,119 @@
+/* pages/resume-index/new-resume-workcontent.wxss */
+@import "resume-common/experience-common.wxss";
+
+page {
+    background: rgb(238, 239, 241);
+}
+
+.jiange {
+    height: 150rpx;
+}
+
+.myresume-workitem {
+    border-bottom: 2rpx solid #eee;
+    padding-bottom: 20rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    margin: 0;
+}
+
+
+.myresume-workcompany {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.myresume-worksorce {
+    margin-top: 15rpx;
+}
+
+.add-item {
+    margin-bottom: 20rpx;
+    background: #fff;
+    font-size: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.add-item-text {
+    margin-left: 5%;
+    line-height: 60rpx;
+}
+
+.add-experience {
+    border: 1rpx solid rgb(146, 191, 246);
+    color: rgb(146, 191, 246);
+    width: 42%;
+    text-align: center;
+    line-height: 76rpx;
+    margin: 30rpx auto;
+    border-radius: 5rpx;
+}
+
+.add-experience text {
+    font-size: 30rpx;
+}
+
+textarea {
+    margin-left: 5.25%;
+}
+
+.text-placeholder-class {
+    font-size: 30rpx;
+    color: #ccc;
+}
+
+.add-experience-navigator {
+    width: 100%;
+    padding:4% 0;
+    border-top: 2rpx solid #eee;
+}
+
+.add-experience-content {
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 90rpx;
+    background: -webkit-linear-gradient(left, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -o-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -moz-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: linear-gradient(to right, rgb(57, 206, 249), rgb(80, 128, 236));
+}
+
+.savebtn {
+    display: inline-block;
+    background: #fff !important;
+    border: none;
+    font-size: 30rpx !important;
+    position: static;
+    top: -10rpx !important;
+    color: rgb(146, 191, 246);
+    padding-left: 12rpx;
+    padding-right: 10rpx;
+    line-height: 0;
+    overflow: visible;
+}
+
+.label-text1 {
+    top: 3rpx !important;
+}
+
+.savebtn::after {
+    width: 0rpx;
+    height: 0rpx;
+    border: none;
+}
+.myresume-workcontent{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+.text-placeholder-class{
+    z-index: 1;
+}

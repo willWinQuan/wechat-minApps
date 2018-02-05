@@ -1,0 +1,172 @@
+/**index.wxss**/
+@import "../common/resume-list.wxss";
+page{
+  background: #eee;
+}
+.index{
+  background: #eee;
+  width: 100%;
+}
+/*  */
+.index_top{
+  width: 100%;
+  height: 430rpx;
+}
+.top_city{
+  width: 100%;
+  position: absolute;
+  top: 20rpx;
+}
+.top_city text{
+  text-shadow:3rpx 3rpx 3rpx #888;
+  display: inline-block;
+  font-size: 30rpx;
+  width: 100rpx;
+  margin-left: 10rpx;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+}
+.top_city .city_icon{
+  width: 20rpx;
+  height: 12rpx;
+  vertical-align: middle;
+}
+.top_city .input{
+  width:580rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #FFF;
+  display: inline-block;
+  color: #c9c9c9;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 10rpx;
+  border-radius: 5rpx;
+  vertical-align: middle;
+}
+.search_icon{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top:42rpx;
+  right: 56%;
+  z-index: 9;
+}
+/* 导航 */
+.daohang{
+  background: #FFF;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0 20rpx 0;
+  /* display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around; */
+}
+.logoinfo{
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.logoinfo image{
+  display: block;
+  width: 100rpx;
+  height:100rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.logotext{
+  margin-top: 20rpx;
+	font-size: 24rpx;
+}
+/* 内容 */
+.content_nav{
+ background: #FFF;
+ position: relative;
+ width: 100%;
+ border-bottom: 1px solid #eee;
+}
+.content_nav1{
+ background: #FFF;
+ width: 100%;
+ position: fixed;
+ z-index: 99;
+ top: 0;
+ border-top: 1px solid #eee;
+ border-bottom: 1px solid #eee;
+}
+.nav_list{
+  width: 25%;
+  line-height: 80rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+}
+.nav_list image{
+  width: 20rpx;
+  height: 13rpx;
+  vertical-align: 5rpx;
+  margin-left: 10rpx;
+}
+/*  */
+.screen_nav{
+  position: absolute;
+  top: 82rpx;
+  background: #FFF;
+  width: 100%;
+  z-index: 9;
+  height: 365rpx;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.screen_nav view{
+  width: 100%;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  border: 1px solid #eee;
+  border-top: none;
+  text-indent: 40rpx;
+}
+.screen_nav image{
+  width: 30rpx;
+  height: 20rpx;
+  float: right;
+  margin: 35rpx 30rpx 0 0;
+}
+/*  */
+/*  */
+.list_nav{
+  position: relative;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  position: absolute;
+  top:0;
+}
+/*  */
+.loging image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: -3rpx;
+}
+.loging{
+  color: #c9c9c9;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+.no_more{
+  color: #c9c9c9;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}

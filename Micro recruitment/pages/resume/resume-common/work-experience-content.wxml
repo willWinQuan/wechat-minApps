@@ -1,0 +1,15 @@
+<template name="workexperiencecontent">
+    <view class='myresume-workitem'>
+        <view class='myresume-worktime'>{{item.starttime}}-{{item.endtime}}</view>
+        <view class='myresume-workcompany'>
+            <text>{{item.company_name}}</text>
+            <text style='float:right;margin-right:20%;'>{{item.position_name}}</text>
+        </view>
+        <view class='myresume-worksorce'>
+            <view>工作业绩：</view>
+            <view style='-webkit-line-clamp:{{lineclamp}};overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;word-wrap:break-word;word-break:break-all;'>
+               {{item.content}}
+            </view>
+        </view>
+    </view>
+</template>

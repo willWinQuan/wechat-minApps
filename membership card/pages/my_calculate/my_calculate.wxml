@@ -1,0 +1,31 @@
+<view class="my_calculate_nav">
+  <view class="calc_usable {{my_calc?'select_present':''}}" style="border-color:{{color=='#FFFFFF'?'#3c94ff':color}}" bindtap="usabletap">可用</view>
+  <view class="calc_lose {{my_calc?'':'select_present'}}" style="border-color:{{color=='#FFFFFF'?'#3c94ff':color}}" bindtap="losetap">已失效</view>
+</view>
+
+<view  class='nodata' wx:if="{{ckdata==null}}">---暂无更多记录---</view>
+
+ <block wx:if="{{ckdata!=null}}"  wx:for="{{ckdata}}"  wx:key="{{index}}">
+<view class="lose_list" data-isuse='{{is_use}}' data-cardid='{{item.id}}' bindtap='bindmy_card'>
+  <view class="calc_card">
+    <image src="{{item.img}}" style='background:{{item.color}}'></image>
+  </view>
+  <view class="calc_info">
+    <view class="calc_name">{{item.title}}</view>
+    <view class="calc_indate">有效期：{{item.time}}</view>
+  </view>
+  <view class="calc_arrow">
+    <image src="../../image/arrow.png"></image>
+  </view>
+  <view wx:if="{{my_calc==false}}" class="calc_lose_image">
+    <image src="../../image/already_lose.png"></image>
+  </view>
+</view>
+</block> 
+
+<view wx:if="{{ckdata!=null}}" class="loadmore_wrap" >
+  <view class="{{is_load==0?'loading':''}}" style="display:{{no_record==0?'inline-block':'none'}}"></view>
+  <view class="loadmore" style="display:{{no_record==0?'inline-block':'none'}}">{{is_load==0?'正在加载':'没有更多了'}}</view>
+</view>
+
+

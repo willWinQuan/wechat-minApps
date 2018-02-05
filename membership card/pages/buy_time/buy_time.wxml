@@ -1,0 +1,64 @@
+<!--pages/buy_time/buy_time.wxml-->
+<!--会员卡信息  -->
+<view class="member_card_wrap">
+
+  <view wx:if="{{carddata.beijingtu == null}}" class="member_card" style='background:{{carddata.color}} 50% 50% ;background-size:cover;'>
+    <text class="card_name">{{carddata.title}}</text>
+    <text class="card_number">卡号：{{carddata.card_number}}</text>
+    <view class="use_rule" bindtap='ruletap'>使用规则></view>
+  </view>
+  <!--  -->
+  <view wx:if="{{carddata.beijingtu !=null}}" class="member_card" style='background:url({{carddata.beijingtu}}) 50% 50% ;background-size:cover;'>
+    <text class="card_name">{{carddata.title}}</text>
+    <text class="card_number">卡号：{{carddata.card_number}}</text>
+    <view class="use_rule" bindtap='ruletap'>使用规则></view>
+  </view>
+  <view class="indata">有效期{{carddata.valid_time}}</view>
+</view>
+<!--消费次数  -->
+<view class="consume_time_wrap">
+  <view class="consume_time">剩余次数：</view>
+  <text class="resto_time">{{carddata.times}}次</text>
+</view>
+<view class="consume_time_wrap">
+  <view class="consume_time">消费次数：</view>
+  <view class="select_time">
+    <view class="minus_time" bindtap="minstap">-</view>
+    <text>{{consume_time}}</text>
+    <view class="add_time" bindtap="addtap">+</view>
+  </view>
+  <text>(次)</text>
+</view>
+
+  <toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">
+    {{toastcontent}}
+  </toast>
+
+  <!-- 遮罩层 -->
+<mask hidden="{{maskflag}}"  bindtap="hiddenflag" style="z-index:1" hover-style="none"/>
+
+<view wx:if="{{maskflag==false}}" class='inputpassd'>
+    <view class='inputpassd-h'>
+      <image src='../../image/warn.png' bindtap='hiddenflag'></image>
+      <text>请输入支付密码</text>
+    </view>
+    <view class='inputpassd-m'>
+       您消费次数：{{consume_time}}次
+    </view>
+    <view class='inputpassd-f'>
+    <block wx:for="{{passarry}}" wx:key="{{index}}">
+      <view class='inputpassd-dot' bindtap='touchpassword'> 
+          <text style="background:{{(password.length>=item)?'#000':'#fff'}}"></text> 
+      </view>
+      </block>
+    </view>
+    <input class='passd-input'  type="number"  bindfocus='inputfocus' bindinput='inputvalue' focus="{{isFocus}}" maxlength="6" />
+</view>
+
+
+<!--确认支付  -->
+<form bindsubmit="formSubmitTopay" report-submit="true">
+<input hidden='true' name="cardnumber" value='{{carddata.card_number}}'></input>
+<button class="confirm_pay" style="background:{{color=='#ffffff'?'#3c94ff':color}}"  formType="submit">确认支付</button>
+</form>
+

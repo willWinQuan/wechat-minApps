@@ -1,0 +1,16 @@
+<!--pages/renew/renew.wxml-->
+
+<block wx:for="{{array}}" wx:key='index'>
+<view class='renew-item' data-index='{{index}}' bindtap='tapchoose'>
+   <view style='color:{{ischecked==index?"#4ba3f1":""}};margin-left:5%;'>{{item.days}}天</view>
+   <view class='renew-item-right' style='background:{{ischecked==index?"linear-gradient(to right, rgb(57,206,249) , rgb(80,128,236))":""}};color:{{ischecked==index?"#fff":"#4ba3f1"}}'>
+      {{item.money}}元
+   </view>
+</view>
+</block>
+
+<view class='add-experience-navigator'>
+  <view class='add-experience-content' bindtap='bindpay'>
+      确认支付
+  </view>
+</view>

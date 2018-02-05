@@ -1,0 +1,3 @@
+<!--pages/phone_number/phone_number.wxml-->
+<input class="phone_num" type="number" placeholder="请输入手机号码" />
+<button class="register">提交</button>

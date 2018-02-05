@@ -1,0 +1,64 @@
+<template name="workexperience">
+    <view class='form-item'>
+        <view class='form-item-text'>
+            公司名称
+        </view>
+        <view class='form-item-content'>
+            <input type='text' maxlength='20' data-workindex='{{index}}' data-inputproperty='company_name' bindinput='bindworkinput' value='{{item.company_name}}' name="companyname" placeholder='请输入您的公司名称' placeholder-class='form-placeholder-class'></input>
+        </view>
+    </view>
+
+    <view class='form-item'>
+        <view class='form-item-text'>
+            所任职位
+        </view>
+        <view class='form-item-content'>
+            <input type='text' maxlength='20' data-workindex='{{index}}' data-inputproperty='position_name' bindinput='bindworkinput' value='{{item.position_name}}' name="appointmentposition" placeholder='请输入您的所任职位' placeholder-class='form-placeholder-class'></input>
+        </view>
+    </view>
+
+    <view class='form-item'>
+        <view class='form-item-text'>
+            入职时间
+        </view>
+        <view class='form-item-content'>
+            <picker mode="date" data-index='{{index}}' name="indate" value="{{indatevalue[index]}}" end="{{nowDate}}" bindchange="bindinDateChange">
+                <view class="picker">
+                    {{indatevalue[index]}}
+                    <text class='picker-text' wx:if="{{indatevalue[index] ==''}}">请输入您的入职时间</text>
+                </view>
+            </picker>
+        </view>
+        <view class='form-item-jiantou'>
+            <image src='../../image/jiantou.png'></image>
+        </view>
+    </view>
+    
+    <view class='form-item'>
+        <view class='form-item-text'>
+            离职时间
+        </view>
+        <view class='form-item-content'>
+            <picker mode="date" data-index='{{index}}' name="outdate" value="{{outdatevalue[index]}}"  end="{{nowDate}}" bindchange="bindoutDateChange">
+                <view class="picker">
+                    {{outdatevalue[index]}}
+                    <text class='picker-text' style='color:#000;' wx:if="{{outdatevalue[index] ==''}}">至今</text>
+                </view>
+            </picker>
+        </view>
+        <view class='form-item-jiantou'>
+            <image src='../../image/jiantou.png'></image>
+        </view>
+    </view>
+
+    <view class='form-item' style='display:block;border-bottom:none;'>
+        <view class='form-item-text' style='white-space:nowrap;'>
+            工作内容  (<text>{{item.content.length}}</text>/350)
+        </view>
+        <view class='form-item-content'>
+            <text class='form-item-textarea' style='display:{{textareahidden?"block":"none"}};color:{{item.content==""?"#ccc":"#333"}}'>{{item.content==""?"请在此描述您的工作内容...":item.content}}</text>
+            <textarea hidden='{{textareahidden}}' value='{{item.content}}'  data-workindex='{{index}}' data-inputproperty='content' bindinput='bindworkinput' name="workcontent" style='margin-left:3%;' maxlength='350' placeholder='请在此描述您的工作内容...' placeholder-class='text-placeholder-class'></textarea>
+        </view>
+        <view class='clear'></view>
+    </view>
+</template>

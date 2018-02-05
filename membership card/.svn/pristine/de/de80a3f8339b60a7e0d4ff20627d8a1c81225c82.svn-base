@@ -1,0 +1,66 @@
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="phone_number_wrap" wx:for="{{person_list}}" wx:key="{{index}}">
+    <view class='personal-left'>
+      <text class='personal-name'>{{item.name}}</text>
+      <text class='xinhao' wx:if="{{item.is_required=='1'}}">*</text> 
+    </view>
+    <view class="name_input" wx:if="{{item.type=='text'}}">
+
+      <input  wx:if='{{item.id =="-3"}}' type="{{item.type}}" name="{{item.id}}" maxlength='18' disabled='{{item.is_disabled==1?"disabled":""}}' placeholder="姓名输入后不可更改" data-index="{{index}}" data-name="{{item.name}}" data-id='{{item.id}}' bindfocus='closeshow' bindblur='closeblur'
+        bindinput="closetap" value='{{item.value}}' bindchange="closestate" />
+
+       <input wx:if='{{item.id !="-3"}}' type="{{item.type}}" name="{{item.id}}" maxlength='18' disabled='{{item.is_disabled==1?"disabled":""}}' placeholder="请输入{{item.name}}" data-index="{{index}}" data-name="{{item.name}}" data-id='{{item.id}}' bindfocus='closeshow' bindblur='closeblur'
+        bindinput="closetap" value='{{item.value}}' bindchange="closestate" />
+
+      <image wx:if='{{isclose[index]}}' src="../../image/close.png" data-cname="{{item.name}}" data-index="{{index}}" bindtap="clear_name" data-id='{{item.id}}'></image>
+    </view>
+
+    <view class="name_input" wx:if="{{item.type=='number'}}">
+      <input type="number" name="{{item.id}}" maxlength='{{item.id=="-2"?"18":"11"}}' disabled='{{item.is_disabled==1?"disabled":""}}' placeholder="请输入{{item.name}}" data-index="{{index}}" data-name="{{item.name}}" data-id='{{item.id}}' bindfocus='closeshow' bindblur='closeblur' bindinput="closetap" value='{{item.value}}' bindchange="closestate" />
+      <image wx:if='{{isclose[index]}}' src="../../image/close.png" data-cname="{{item.name}}" data-index="{{index}}" bindtap="clear_name" data-id='{{item.id}}'></image>
+    </view>
+
+    <view class="name_input" wx:if="{{item.type=='time'}}">
+      <picker name="{{item.id}}" mode="date" value="{{timevalue}}" end="3000-12-30" bindchange="datePickerBindchange">
+        <text wx:if="{{timevalue!=''}}">{{timevalue}}</text>
+        <text class='novalue' wx:if="{{timevalue==''}}">请选择日期...</text>
+      </picker>
+    </view>
+
+    <view class="address-input" wx:if="{{item.type=='address'}}">
+      <picker name="{{item.id}}" mode="region" value='{{addressvalue}}' bindchange="bindRegionChange">
+        <text wx:if="{{addressvalue!=''}}">{{addressvalue}}</text>
+        <text class='novalue' wx:if="{{addressvalue==''}}">请选择地址...</text>
+      </picker>
+    </view>
+
+    <radio-group name="{{item.id}}" value='{{radioCheckVal[index]}}' bindchange="radioCheckedChange" wx:if="{{item.type=='bool'}}" data-index="{{index}}">
+      <view class="flex_box">
+        <view class="flex_item">
+          <label class="{{radioCheckVal==1?'active':''}}">男
+            <radio hidden="true" value="1" checked="{{item.value=='1'}}"></radio>
+            <text class="{{radioCheckVal[index]==1?'active':''}}"></text>
+            <text class="{{radioCheckVal[index]==1?'active':''}}" style="background:{{color}};"></text>
+          </label>
+        </view>
+        <view class="flex_item">
+          <label class="{{radioCheckVal==2?'active':''}}">女
+            <radio hidden="true" value="2" checked="{{item.value=='2'}}"></radio>
+            <text class="{{radioCheckVal[index]==2?'active':''}}"></text>
+            <text class="{{radioCheckVal[index]==2?'active':''}}" style="background:{{color=='#FFFFFF'?'#3c94ff':color}};"></text>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+
+
+  <!--保存-->
+  <view class="save_info_wrap">
+    <button class="save_info" disabled='{{disabled_status}}' style="background:{{color=='#FFFFFF'?'#3c94ff':color}};" formType="submit">保存</button>
+  </view>
+</form>
+
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">
+  {{toastcontent}}
+</toast>

@@ -1,0 +1,107 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.5.4",
+	"appid": "wxea954817737931af",
+	"projectname": "minvite-v825",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "投递箱",
+					"pathName": "pages/send_box/send_box",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业详情",
+					"pathName": "pages/company-detail/company-detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑企业",
+					"pathName": "pages/editor-company/editor-company",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业信息",
+					"pathName": "pages/company-msg/company-msg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布职位",
+					"pathName": "pages/posting-position/posting-position",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "续费",
+					"pathName": "pages/renew/renew",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "我的简历",
+					"pathName": "pages/resume/my-resume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建简历",
+					"pathName": "pages/resume/creat-new-resume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "工作内容",
+					"pathName": "pages/resume/new-resume-workcontent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加工作经历",
+					"pathName": "pages/resume/add-work-experience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加教育经历",
+					"pathName": "pages/resume/add-each-experience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "投递信息",
+					"pathName": "pages/send_msg/send_msg",
+					"query": ""
+				}
+			]
+		}
+	}
+}

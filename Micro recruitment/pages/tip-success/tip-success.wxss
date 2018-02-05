@@ -1,0 +1,22 @@
+/* pages/tip-success/tip-success.wxss */
+.suces_img{
+  margin-top: 260rpx;
+  text-align: center;
+}
+.suces_img image{
+  width: 60%;
+}
+.btn{
+  position: fixed;
+  left: 5%;
+  bottom: 60rpx;
+  width:90%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(left, #3ACEF6, #4F80E9); 
+  background: -webkit-linear-gradient(left, #3ACEF6, #4F80E9); 
+  background: -o-linear-gradient(left, #3ACEF6, #4F80E9);
+  background: -moz-linear-gradient(left, #3ACEF6, #4F80E9); 
+}

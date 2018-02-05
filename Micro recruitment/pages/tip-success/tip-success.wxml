@@ -1,0 +1,7 @@
+<!--pages/tip-success/tip-success.wxml-->
+
+<view class="suces_img">
+  <image src='../../image/report.png'></image>
+</view>
+
+<button class='btn' bindtap='bindtipsuccess' >确认</button>

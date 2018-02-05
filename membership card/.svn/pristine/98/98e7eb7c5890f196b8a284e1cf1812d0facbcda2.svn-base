@@ -1,0 +1,109 @@
+/* pages/buy_detail/buy_detail.wxss */
+page{
+  background: #f0eff5;
+}
+/*会员卡信息  */
+.buy_detail_wrap{
+  background: #ffffff;
+  padding-top: 40rpx; 
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9; 
+  padding-bottom: 20rpx;
+}
+.member_card{
+  background: url('../../image/card.png');
+  border-radius: 10px;
+  width: 640rpx;
+  height: 360rpx;
+  background-size: 640rpx 360rpx;
+  margin: 0 auto;
+  position: relative;
+  /* box-shadow:3rpx 3rpx 3rpx #999; */
+}
+.card_name{
+  color: #ffffff;
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+.card_number{
+  color: #ffffff;
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+.card_title{
+  padding: 20rpx;
+  font-weight: bold;
+}
+.card_info{
+  padding: 0 20rpx 0 20rpx;
+  display:flex;
+}
+.card_price{
+  color: #ef614f;
+  display: inline-block;
+  vertical-align: middle;
+}
+.card_price text{
+  font-size: 50rpx;
+}
+.resto_time{
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 25rpx;
+  color:#bababa;
+  padding-top: 20rpx;
+  text-align: right;
+}
+.card_indate{
+  width: 70%;
+  font-size: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+  color:#bababa;
+  padding-top:20rpx;
+}
+/*购买须知  */
+.buy_notice{
+  background: #ffffff;
+  margin-top: 30rpx;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom:140rpx;
+}
+.notice_title{
+  padding: 20rpx 0 0 20rpx; 
+  font-weight: bold;
+}
+.notice_content{
+  padding: 20rpx;
+  color:#bababa;
+}
+/*立即支付  */
+.pay_now_wrap{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  border-top: 1px solid #d9d9d9;
+  padding: 20rpx 0;
+}
+.pay_now{
+  width: 95%;
+  color: #ffffff;
+}
+.card-shennum{
+  font-size: 26rpx;
+  color: #666;
+  white-space: nowrap
+}
+
+
+.wxParse-img{
+  width: 100%;
+}

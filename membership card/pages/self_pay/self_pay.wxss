@@ -1,0 +1,315 @@
+/* pages/self_pay/self_pay.wxss */
+ page{
+  /* height: 453px;  */
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+/* .self_pay_wrap{
+  height: 100%;
+  overflow: hidden;
+}   */
+/*会员卡信息  */
+.member_card{
+  /* background: url('../../image/card.png'); */
+  width: 640rpx;
+  height: 330rpx;
+  background-size: 640rpx 360rpx;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 40rpx;
+  border-radius: 10px;
+}
+.card_name{
+  color: #ffffff;
+  position: absolute;
+  top: 40rpx;
+  left: 130rpx;
+  font-size: 30rpx;
+}
+.card_title{
+  color: #ffffff;
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+.card_number{
+  color: #ffffff;
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+/*消费金额  */
+.consume_sum text{
+  display: block;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.consume_sum{
+  margin: 0 auto;
+  width: 90%;
+}
+.consume_sum input{
+  background: #D8EAFF;
+  border-radius: 25px;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 30rpx;
+  height: 70rpx;
+}
+/*会员专享  */
+.member_particular{
+  margin-top: 50rpx;
+}
+.member_title{
+  font-size: 30rpx;
+  padding: 20rpx;
+}
+.member_discount_wrap{
+  width: 95%;
+  margin: 0 auto;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.member_discount{
+  margin: 20rpx auto;
+}
+.discount_left{
+  width: 70%;
+  display: inline-block;
+}
+.discount_left text{
+  color:#bababa;
+  font-size: 30rpx;
+}
+.discount_right{
+  width: 30%;
+  display: inline-block;
+}
+.discount_right text{
+  width: 80%;
+  display: inline-block;
+  text-align: center;
+}
+.discount_right checkbox{
+  width: 20%;
+  display: inline-block;
+}
+/*确认支付  */
+.confirm_payment{
+  width: 95%;
+  background: #3C94FF;
+  color: #ffffff;
+  position: absolute;
+  bottom: 20rpx;
+  left: 2.5%;
+}
+/*选择优惠券  */
+.select_discount{
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+  width: 100%;
+  height: 530rpx;
+  z-index: 999;
+  transition: all .3s linear;
+  opacity: 1;
+  overflow-y:scroll;
+}
+ .discount_wrap{
+  position: relative;
+  top: 0;
+} 
+.discount_none{
+  position: fixed;
+  bottom: -500rpx;
+  opacity: 0;
+}
+.discount_nav{
+  width: 100%;
+  /* padding: 20rpx 0; */
+  /* position: fixed; */
+  line-height: 80rpx;
+  z-index:99;
+  background:#fff;
+  box-sizing: border-box;
+}
+.discount_coupon_wrap{
+  /* padding-top: 80rpx; */
+  height: 420rpx;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch; 
+}
+.discount_nav view{
+  width: 16%;
+  display: inline-block;
+  text-align: center;
+  margin: 0rpx 15%;
+}
+.default_discount,.default_full{
+  font-weight: bold;
+}
+.is_discount,.is_full{
+  color: #3C94FF;
+  font-weight: bold;
+  border-bottom: 2px solid #3C94FF;
+}
+.discount_coupon{
+  width: 92%;
+  margin: 20rpx auto;
+}
+.discount_coupon_left{
+  width: 9%;
+  height: 197rpx;
+  background-size: 67rpx 197rpx;
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+  text-align: center;
+  padding: 35rpx 15rpx;
+  box-sizing: border-box;
+  position: relative;
+  writing-mode: tb-rl;
+  font-size: 24rpx;
+}
+.discount_coupon_left text,.discount_coupon_left text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding-top: 35rpx;
+}
+.discount_bg{
+  width: 65rpx;
+  height: 197rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: 67rpx 197rpx; 
+}
+.discount_coupon_right{
+  background: url('http://shenzhen.weisanyun.cn/weixinpl/sustain/back/Application/Workroom_admin/upload/2017101011034111498.png') no-repeat; 
+  width: 91%;
+  height: 197rpx;
+  background-size: 625rpx 197rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: #ef614f;
+}
+.discount_condition{
+  position: absolute;
+  top: 5rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+}
+.discount_condition text{
+   font-size: 40rpx;
+   font-weight: bold;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.coupon{
+  position: absolute;
+  top: 10rpx;
+  right: 80rpx;
+}
+.discount_money{
+  position: absolute;
+  bottom: 45rpx;
+  left: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.discount_money text{
+  font-size: 30rpx;
+}
+.discount_indate{
+  position: absolute;
+  bottom: 10rpx;
+  left: 30rpx;
+  font-size: 24rpx;
+  color: #bababa;
+}
+.discount_coupon_right image{
+  width: 128rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 80rpx;
+}
+.inputpassd{
+  position:absolute;
+  z-index:999;
+  top:20%;
+  left:10%;
+  background:#fff;
+  width:80%;
+  border-radius:6%;
+}
+.inputpassd-h{
+  width:100%;
+  border-bottom:1px solid #ccc;
+}
+.inputpassd-h image{
+  width:40rpx;
+  height:40rpx;
+  margin:10rpx;
+  margin-left:4%;
+}
+.inputpassd-h text{
+  font-size:35rpx;
+  text-align:center;
+  width:80%;
+  display:inline-block;
+  position:relative;
+  bottom:15rpx;
+}
+.inputpassd-m{
+  width:90%;
+  border-bottom:1px solid #ccc;
+  line-height:100rpx;
+  margin-left:5%;
+  text-align:center;
+  font-size:32rpx;
+}
+.inputpassd-f{
+  width:90%;
+  dispaly:flex;
+  margin-left:8%;
+  margin-top:20rpx;
+}
+.inputpassd-dot{
+  width:15%;
+  display:inline-block;
+  border:1px solid #ccc;
+  height:80rpx;
+  border-right:0;
+}
+.inputpassd-dot:last-child{
+  border-right: 1px solid #ccc;
+}
+.inputpassd-dot text{
+  display:inline-block;
+  width:25rpx;
+  height:25rpx;
+  border-radius:50%;
+  background:#fff;
+  margin-top:28rpx;
+  margin-left:28rpx;
+}
+.passd-input{
+  color: #fff;
+  font-size: 0rpx;
+  width: 1rpx;
+ margin: 0 outo;
+}
+.nodata{
+  text-align: center;
+  margin-top: 50rpx;
+  color: #d9d9d9;
+}

@@ -1,0 +1,23 @@
+<!--pages/new_phone/new_phone.wxml-->
+<view class="get_phone_number">
+  <view class="phone_number">
+  <text>您当前的手机号：</text>
+  {{tel}}</view>
+</view>
+
+<view class='phone-num'>
+  <text>手机号</text>
+  <input type='number' maxlength='11' focus='{{pisfocus}}' bindinput='pconfirm'  bindconfirm='pconfirm' placeholder-class='holderclass' placeholder='请输入您的常用手机号码'></input>
+</view>
+<view class='yanzheng-num'>
+  <text>验证码</text>
+  <input type='number' maxlength='6'  placeholder-class='holderclass' bindinput='yconfirm' bindconfirm='yconfirm' placeholder='请输入验证码'></input>
+  <text id='sendma' wx:if="{{sendmsg == 60}}" bindtap='sendma' style="color:{{color=='#FFFFFF'?'#3c94ff':color}}">发送验证码</text>
+  <text id='sendmatext' wx:if="{{sendmsg != 60}}" style="text-align:center;color:{{color=='#FFFFFF'?'#3c94ff':color}}">{{sendmsg}}</text>
+</view>
+
+<button class='chance-sub' style="background:{{color=='#FFFFFF'?'#3c94ff':color}}" bindtap='bindchance'>确认修改</button>
+
+  <toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">
+    {{toastcontent}}
+  </toast>

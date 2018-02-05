@@ -1,0 +1,42 @@
+<!--pages/resume/add-each-experence.wxml-->
+
+<import src="resume-common/each-experience-common.wxml" />
+<import src="resume-common/each-experience-content.wxml" />
+
+<block wx:for="{{eacharray}}" wx:key="index">
+    <form bindsubmit="eachformSubmit">
+        <view class='experience-template' style='margin-bottom:10px; padding:0 5%;'>
+            <template is="{{eachindex[index]?'eachexperiencecontent':'eachexperience'}}" data="{{item,enddatevalue,index,lineclamp,textareahidden}}" />
+            <input hidden='true' name="eachisindex" value='{{index}}'></input>
+            <input hidden='true' name="eachid" value='{{item.id}}'></input>
+            <view class='work-control'>
+                <view class='work-control-right'>
+                    <label data-index='{{index}}' data-eachid='{{item.id}}' bindtap='delteeachtemplate'>
+                        <image src='../../image/delete_gray.png'></image>
+                        <text class='label-text1'>删除</text>
+                    </label>
+                    <label>
+                        <image wx:if="{{!eachindex[index]}}" src='../../image/save_gray.png'></image> 
+                        <image wx:if="{{eachindex[index]}}" src='../../image/chance.png'></image> 
+                        <text data-index='{{index}}' bindtap='tapwriteeach' class='label-text1' wx:if="{{eachindex[index]}}" style='display:{{eachindex[index]?"inline-block":"none"}}'>修改</text>
+                        <button hover-stop-propagation="true" hover-class='none' wx:if="{{!eachindex[index]}}" style='display:{{eachindex[index]?"none":"inline-block"}}' class='savebtn' form-type='submit'>保存</button>
+                    </label>
+                </view>
+                <view class='clear'></view>
+            </view>
+        </view>
+    </form>
+</block>
+
+<view class='add-experience' bindtap='addeachtemplate'>
+    <text>+</text> 添加教育经历
+</view>
+
+<toast hidden="{{toastHidden}}" style="z-index:999;" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>
+
+<view class='add-experience-navigator' bindtap='bindnewresumeworkcontent'>
+    <view class='add-experience-content'>
+        返回
+    </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/new_password/new_password.wxml-->
+<!--获取手机号码  -->
+<view class="get_phone_number">
+  <view class="phone_number">{{tel}}</view>
+  <text style="display:{{send_code=='重新发送'||send_code=='发送验证码'?'none':'block'}}">验证码已以短信形式发送到你的手机中，请注意查收</text>
+</view>
+<!--修改密码  -->
+<view class="note_code">
+  <text>短信验证码</text>
+  <input type="number" placeholder="6位纯数字" bindblur="noteCode" value="{{code_value}}" maxlength="6"/>
+  <view class="send_code" bindtap="sendCodetap" style="color:{{color=='#FFFFFF'?'#3c94ff':color}}">{{send_code}}</view>
+</view>
+<view class="password_alter">
+  <text>新支付密码</text>
+  <input type="{{select_type=='password'?'password':'number'}}" placeholder="6位纯数字" bindblur="newPassword" value="{{password_value}}" maxlength="6" focus="{{focus1}}"/>
+  <image class='eyes' src="{{password_state==0?'../../image/close_eye.png':'../../image/open_eye.png'}}" bindtap="toggle_password"></image>
+</view>
+<view class="password_alter">
+  <text>确认密码</text>
+   <input type="{{select_type2=='password'?'password':'number'}}" placeholder="再次输入密码" maxlength="6" bindblur="surePassword" value="{{sure_password_value}}"  focus="{{focus2}}"/> 
+   <image class='eyes' src="{{password_state2==0?'../../image/close_eye.png':'../../image/open_eye.png'}}" bindtap="toggle_password_sure"></image>
+</view>
+<!--显示密码  -->
+<!-- <view class="show_select">
+ <radio-group bindtap="showpasswordtap">
+    <view class="flex_box">
+      <view class="flex_item">
+        <label class="{{showpassword?'active':''}}">显示密码
+          <radio hidden="true"></radio>
+          <text class="{{showpassword?'active':''}}"></text>
+          <text class="{{showpassword?'active':''}}" style="background:{{color=='#FFFFFF'?'#3c94ff':color}}"></text>  
+        </label>
+      </view>
+    </view>
+  </radio-group>
+</view> -->
+<!--确认修改  -->
+<button class="sure_alter" disabled='{{disabled_status}}' style="background:{{color=='#FFFFFF'?'#3c94ff':color}}" bindtap="alter_info">确认修改</button>

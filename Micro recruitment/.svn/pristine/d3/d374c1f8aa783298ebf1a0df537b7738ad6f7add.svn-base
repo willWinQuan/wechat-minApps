@@ -1,0 +1,71 @@
+<!--pages/company_apply/company_apply.wxml-->
+<import src="../common/chooseaddress.wxml" />
+<form bindsubmit="formSubmit">
+  <view class='company_apply_wrap'>
+    <view class='company_apply'>
+      <view>企业名称</view>
+      <input type='text' maxlength='20' name="company_name" placeholder='请输入您的企业名称' value="{{company_name}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view>企业法人</view>
+      <input type='text' maxlength='10' name="company_legal" placeholder='请输入企业法人' value="{{company_legal}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view>联系电话</view>
+      <input class="phonenumber" type='number' placeholder='请输入联系电话' name="phonenumber" value="{{phone_number}}"></input>
+      <button class='getphone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button>
+    </view>
+    <view class='company_apply' bindtap="tabchooseaddress">
+      <view>公司地址</view>
+      <view class='form-item-content'>
+        <view class='picker'>
+            <input hidden='true' name="addressvalue" value='{{addressprovince}} - {{addresscity}} - {{addresscounty}}'></input>
+            <text wx:if="{{addressprovince!=''}}">{{addressprovince}} - {{addresscity}} - {{addresscounty}} </text>
+            <text class='picker-text' wx:if="{{addressprovince ==''}}">省份-城市-区(县)</text>
+        </view>
+        <!-- <picker bindchange="bindaddressPickerChange"  value="{{addressvalue}}" mode="region">
+            <view class="picker">
+                {{addressvalue}}
+                <text class='picker-text' wx:if="{{addressvalue ==''}}">请选择公司地址</text>
+            </view>
+        </picker> -->
+      </view>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+    <view class='company_apply'>
+      <view class='address_text'>详细地址</view>
+      <!-- <textarea class='address_detail' placeholder='街道门牌信息' name="address_detail"></textarea> 
+      <view wx:if="{{detail_status}}" class='address_detail' name="address_detail" value="{{detail_address}}" style="color:{{detail_address=='街道门牌信息'?'#bababa':'#000'}}">{{detail_address}}</view> -->
+
+      <textarea wx:if="{{address_status}}" class='address_detail' style='margin-top:{{margin_top}}' placeholder='街道门牌信息' name="detail_address" value="{{detail_address=='街道门牌信息'?'':detail_address}}" show-confirm-bar="{{false}}" bindinput='detail_address'></textarea>   
+      <view wx:if="{{detail_status}}" class='address_detail' name="address_detail" value="{{detail_address}}" style="color:{{detail_address=='街道门牌信息'?'#bababa':'#000'}}">{{detail_address}}</view>
+    </view>
+    <view class='company_apply'>
+      <view class='license_text'>营业执照</view>
+      <view class='business_license' wx:for="{{license_img_have.length}}" wx:key="{{index}}">
+          <image class='license' src="{{license_img_have[index]}}"></image>   
+        <input hidden='true' type='text' name="licenseimg" value='{{license_img_have}}'></input>
+        <view class='license_del' data-index='{{index}}' bindtap='license_del'>点击删除</view>
+      </view>
+      <view class='business_license_wrap'>
+        <view class='business_license' bindtap='license_uploading'>
+          <image class='license' src="../../image/license.png"></image>
+        </view>
+        <view>至少2张，最多8张</view>
+         <!-- <input hidden='true' type='text' name="licenseimg" value='{{license_img}}'></input>  -->
+      </view>
+    </view>
+    <view class='company_apply'>
+      <view>备注</view>
+      <textarea class='position_explain' placeholder='请在此描述备注内容...' name="position_explain" wx:if="{{destribe_status}}" show-confirm-bar="{{false}}" value='{{position_explain}}' bindinput='position_explain'></textarea>    
+    </view>
+  </view>
+  <!--提交申请  -->
+  <view class='submit_apply'>
+    <button form-type='submit' bindtap='bindcompanyapplysubmit'>提交申请</button>
+  </view>
+</form>
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}</toast>
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:1;" hover-style="none"/>   
+<!-- <template is="chooseaddress" data="{{provincesvalue,citysvalue,countysvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" /> -->
+<template is="chooseaddress" data="{{addressvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" />

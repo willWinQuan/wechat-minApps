@@ -1,0 +1,4 @@
+<!--pages/map/map.wxml-->
+<view class="map_box">
+  <map id="navi_map" bindtap="changeLocal" longitude="{{longitude}}" latitude="{{latitude}}" scale="12" markers="{{markers}}" polyline="{{polyline}}"></map>
+</view>

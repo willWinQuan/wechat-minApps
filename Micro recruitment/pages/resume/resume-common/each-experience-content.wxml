@@ -1,0 +1,16 @@
+<template name="eachexperiencecontent">
+    <view class='myresume-workitem'>
+        <view class='myresume-worktime'>{{item.endtime}}</view>
+        <view class='myresume-workcompany'>
+            <text>{{item.school_name}}</text>
+        </view>
+        <view class='myresume-workcompany'>
+            <text>{{item.domain_name}}</text>
+        </view>
+        <view class='myresume-worksorce'>
+            <view style='overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{lineclamp}};word-wrap:break-word;word-break:break-all;'>
+               {{item.content}}
+            </view>
+        </view>
+    </view>
+</template>

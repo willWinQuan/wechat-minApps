@@ -1,0 +1,253 @@
+/**index.wxss**/
+page{
+  background: #f0eff5;
+}
+/*商家背景图  */
+.shop_wrap{
+  width: 100%;
+}
+.shop_image{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+/*商家地址  */
+.shop_address_wrap{
+  width: 100%;
+  padding: 20rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.shop_address_left{
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.shop_name{
+  font-weight: bold;
+  font-size:36rpx;
+}
+.shop_address_icon{
+  width: 25rpx;
+  height: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.shop_address_text{
+  width: 93%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 22rpx;
+  vertical-align: middle;
+  padding-left: 2%;
+  color:#bababa;
+}
+.shop_address_right{
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.shop_phone_image_wrap{
+  width: 100%;
+}
+.shop_phone_image{
+  width: 50rpx;
+  height: 50rpx; 
+  display: block;
+  margin: 0 auto;
+}
+.shop_contact{
+   font-size:22rpx; 
+   width: 100%;
+   text-align: center;
+   display: block;
+   margin-top: 10rpx;
+}
+/*分类栏  */
+.classsify_wrap{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap; 
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 50rpx 20rpx 20rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.classift_item{
+  width: 25%;
+}
+.self_pay{
+  width: 100%;
+  display: block;
+}
+.classift_item image{
+  width: 90rpx;
+  height: 90rpx;
+  display: block;
+  margin: 0 auto;
+}
+.classift_item text{
+  display: block;
+  text-align: center;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+/*领取优惠券  */
+.get_discount{
+  width: 100%;
+  background: #ffffff;
+  margin-top: 50rpx;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.discount_title{
+  width: 95%;
+  margin: 0 auto;
+  padding: 10rpx;
+}
+.discount_title_image{
+  width: 33rpx;
+  height: 35rpx;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10rpx;
+}
+.discount_title_text{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 28rpx;
+}
+.discount_coupon{
+  width: 92%;
+  margin: 20rpx auto;
+}
+.discount_coupon_left{
+  width: 9%;
+  height: 197rpx;
+  background-size: 67rpx 197rpx;
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+  text-align: center;
+  padding: 10rpx 15rpx;
+  box-sizing: border-box;
+  position: relative;
+  writing-mode: tb-rl;
+  font-size: 24rpx;
+}
+.discount_coupon_left text,.discount_coupon_left text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding-top: 35rpx;
+}
+.discount_bg{
+  width: 65rpx;
+  height: 197rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: 67rpx 197rpx; 
+}
+.discount_coupon_right{
+  /* background: url('https://822.dev.wsy010.cn/mini_program/wa_card/back/Application/Workroom_admin/upload/2017102317292217184.png') no-repeat;  */
+  width: 91%;
+  height: 197rpx;
+  /* background-size: 625rpx 197rpx; */
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: #ef614f;
+}
+.discount_condition{
+  position: absolute;
+  top: 5rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+}
+.discount_condition text{
+   font-size: 40rpx;
+   font-weight: bold;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.coupon{
+  position: absolute;
+  top: 10rpx;
+  right: 80rpx;
+}
+.discount_money{
+  position: absolute;
+  bottom: 45rpx;
+  left: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.discount_money text{
+  font-size: 30rpx;
+}
+.discount_indate{
+  position: absolute;
+  bottom: 10rpx;
+  left: 30rpx;
+  font-size: 24rpx;
+  color: #bababa;
+}
+.discount_coupon_right image{
+  width: 128rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 80rpx;
+}
+/*核销  */
+.examine{
+  width: 97rpx;
+  height: 97rpx;
+  position: fixed;
+  bottom: 0rpx;
+  right: 10rpx;
+  text-align: center;
+  line-height: 97rpx;
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+/*  加载更多   */
+.loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat; 
+  background-size: 100%;
+}
+.loadmore_wrap {
+  width: 100%;
+  padding: 30rpx 0;
+  /* line-height: 30rpx; */
+  font-size: 14px;
+  text-align: center;
+}
+.loadmore {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*没有记录  */
+.no_record{
+  width: 236rpx;
+  height: 263rpx;
+  display: block;
+  margin: 0 auto;
+}

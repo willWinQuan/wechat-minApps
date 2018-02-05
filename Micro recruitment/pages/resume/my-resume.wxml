@@ -1,0 +1,91 @@
+<!--pages/my-resume/my-resume.wxml-->
+<import src="resume-common/work-experience-content.wxml" />
+<import src="resume-common/each-experience-content.wxml" />
+
+<view class='resume' wx:if='{{showmyresume==""}}'>
+    <image src='../../image/jianli_01.png'></image>
+    <view bindtap='creatnewresume' >
+        <view class='creat-btn'>
+            <text>+</text> 创建简历
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{showmyresume!= '0' && showmyresume!= ''}}">
+<view class='myresume-item'>
+    <!-- <view class='myresume-title'>基本信息</view> -->
+    <view class='myresume-personal'>
+        <view class='myresume-personal-h'>
+            <image wx:if='{{showmyresume.data.baseinfo.pic_url}}' src='{{http_host+showmyresume.data.baseinfo.pic_url}}'></image>
+            <view class='myresume-personal-hr'>
+                <view class='myresume-personal-hrn'>{{showmyresume.data.baseinfo.name}}</view>
+                <view class='myresume-personal-hrss'>
+                    <text>{{showmyresume.data.baseinfo.sex=="1"?"男":"女"}}</text> |
+                    <text>{{showmyresume.data.baseinfo.birth_day}}</text>
+                </view>
+                <view class='myresume-personal-address'>
+                    <text>{{showmyresume.data.baseinfo.province}}</text>
+                    <text>{{showmyresume.data.baseinfo.city}}</text>
+                    <text>{{showmyresume.data.baseinfo.area}}</text>
+                </view>
+            </view>
+        </view>
+        <view class='myresume-personal-f'>
+            <view class='myresume-personal-flist'>
+                <text>学 <text>  </text>
+                <text>  </text> 历:</text>
+                <text>{{showmyresume.data.baseinfo.edu_type}}</text>
+            </view>
+            <view class='myresume-personal-flist'>
+                <text>工作年限:</text>
+                <text>{{showmyresume.data.baseinfo.workyear}}</text>
+            </view>
+            <view class='myresume-personal-flist'>
+                <text>联系电话:</text>
+                <text>{{showmyresume.data.baseinfo.contact}}</text>
+            </view>
+            <view class='myresume-personal-flist'>
+                <text>联系邮箱:</text>
+                <text>{{showmyresume.data.baseinfo.email}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='myresume-item'>
+    <view class='myresume-title'>工作经历</view>
+    <view class='noexpreience' wx:if="{{workarray.length == 0}}">--请完善工作经历--</view>
+    <block wx:for='{{workarray}}' wx:key="index">
+    <template is="workexperiencecontent" data="{{item,index,lineclamp}}" />
+    </block>
+</view>
+
+<view class='myresume-item'>
+    <view class='myresume-title'>教育经历</view>
+    <view class='noexpreience' wx:if="{{eacharray.length == 0}}">--请完善教育经历--</view>
+    <block wx:for='{{eacharray}}' wx:key="index">
+    <template is="eachexperiencecontent" data="{{item,index,lineclamp}}" />
+    </block>
+</view>
+
+<view class='myresume-item' style='padding-bottom:{{id==""?"130rpx":"20rpx"}};'>
+    <view class='myresume-title'>自我介绍</view>
+    <view class='myresume-minecontent' style='-webkit-line-clamp:{{lineclamp}}'>
+       <view class='noexpreience' wx:if="{{showmyresume.data.baseinfo.discription.length == 0}}">--请完善自我介绍--</view>
+       {{showmyresume.data.baseinfo.discription}}
+    </view>
+    <view class='myresume-myseemore' wx:if='{{lineclamp=="2"}}' bindtap='seeallcontent'>查看全部</view>
+     <view class='myresume-myseemore' wx:if='{{lineclamp=="20"}}' bindtap='seeonecontent'>收起全部</view>
+</view>
+
+<view class='add-experience-navigator' wx:if="{{id==''}}" >
+    <view class='add-experience-content' bindtap='tapnewresume'>
+        编辑
+    </view>
+</view>
+</block>
+
+<mask hidden="{{hiddenmask}}" bindtap="tapmask" style="z-index:1;opacity: 0.6;" hover-style="none" />
+
+<toast hidden="{{toastHidden}}" style="z-index:999;" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>

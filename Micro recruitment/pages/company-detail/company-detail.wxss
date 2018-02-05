@@ -1,0 +1,212 @@
+/* pages/company-detail/company-detail.wxss */
+@import "../common/resume-list.wxss";
+
+Page{
+  background: #F1EFF5;
+}
+.clear{
+  clear: both;
+}
+.lf{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.img_box{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 3rpx;
+   margin-right: 20rpx;  
+   float: left; 
+}
+.img_box image{
+  width:100%;
+  height: 100%;
+}
+.text_box{
+  padding-top: 10px;
+}
+.text_box text{
+  font-size: 30rpx;
+  color: #AAA;
+  border-right: 1px solid #F1EFF5;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.text_box text:last-child{
+  border: none;
+}
+.text_box .noborder{
+  border-right: none;
+}
+.text_box view{
+  border-right: none;
+}
+.text_box .noborder{
+  border-right: none;
+}
+.text_box view{
+  border-right: none;
+}
+.content{
+  background: #fff;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+.jubao{
+  color: #5B89EE;
+  font-size: 30rpx;
+  margin-right: 30rpx;
+}
+.top{
+  width: 100%;
+  height: 60rpx;
+}
+.min_line{
+  height: 1px;
+  background: #F1EFF5;
+}
+.gsjs image{
+  width:35rpx;
+  height: 39rpx;
+  margin-right: 20rpx;
+}
+.gsjs text{
+  position: relative;
+  top:-5px;
+  left: 0px;
+}
+.text{
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+.company_des{
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+.show{
+  color:#5B89EE;
+}
+.position{
+  color:#5B89EE;
+  display: inline-block;
+}
+.max_line{
+  height: 20rpx;
+  background: #F1EFF5;
+}
+.font image{
+  width:15rpx;
+  height: 15rpx;
+  position: relative;
+  top: -6px;
+  left: 5px;
+}
+.gzdz_txt text{
+  display: block;
+  font-size: 30rpx;
+}
+.gzdz_sq text{
+  display: block;
+  font-size: 22rpx;
+  color: #fff;
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  /* background: #4F84EC; */
+   background: linear-gradient(left, #3ACEF6, #4F80E9); 
+   background: -webkit-linear-gradient(left, #3ACEF6, #4F80E9); 
+   background: -o-linear-gradient(left, #3ACEF6, #4F80E9);
+  background: -moz-linear-gradient(left, #3ACEF6, #4F80E9); 
+  border-radius: 3px;
+  text-align: center;
+}
+.gzdz_sq{
+  padding: 10rpx 0;
+}
+.gzdz_zw{
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+.price{
+  color: #F72F5D;
+}
+.fbzw_zw{
+  padding-right: 30rpx;
+}
+.wxyj text{
+  display: inline-block;
+  width: 150rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border:1px solid #4F84EC;
+  margin: 0 10px;
+  font-size: 30rpx;
+  text-align: center;
+  color: #69B0F4;
+  border-radius: 3px;
+}
+.center_line{
+  width:98%;
+  height: 1px;
+  background: #F1EFF5;
+}
+.gzdz_gs text{
+  font-size: 30rpx;
+  text-align: center;
+  color: #AAA;
+  border:1px solid red;
+}
+.gzdz_qy text{
+  font-size: 30rpx;
+  color: #AAA;
+}
+.gsjs view{
+  margin: 10px 0;
+}
+.gzdz_gx{
+  font-size: 30rpx;
+  border:1px solid red;
+}
+.font{
+  font-size: 26rpx;
+  width:150rpx;
+  height: 15px;
+}
+.fbzw_bottom{
+  font-size: 30rpx;
+  color: #AAA;
+}
+.company{
+  padding: 0 20rpx;
+}
+.publish_position{
+  background: #fff;
+  padding: 20rpx;
+}
+.post_position{
+  width: 36rpx;
+  height: 29rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.publish_position text{
+  vertical-align: middle;
+}
+/*加载更多  */
+.loading{
+  border: none;
+  font-size: 30rpx;
+  border-radius: 0;
+  background: #F1EFF5;
+  color: #bababa;
+}
+.loading::after{
+  width: 0rpx;
+  height: 0rpx;
+  border: none;
+  border-radius: 0;
+} 

@@ -1,0 +1,125 @@
+.experience-template {
+    background: #fff;
+    padding:0 5%;
+}
+
+.dispaly-block {
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+.form-item {
+    width: 100%;
+    background: #fff;
+    border-bottom: 2rpx solid #eee;
+    display: flex;
+}
+
+.form-item-text {
+    font-size: 33rpx;
+    width: 27%;
+    line-height: 90rpx;
+}
+
+.form-item-content {
+    margin-left: -12rpx;
+    width: 70%;
+}
+
+.form-item-content input {
+    font-size: 36rpx;
+    margin-top: 5%;
+}
+
+.form-placeholder-class {
+    color: #ccc;
+    font-size: 30rpx;
+}
+
+.form-item-content picker {
+    margin-top: 22rpx;
+}
+
+.picker {
+    font-size: 35rpx;
+}
+
+.picker-text {
+    font-size: 33rpx;
+    color: #ccc;
+}
+
+textarea {
+    margin-left: 10%;
+    width: 136%;
+    border-bottom: 1rpx solid #eee;
+    word-wrap:break-word;
+    word-break:break-all;
+    line-height:50rpx;
+}
+
+.text-placeholder-class {
+    font-size: 30rpx;
+    color: #ccc;
+}
+
+.work-control {
+    width: 100%;
+    background: #fff;
+}
+
+.work-control-right {
+    float: right;
+    margin:25rpx 5%;
+    margin-top:15rpx;
+}
+
+.work-control-right label {
+    margin-left: 40rpx;
+}
+
+.work-control-right image {
+    width: 40rpx;
+    height: 40rpx;
+    position: relative;
+    top: 10rpx;
+}
+
+.work-control-right text {
+    font-size: 30rpx;
+    position: relative;
+    top: -10rpx;
+    left: 10rpx;
+    color: rgb(146, 191, 246);
+}
+
+.form-item-jiantou {
+    float: right;
+    font-size: 40rpx;
+    height: auto;
+    padding-top: 16rpx;
+    color: #ccc;
+}
+.form-item-jiantou image{
+    width:20rpx;
+    height:28rpx;
+}
+.myresume-worktime {
+    color: #999;
+    font-size: 30rpx;
+}
+
+.form-item-textarea{
+    width:136%;
+    border-bottom:1rpx solid #eee;
+    word-wrap:break-word;
+    word-break:break-all;
+    line-height:50rpx;
+    margin-left: 3%;
+    font-size:30rpx;
+    height:306rpx;
+    margin-top:-5rpx;
+}

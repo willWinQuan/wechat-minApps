@@ -1,0 +1,86 @@
+<view class="positionDetails">
+  <view class="content_xinxi">
+    <view class="xinxi_nav">
+      <view class="nav_text1">
+        <text class="text1_left">{{job_name}}</text>
+        <text class="text1_right">{{publish_time}}</text>
+      </view>
+      <view class="nav_text1">
+        <text class="text1_left" style="color:#f72a5a">{{min}}-{{max}}</text>
+        <text class="text1_right">{{edu_type}}</text>
+      </view>
+      <view class="nav_text3">
+        <text wx:if="{{labels!=''}}" wx:for="{{labels}}" wx:key="{{index}}">{{labels[index].label}}</text>
+      </view>
+       <!--  -->
+      <view class="company_xinxi">
+          <image src="{{pic_url}}"></image>
+          <view class="xinxi_right" >
+            <view class="text1">
+              <text class="text1_1">{{company_name}}</text>
+              <image wx:if="{{is_see==1}}" src="../../image/icon_05.png"></image>
+              <view wx:if="{{is_see==1}}" class="text1_2"  bindtap='bindcompanydetail' data-id="{{id}}">查看公司</view>
+            </view>
+            <!--  -->
+            <view class="text2">{{discription}}</view>
+          </view>
+      </view>
+    </view>  
+  </view>
+  <!--  -->
+  <view class="content_xinxi">
+    <view class="xinxi_nav">
+      <view class="position">
+        <image src="../../image/job_description.png"></image>
+        <text>职位说明</text>
+      </view>
+      <view class="explain">
+        <view class="explain_title">职位类别: <text wx:for="{{position}}">{{position[index].name}}</text> </view>
+        <text class="explain_text" decode="{{true}}">{{content=='undefined'?'':content}}</text>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="content_xinxi">
+    <view class="xinxi_nav">
+      <view class="position">
+        <image class='word_address' src="../../image/work_address.png"></image>
+        <text>详细地址</text>
+      </view>
+      <view class="address">{{address==''?'暂无信息':address}}</view>
+      <view class="address_ck" bindtap='get_location' wx:if="{{address!=''}}">
+        <text>查看位置</text>
+        <image src="../../image/icon_05.png"></image>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="content_xinxi">
+    <view class="xinxi_nav">
+      <view class="position">
+        <image class='publish_img' src="../../image/promulgator.png"></image>
+        <text>发布者</text>
+      </view>
+      <view class="xinxi_nav_1">
+        <text>{{legal_person}}</text>
+        <!-- <text style="margin-left:40rpx">生产总监</text> -->
+        <image src="../../image/phone.png" bindtap='call_phone'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部按钮 -->
+  <view class="bottom_click">
+    <text class="{{collect_status==0?'click_1':'already_collect'}}" bindtap="collect_job">{{collect_status==0?'收藏':'已收藏'}}</text>
+    <!-- <form bindsubmit="bindresume" report-submit="true"> -->
+    <!-- <button formType="submit" class='savebtn' loading='{{loading}}'>  -->
+
+       <!-- <button class="{{send_status==1?'already_send':'click_2'}}" loading='{{loading}}' bindtap='bindresume'>{{is_have==0?'创建简历':(send_status==1?'已投递':'投递简历')}}</button>    -->
+    <button class="{{send_status==1?'already_send':'click_2'}}" wx:if="{{is_have==0}}" bindtap='bindresume'>创建简历</button>
+    <button class="{{send_status==1?'already_send':'click_2'}}" wx:if="{{is_have!=0 && send_status==1}}" bindtap='bindresume'>已投递</button>
+    <button class="{{send_status==1?'already_send':'click_2'}}" loading='{{loading}}' wx:if="{{is_have!=0 && send_status!=1}}" bindtap='bindresume'>投递简历</button>   
+
+    <!-- </button>
+    </form> -->
+
+  </view>

@@ -1,0 +1,35 @@
+<!--会员卡信息  -->
+<view class="member_card_wrap" wx:if="{{img != ''}}">
+  <view class="member_card" style="background:url('{{img}}') no-repeat 50% 50%;background-size:640rpx 360rpx;">
+    <text class="card_name">{{title}}</text>
+    <text class="card_number">卡号：{{number}}</text>
+  </view>
+</view>
+<view class="member_card_wrap" wx:if="{{img == ''}}">
+  <view class="member_card" style="background:{{color1}} no-repeat 50% 50%;background-size:640rpx 360rpx;">
+    <text class="card_name">{{title}}</text>
+    <text class="card_number">卡号：{{number}}</text>
+  </view>
+</view>
+<!--商家暂未开通充值  -->
+<!--<view class="not_open" wx:if="{{detail_length==1 && now==0 && prev==0}}">
+  <image class="not_open_image" src="../../image/ban.png"></image>商家暂未开通充值
+</view>-->
+<!--充值金额选择  -->
+<view class="recharge_count_wrap" wx:if="{{detail_length!=0 && now!=0 && prev!=0}}">
+  <view class="recharge_count">
+    <view bindtap="counttap" wx:for="{{detail}}" wx:key="*this" id="{{index+1}}" data-now='{{item.now}}' data-prev='{{item.prev}}' class="count_item {{count==(index+1)?'recharge_now':''}}"  style="border-color:{{count==(index+1)?(color=='#FFFFFF'?'#3c94ff':color):''}};color:{{count==(index+1)?(color=='#FFFFFF'?'#3c94ff':color):''}}">
+      {{item.now}}元/<s>{{item.prev}}元</s>
+       <view class="recharge_bg" style="display:{{count==(index+1)?'inline-block':'none'}};background:{{color=='#FFFFFF'?'#3c94ff':color}}"></view> 
+      <view class="recharge_check" style="display:{{count==(index+1)?'inline-block':'none'}}; background:url('{{http_host}}/mini_program/wa_card/back/Public/ass/img/pay_check.png');background-size: 45rpx 45rpx;"></view>
+    </view> 
+  </view>
+</view>
+<!--确认支付  -->
+
+<view class="confirm_wrap" wx:if="{{detail_length>0 }}" >
+  <button class="recharge_confirm" bindtap='formSubmitTopay' style="background:{{color=='#FFFFFF'?'#3c94ff':color}}" formType="submit" >确认支付：￥{{now}}</button>
+</view>
+<view class="confirm_wrap" wx:if="{{detail_length==0 }}" >
+  <button class="recharge_confirm" style="background:{{color=='#FFFFFF'?'#3c94ff':color}}" formType="submit" >充值暂未开通</button>
+</view>

@@ -1,0 +1,21 @@
+<template name="chooseaddress">
+    <view class='picker-view' style='bottom:{{pickershow}}'>
+        <view class='picker-view-l' bindtap='canceladdress'>取消</view>
+        <view class='picker-view-r' bindtap='sureaddress'>确定</view>
+        <view class='clear xian'></view>
+    <picker-view indicator-style="height:80rpx" style="width: 80%; height: 480rpx;margin:10rpx 10%;" value="{{addressvalue}}" bindchange="bindaddressChange">
+        <picker-view-column style='text-align:center;'>
+        <view wx:for="{{provinces}}" wx:key='index' style="line-height: 68rpx;">{{item.shortname}}</view>
+        </picker-view-column>
+
+        <picker-view-column  style='text-align:center;'>
+        <view wx:if='{{citys.length==0}}' style='line-height: 68rpx;'>无</view>
+        <view wx:if="{{citys.length!=0}}" wx:for="{{citys}}"  wx:key='index' style="line-height: 68rpx;">{{item.shortname}}</view>
+        </picker-view-column>
+        <picker-view-column style='text-align:center;'>
+        <view wx:if='{{countys.length==0}}' style='line-height: 68rpx;'>无</view>
+        <view  wx:if='{{countys.length!=0}}' wx:for="{{countys}}"  wx:key='index' style="line-height: 68rpx;">{{item.shortname}}</view>
+        </picker-view-column>
+    </picker-view>
+    </view>
+</template>

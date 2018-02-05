@@ -1,0 +1,116 @@
+<!--pages/position_info/position_info.wxml-->
+<import src="../common/chooseaddress.wxml" />
+<form bindsubmit="formSubmit">
+  <view class='company_apply_wrap'>
+    <view class='company_apply'>
+      <view class='company_name'>职位名称</view>
+      <input placeholder='请输入职位名称' name="job_name" value="{{job_name}}"></input>
+    </view>
+    <view class='company_apply'>
+      <view class='company_name'>薪资待遇</view>
+      <input class='fill_money' type='number' placeholder='填写金额' name="min_money" value="{{min_money}}"></input>-<input class='fill_money' name="max_money" type='number' placeholder='填写金额' value="{{max_money}}"></input>元
+    </view>
+  </view>
+  <view class='company_apply_wrap'>
+    <view class='company_apply'>
+      <view class='company_name'>职业分类</view>
+      <!-- <input placeholder='请选择行业'></input> -->
+      <!-- <image src="../../image/icon_04.png"></image> -->
+      <!-- <view class='add-experience'>
+          <text>+</text>添加
+      </view> -->
+      <view class='add_wrap'>
+        <view class='trade_item_wrap' wx:for="{{trade_array_have.length}}" wx:key="{{index}}">
+          <label class='trade_item'>{{trade_array_have[index]}}<view class='cross_img' bindtap='del_trade' data-index="{{index}}"></view> </label>
+        </view>
+        <view class='add-experience'>
+          <picker bindchange="bindtradeChange" value="{{trade}}" range="{{trade_array}}">
+              <view class="picker">
+                  <!-- {{trade}} -->
+                  <input hidden='true' type='text' name="trade_value" value='{{trade_array_have_id}}'></input>
+                  <text class='picker-text' wx:if="{{trade ==''}}">+ 添加</text>
+              </view>
+          </picker>
+        </view>
+      </view>
+      
+    </view>
+    <view class='company_apply'>
+      <view class='company_name'>学历要求</view>
+      <!-- <input placeholder='请选择学历'></input> -->
+      <!-- <image src="../../image/icon_04.png"></image> -->
+      <!-- <view class='add-experience'>
+          <text>+</text>
+          添加
+      </view> -->
+      <view class='add_wrap'>
+        <view class='trade_item_wrap' wx:for="{{education_array_have.length}}" wx:key="{{index}}">
+          <label class='trade_item'>{{education_array_have[index]}}<view class='cross_img' bindtap='del_education' data-index="{{index}}"></view> </label>
+        </view>
+        <view class='add-experience'>
+          <picker bindchange="bindeducationChange" value="{{education}}" range="{{education_array}}">
+              <view class="picker">
+                  <!-- {{eachvalue}} -->
+                  <input hidden='true' type='text' name="education_value" value='{{education_array_have}}'></input>
+                  <text class='picker-text' wx:if="{{education ==''}}">+ 添加</text>
+              </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='company_apply'>
+      <view class='company_name'>福利待遇</view>
+      <view class='add_wrap'>
+        <view class='trade_item_wrap' wx:for="{{welfare_array_have.length}}" wx:key="{{index}}">
+          <label class='trade_item'>{{welfare_array_have[index]}}<view class='cross_img' bindtap='del_welfare' data-index="{{index}}"></view> </label>
+        </view>
+        <view class='add-experience'>
+          <picker bindchange="bindwelfareChange" value="{{welfare}}" range="{{welfare_array}}">
+              <view class="picker">
+                  <input hidden='true' type='text' name="welfare_value" value='{{welfare_array_have}}'></input>
+                  <text class='picker-text' wx:if="{{welfare ==''}}">+ 添加</text>
+              </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='company_apply_wrap'>
+    <view class='company_apply'>
+      <view class='company_name contact'>联系电话</view>
+      <input class='phonenumber' placeholder='请输入联系电话' name="phonenumber" value="{{phone_number}}"></input>
+      <button class='getphone' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号码</button>
+    </view>
+    <view class='company_apply' bindtap="tabchooseaddress">
+      <view class='company_name'>地址</view>
+      <view class='form-item-content company_name'>
+        <view class='picker'>
+            <input hidden='true' name="addressvalue" value='{{addressprovince}} - {{addresscity}} - {{addresscounty}}'></input>
+            <text wx:if="{{addressprovince!=''}}">{{addressprovince}} - {{addresscity}} - {{addresscounty}} </text>
+            <text class='picker-text address_picker' wx:if="{{addressprovince ==''}}">省份-城市-区(县)</text>
+        </view>
+      </view>
+      <image src="../../image/icon_04.png"></image>
+    </view>
+    <view class='company_apply address_wrap'>
+      <view class='company_name address_text'>详细地址</view>
+      <textarea wx:if="{{address_status}}" style='margin-top:{{margin_top}}' class='address_detail' placeholder='街道门牌信息' bindinput="detail_address" value="{{detail_address=='街道门牌信息'?'':detail_address}}" show-confirm-bar="{{false}}"></textarea>
+      <view wx:if="{{detail_status}}" class='address_detail' style="color:{{detail_address=='街道门牌信息'?'#808080':'#000'}}">{{detail_address}}</view>
+      
+    </view>
+    <view class='company_apply'>
+      <view class='company_name'>职位说明</view>
+      <textarea wx:if="{{destribe_status}}" class='position_explain' placeholder='请在此描述您的职位要求...' bindinput="position_explain" value="{{position_explain}}" show-confirm-bar="{{false}}" maxlength='500'></textarea>
+    </view>
+  </view>
+  <!--保存  -->
+  <view class='save_wrap'>
+    <button class='save' form-type='submit' bindtap='save'>保存</button>
+    <button class='save_publish' form-type='submit' bindtap='save_publish'>保存并发布</button>
+  </view>
+</form>
+
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}</toast>
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:1;" hover-style="none"/>   
+<!-- <template is="chooseaddress" data="{{provincesvalue,citysvalue,countysvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" /> -->
+<template is="chooseaddress" data="{{addressvalue,hiddenmask,provinces,citys,countys,pickershow,swipercurrent}}" />

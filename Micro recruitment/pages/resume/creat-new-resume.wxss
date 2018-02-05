@@ -1,0 +1,197 @@
+/* pages/resume-index/creat-new-resume.wxss */
+@import "../common/chooseaddress.wxss";
+
+page {
+    background: rgb(238, 239, 241);
+}
+.inline-block{
+    display: inline-block;
+}
+/* 强行一行，溢出省略号 */
+.ellipsis{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.clear {
+    clear: both;
+}
+
+.add-header-img {
+    background: #fff;
+    clear: both;
+    padding-top: 30rpx;
+}
+
+.add-header-img text {
+    font-size: 33rpx;
+    color: #666;
+    margin-left: 5%;
+    margin-top: 30rpx;
+    display: inline-block;
+}
+
+.add-hi-right {
+    float: right;
+    margin-right: 5%;
+    margin-bottom: 17rpx;
+}
+
+.add-hi-right image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.header-img-alt {
+    position: relative;
+    top: -38rpx;
+    left:5%;
+    width:18rpx !important;
+    height:25rpx !important;
+}
+
+.form-radio-n {
+    width: 26rpx;
+    height: 26rpx;
+    background: rgb(80, 128, 236);
+    display: inline-block;
+    border-radius: 50%;
+    position:relative !important;
+    top:-12%;
+    left:6%;
+}
+
+.essential-msg {
+    width: 100%;
+    background: #fff;
+}
+
+.msg-text {
+    font-size: 33rpx;
+    margin-left: 5%;
+    line-height: 48rpx;
+    margin-top: 9rpx;
+}
+
+.form-item {
+    width: 95%;
+    background: #fff;
+    border-bottom: 2rpx solid #eee;
+    display: flex;
+    margin: 0 0 0 5%;
+}
+
+.form-item-text {
+    font-size: 35rpx;
+    width: 27%;
+    line-height: 90rpx;
+}
+
+.twoword {
+    letter-spacing: 56rpx;
+}
+
+.form-item-content {
+    margin-left: -12rpx;
+    width: 66%;
+}
+
+.form-item-content input {
+    font-size: 35rpx;
+    margin-top: 10px;
+}
+
+.form-item-content radio-group {
+    margin-top: 10px;
+}
+
+.form-item-content .form-radio {
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    border: 1rpx solid #ccc;
+}
+
+.form-item-content picker {
+    margin-top: 10px;
+}
+
+.picker {
+    font-size: 35rpx;
+    margin-top: 25rpx;
+}
+
+.picker-text {
+    font-size: 33rpx;
+    color: #ccc;
+}
+
+.radio-two {
+    margin-left: 20rpx;
+}
+
+.form-item-content image {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 15rpx;
+}
+
+.form-placeholder-class {
+    color: #ccc;
+    font-size: 33rpx;
+}
+
+.save-msg {
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    line-height: 90rpx;
+    background: -webkit-linear-gradient(left, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -o-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -moz-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: linear-gradient(to right, rgb(57, 206, 249), rgb(80, 128, 236));
+}
+
+.form-item-jiantou {
+    float: right;
+    font-size: 40rpx;
+    height: auto;
+    padding-top: 16rpx;
+    color: #ccc;
+}
+.form-item-jiantou image{
+    width:20rpx;
+    height:28rpx;
+}
+.cityclass{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    width:100%;
+    display:inline-block;
+}
+.getphone{
+    display:inline-block;
+    background:#fff !important;
+    border:none;
+    font-size:27rpx !important;
+    position:static;
+    color:rgb(146, 191, 246);
+    line-height:90rpx;
+    overflow:visible;
+    margin-right:5%;
+    white-space:nowrap;
+    padding:0;
+}
+.getphone::after {
+    width: 0rpx;
+    height: 0rpx;
+    border: none;
+}

@@ -1,0 +1,119 @@
+/* pages/my_ticket/my_ticket.wxss */
+page{
+  background: #f0eff5;
+}
+.my_ticket_nav{
+  border-top: 1px solid #d9d9d9;
+  border-bottom:1px solid #d9d9d9;
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+}
+.usable_ticket,.lose_ticket{
+  margin-top: 125rpx;
+}
+.ticket_usable,.ticket_lose{
+  width: 50%;
+  padding: 30rpx 0;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+}
+.select_present{
+  /* color: #3c94ff; */
+  border-bottom: 2px solid #3c94ff;
+}
+
+.discount_coupon{
+  width: 92%;
+  margin: 20rpx auto;
+}
+.discount_coupon_left{
+  width: 9%;
+  height: 197rpx;
+  background-size: 67rpx 197rpx;
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+  text-align: center;
+  padding: 35rpx 15rpx;
+  box-sizing: border-box;
+  position: relative;
+  writing-mode: tb-rl;
+  font-size: 24rpx;
+}
+.discount_coupon_left text,.discount_coupon_left text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding-top: 35rpx;
+}
+.discount_bg{
+  width: 65rpx;
+  height: 197rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: 67rpx 197rpx; 
+}
+.discount_coupon_right{
+  background: url('http://shenzhen.weisanyun.cn/weixinpl/sustain/back/Application/Workroom_admin/upload/2017101011034111498.png') no-repeat; 
+  width: 91%;
+  height: 197rpx;
+  background-size: 625rpx 197rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: #ef614f;
+}
+.discount_condition{
+  position: absolute;
+  top: 5rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+}
+.discount_condition text{
+   font-size: 40rpx;
+   font-weight: bold;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.coupon{
+  position: absolute;
+  top: 10rpx;
+  right: 80rpx;
+}
+.discount_money{
+  position: absolute;
+  bottom: 45rpx;
+  left: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.discount_money text{
+  font-size: 30rpx;
+}
+.discount_indate{
+  position: absolute;
+  bottom: 10rpx;
+  left: 30rpx;
+  font-size: 24rpx;
+  color: #bababa;
+}
+.discount_coupon_right image{
+  width: 128rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 80rpx;
+}
+/*暂未领取优惠券  */
+.no_discount{
+  text-align: center;
+  padding-top:40rpx;
+  color:#bababa; 
+}

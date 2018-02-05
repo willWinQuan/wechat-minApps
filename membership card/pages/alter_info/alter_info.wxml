@@ -1,0 +1,13 @@
+<!--pages/alter_info/alter_info.wxml-->
+<view class="alter_info" bindtap="person_info">
+  <text>修改个人信息</text>
+  <image src="../../image/arrow.png"></image>
+</view>
+<view class="alter_info" bindtap="new_password">
+  <text>修改支付密码</text>
+  <image src="../../image/arrow.png"></image>
+</view>
+<view class="alter_info" bindtap="new_phone">
+  <text>修改手机号码</text>
+  <image src="../../image/arrow.png"></image>
+</view>

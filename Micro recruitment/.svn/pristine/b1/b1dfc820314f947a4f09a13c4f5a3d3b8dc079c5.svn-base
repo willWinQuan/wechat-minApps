@@ -1,0 +1,67 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/company-search/company-search",
+        "pages/company_info/company_info",
+        "pages/resume/creat-new-resume",
+        "pages/company_apply/company_apply",
+        "pages/search/search",
+        "pages/mine/mine",
+        "pages/send_box/send_box",
+        "pages/resume/new-resume-workcontent",
+        "pages/resume/add-work-experience",
+        "pages/resume/add-each-experience",
+        "pages/details/details",
+        "pages/company-detail/company-detail",
+        "pages/resume/my-resume",
+        "pages/my-collection/my-collection",
+        "pages/posting-position/posting-position",
+        "pages/company-msg/company-msg",
+        "pages/company-apply-submit/company-apply-submit",
+        "pages/creat-position/creat-position",
+        "pages/renew/renew",
+        "pages/position-msg/position-msg",
+        "pages/tip/tip",
+        "pages/tip-success/tip-success",
+        "pages/send_msg/send_msg",
+        "pages/addressSearch/addressSearch",
+        "pages/position_info/position_info"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "borderStyle": "white",
+        "position": "bottom",
+        "selectedColor": "#3c94ff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "image/img1.png",
+                "selectedIconPath": "image/img1_.png"
+            },
+            {
+                "pagePath": "pages/company-search/company-search",
+                "text": "企业",
+                "iconPath": "image/img2.png",
+                "selectedIconPath": "image/img2_.png"
+            },
+            {
+                "pagePath": "pages/send_box/send_box",
+                "text": "投递箱",
+                "iconPath": "image/img3.png",
+                "selectedIconPath": "image/img3_.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "image/img4.png",
+                "selectedIconPath": "image/img4_.png"
+            }
+        ]
+    }
+}

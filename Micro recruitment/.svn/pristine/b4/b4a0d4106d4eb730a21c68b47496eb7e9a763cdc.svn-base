@@ -1,0 +1,86 @@
+<!--pages/posting-position/posting-position.wxml-->
+
+<view class='posting-h' wx:if="{{is_free==0}}">
+   <view class='posting-hl' wx:if="{{is_free==1}}">
+     试用<text>{{try_day}}</text>天
+   </view>
+   <view class='posting-hl' wx:if="{{is_free==0}}">还剩<text>{{try_day}}</text>天</view>
+   <view class='posting-hr' bindtap='bindrenew'>立即续费</view>
+</view>
+
+<view class='heard-nav' style='margin-top:{{is_free==0?"140rpx":"0"}}'>
+    <text bindtap='bindposting' style="color:{{tabread?'#5D8AEC':'#000'}};border-bottom:{{tabread?'5rpx solid #4ba3f1':'0'}};">已发布</text>
+    <text bindtap='bindnoposting' style="color:{{tabread?'#000':'#5D8AEC'}};border-bottom:{{tabread?'0':'5rpx solid #4ba3f1'}};">未发布</text> 
+</view>
+
+<view style='padding-bottom:160rpx;padding-top:{{is_free==0?"244rpx":"106rpx"}}'>
+<!-- <block wx:for='123'>
+<template is="resumelist" data=""/>
+</block> -->
+<!--已发布  -->
+<view wx:if="{{have_publish==true}}">
+      <view class='content_wrap'  wx:for="{{release_data}}" wx:key="{{index}}">
+                <navigator  url='../position_info/position_info?id={{item.id}}'>
+                  <view class="content_xinxi">
+                    <view class="xinxi_nav">
+                      <view class="nav_text1">
+                        <text class="text1_left">{{item.job_name}}</text>
+                        <text class="text1_right">{{item.createtime}}</text>
+                      </view>
+                      <view class="nav_text2">
+                        <text style="color:#f72a5a">{{item.min}}-{{item.max}}</text>
+                      </view>
+                      <view class="nav_text3" >
+                        <text wx:for="{{item.label_id}}"  wx:key="{{index}}">{{item}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </navigator> 
+                <view class="nav_text4">
+                  <text class="text1_left">浏览 {{item.pv}} </text>
+                  <text class="text1_left"> 投递 {{item.sends}}</text>
+                  <view class="text1_right" data-id="{{item.id}}" bindtap="cancel_publish">取消发布</view>
+                </view>
+      </view>
+  <button class='loading' wx:if="{{release_data!=null}}" loading='{{loading_state}}' >{{loading_state==true?'正在加载中':'没有更多了'}}</button> 
+  <view class='no_data' wx:if="{{release_data==null}}">--暂无数据--</view>
+</view>
+  <!--未发布  -->
+<view wx:if="{{have_publish==false}}">
+    <view  wx:for="{{no_release_data}}" wx:key="{{index}}">
+      <view class='publish_wrap'>
+        <navigator url='../position_info/position_info?id={{item.id}}'>
+          <view class="content_xinxi">
+            <view class="xinxi_nav">
+              <view class="nav_text1">
+                <text class="text1_left">{{item.job_name}}</text>
+                <text class="text1_right">{{item.createtime}}</text>
+              </view>
+              <view class="nav_text2">
+                <text style="color:#f72a5a">{{item.min}}-{{item.max}}</text>
+              </view>
+              <view class="nav_text3">
+                <text wx:for="{{item.label_id}}" wx:key="{{index}}">{{item}}</text>
+              </view> 
+            </view>
+          </view>
+        </navigator>
+        <view class="nav_text4">
+          <text class="text1_left">浏览 {{item.pv}} </text>
+          <text class="text1_left"> 投递 {{item.sends}}</text>
+          <view class="text1_right now_publish" data-id="{{item.id}}" bindtap="now_publish">立即发布</view>
+          </view>
+      </view>
+  
+    </view>
+    <button class='loading' wx:if="{{no_release_data!=null}}" loading='{{loading_state}}' >{{loading_state==true?'正在加载中':'没有更多了'}}</button> 
+    <view class='no_data' wx:if="{{no_release_data==null}}">--暂无数据--</view> 
+</view>
+</view>
+
+
+<view class='add-experience-navigator' bindtap='bindcreatposition'>
+  <view class='add-experience-content'>创建职位</view>
+</view>   
+
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}</toast>

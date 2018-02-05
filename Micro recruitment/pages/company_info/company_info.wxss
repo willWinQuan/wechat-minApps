@@ -1,0 +1,143 @@
+/* pages/company_info/company_info.wxss */
+@import "../common/chooseaddress.wxss";
+page{
+  border-top: 1px solid #eeeff1;
+}
+.company_apply_wrap{
+  background: #ffffff;
+}
+.company_apply{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eeeff1;
+  margin:0 0 0 30rpx;
+}
+.company_apply view{
+  width: 25%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height:52.5rpx;
+}
+.company_apply input{
+  width: 65%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply image{
+  width: 14rpx;
+  height: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.company_apply .company_member{
+  width: 200rpx;
+  text-align: center;
+}
+.company_apply .logo{
+  width: 80%;
+}
+.company_apply .company_logo{
+  width: 100rpx;
+  height: 100rpx;
+}
+.company_apply textarea{
+  width: 90%;
+  position: relative;
+}
+.company_apply textarea text{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #808080;
+}
+.company_apply .phonenumber{
+  width: 280rpx;
+}
+.company_apply .getphone{
+  display: inline-block;
+  width: 35%;
+  border: none;
+  font-size: 30rpx;
+  position: static;
+  overflow: visible;
+  line-height: 60rpx;
+  background: #fff;
+  color: #5080EC;
+}
+.getphone::after {
+    width: 0rpx;
+    height: 0rpx;
+    border: none;
+}
+.company_apply:last-child{
+  border:none;
+}
+.company_apply .form-item-content{
+  width: 65%;
+}
+.company_apply .picker{
+  width: 100%;
+}
+.picker-text{
+  color: #808080;
+}
+.company_apply .address_detail{
+  width: 65%;
+  display: inline-block;
+  height: 50px;
+  /* color:#808080; */
+}
+.company_apply .address_text{
+  vertical-align: top;
+  margin-top:10rpx;
+}
+.company_des{
+  margin-top: 20rpx;
+}
+input[hidden] {
+  display:none;
+}
+.company_apply .trade_wrap{
+  width: 65%;
+}
+.form-item-content{
+    width:63%;
+}
+.form-item-content input{
+    font-size: 36rpx;
+    margin-top:10px;
+}
+.form-item-content radio-group{
+    margin-top: 10px;
+}
+.form-item-content .form-radio{
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    border:1rpx solid #ccc;
+}
+.add-experience .picker{
+  width: 100%;
+}
+.clear {
+    clear: both;
+}
+/*取消  保存  */
+.cancel_submit{
+  width: 100%;
+  background: #ffffff;
+  padding: 20rpx;
+  border-top: 1px solid #eeeff1;
+  box-sizing: border-box;
+}
+.cancel{
+  width: 30%;
+  display: inline-block;
+  margin-right: 60rpx;
+}
+.submit{
+  width: 61%;
+  display: inline-block;
+  background: linear-gradient(to right,#38cff9,#4f80eb);
+  color: #ffffff;
+}

@@ -1,0 +1,159 @@
+/**index.wxss**/
+.search{
+  background: #eee;
+  min-height: 100vh;
+}
+/*  */
+.top_city{
+  width: 100%;
+  padding: 20rpx 0 10rpx 0;
+  position: relative; 
+  overflow: hidden;
+}
+.top_city text{
+  font-size: 30rpx;
+  margin-right: 10rpx;
+  margin-left: 25rpx;
+  float: left;
+  margin-top: 17rpx;
+}
+.top_city .city_icon{
+  width: 20rpx;
+  height: 12rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+.top_city input{
+  width:580rpx;
+  height: 70rpx;
+  background: #d5d6d7;
+  display: inline-block;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  border-radius: 5rpx;
+  color: #000;
+}
+.psection{
+  color: #FFF
+}
+.search_icon{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top:40rpx;
+  right: 56%;
+  z-index: 9;
+}
+/* 内容 */
+.content_nav{
+ background: #FFF;
+ position: relative;
+ border-bottom: 1px solid #eee;
+}
+.nav_list{
+  width: 25%;
+  line-height: 100rpx;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 1px solid #eee;
+}
+.nav_list image{
+  width: 20rpx;
+  height: 15rpx;
+  vertical-align: 5rpx;
+  margin-left: 20rpx;
+}
+/*  */
+.screen_nav{
+  position: absolute;
+  top: 102rpx;
+  background: #FFF;
+  width: 100%;
+  z-index: 9;
+}
+.screen_nav view{
+  width: 100%;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  border: 1px solid #eee;
+  border-top: none;
+  text-indent: 40rpx;
+}
+.screen_nav image{
+  width: 30rpx;
+  height: 20rpx;
+  float: right;
+  margin: 35rpx 30rpx 0 0;
+}
+/*  */
+.content_content{
+  position: relative;
+}
+.content_xinxi{
+  overflow: hidden;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.xinxi_nav{
+  width: 94%;
+  margin-left: 3%;
+  overflow: hidden;
+}
+.nav_text1{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+}
+
+.xinxi_nav .nav_text1 .text1_left{
+  float: left;
+  font-size: 35rpx;
+}
+.xinxi_nav .nav_text1 .text1_right{
+  float: right;
+  color: #c9c9c9;
+  font-size: 28rpx;
+}
+.nav_text3{
+  margin-top: 10rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.nav_text3 text{
+  font-size: 26rpx;
+  color: #4ba3f1;
+  padding: 5rpx 10rpx;
+  border: 1px solid #4ba3f1;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+}
+.nav_text4{
+  line-height: 90rpx;
+  overflow: hidden;
+}
+
+.xinxi_nav .nav_text4 .text1_left{
+  float: left;
+  font-size: 28rpx;
+  color: #c9c9c9;
+}
+.xinxi_nav .nav_text4 .text1_right{
+  float: right;
+  color: #c9c9c9;
+  font-size: 28rpx;
+}
+/*  */
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  position: absolute;
+  top:0;
+}
+/*  */
+.no_img{
+  width: 100%;
+  text-align: center;
+  margin-top: 150rpx;
+}

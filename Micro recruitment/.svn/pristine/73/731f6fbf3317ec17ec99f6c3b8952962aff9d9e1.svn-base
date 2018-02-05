@@ -1,0 +1,47 @@
+<template name="eachexperience">
+    <view class='form-item'>
+        <view class='form-item-text'>
+            学校名称
+        </view>
+        <view class='form-item-content'>
+            <input type='text' value='{{item.school_name}}' data-eachindex='{{index}}' data-inputproperty='school_name' bindinput='bindeachinput' name="schoolname" maxlength='20' placeholder='请输入您的学校名称' placeholder-class='form-placeholder-class'></input>
+        </view>
+    </view>
+
+    <view class='form-item'>
+        <view class='form-item-text'>
+            专业名称
+        </view>
+        <view class='form-item-content'>
+            <input type='text' value='{{item.domain_name}}' data-eachindex='{{index}}' data-inputproperty='domain_name' bindinput='bindeachinput' name="domainname" maxlength='10' placeholder='请输入您的专业名称' placeholder-class='form-placeholder-class'></input>
+        </view>
+    </view>
+
+    <view class='form-item'>
+        <view class='form-item-text'>
+            毕业时间
+        </view>
+        <view class='form-item-content'>
+            <picker mode="date" name="endtime" data-index='{{index}}' value="{{enddatevalue[index]}}" end="2017-09-01" bindchange="bindendDateChange">
+                <view class="picker">
+                    {{enddatevalue[index]}}
+                    <text class='picker-text' wx:if="{{enddatevalue[index] ==''}}">请输入您的毕业时间</text>
+                </view>
+            </picker>
+        </view>
+        <view class='form-item-jiantou'>
+            <image src='../../image/jiantou.png'></image>
+        </view>
+    </view>
+
+    <view class='form-item' style='display:block;border-bottom:none;'>
+        <view class='form-item-text' style='white-space:nowrap;'>
+            教育内容 (<text>{{item.content.length}}</text>/350)
+        </view>
+        <view class='form-item-content'>
+             <text class='form-item-textarea' style='display:{{textareahidden?"block":"none"}};color:{{item.content==""?"#ccc":"#333"}}'>{{item.content==""?"请在此描述您的教育内容...":item.content}}</text>
+            <textarea hidden='{{textareahidden}}' value='{{item.content}}' data-eachindex='{{index}}' data-inputproperty='content' bindinput='bindeachinput' name="eachcontent" style='margin-left:3%;' maxlength='350' placeholder='请在此描述您的教育内容...' placeholder-class='text-placeholder-class'></textarea>
+        </view>
+        <view class='clear'></view>
+    </view>
+</template>

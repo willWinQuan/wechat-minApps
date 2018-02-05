@@ -1,0 +1,244 @@
+/* pages/my-resume/my-resume.wxss */
+
+page {
+    background: rgb(240, 239, 245);
+}
+
+.resume {
+    width: 100%;
+    padding-bottom: 20%;
+    background: #fff;
+}
+
+.resume image {
+    width: 50%;
+    height: 335rpx;
+    margin: 30% auto;
+    display: block;
+    padding-top: 30%;
+    margin-top: 0;
+}
+
+.creat-btn {
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40%;
+    margin-bottom: 20%;
+    line-height: 90rpx;
+    background: -webkit-linear-gradient(left, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -o-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -moz-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: linear-gradient(to right, rgb(57, 206, 249), rgb(80, 128, 236));
+}
+
+.creat-btn text {
+    font-size: 33rpx;
+}
+
+.myresume-item {
+    background: #fff;
+    margin-bottom: 10rpx;
+    font-size: 30rpx;
+}
+
+.myresume-title {
+    margin-left: 5%;
+    padding-top: 18rpx;
+}
+
+.myresume-workitem {
+    margin: 0 5%;
+}
+
+.myresume-personal {
+    font-size: 30rpx;
+}
+
+.myresume-personal-h {
+    display: flex;
+    margin: 0 5%;
+    margin-bottom: 20rpx;
+    padding-top: 20rpx;
+}
+
+.myresume-personal-h image {
+    width: 110rpx;
+    height: 110rpx;
+}
+
+.myresume-personal-hr {
+    margin-left: 30rpx;
+    margin-top: -10rpx;
+}
+
+.myresume-personal-hrss {
+    color: #eee;
+    font-size: 28rpx;
+}
+
+.myresume-personal-hrss text {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.myresume-personal-hrss text:first-child {
+    paddding-right: 10rpx;
+}
+
+.myresume-personal-hrss text:last-child {
+    paddding-left: 10rpx;
+}
+
+.myresume-personal-address text {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.myresume-personal-address text:nth-child(2) {
+    padding: 0 10rpx;
+}
+
+.myresume-personal-f {
+    margin-left: 5%;
+    padding-bottom: 12px;
+}
+
+.myresume-personal-flist text {
+    margin-right: 20rpx;
+    display: inline-block;
+}
+
+.myresume-workitem {
+    border-bottom: 2rpx solid #eee;
+    margin: 0 5%;
+    padding-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+
+.myresume-worktime {
+    color: #999;
+    font-size: 30rpx;
+}
+
+.myresume-workcompany {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.myresume-worksorce {
+    margin-top: 15rpx;
+}
+
+.myresume-minecontent {
+    margin-left:5%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    word-wrap:break-word;
+    word-break:break-all;
+    margin-right:5%;
+}
+
+.myresume-myseemore {
+    margin-left: 5%;
+    color: #4ba3f1;
+    font-size: 28rpx;
+    padding-top:15rpx;
+    padding-bottom:20rpx;
+}
+
+.share-myresume {
+    width: 20%;
+    border: 1rpx solid #ccc;
+    margin: 3% 5%;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 30rpx;
+}
+
+.add-experience-navigator {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    border-top: 2rpx solid #eee;
+}
+
+.add-experience-content {
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    width: 73%;
+    margin: 2% auto;
+    line-height: 84rpx;
+    background: -webkit-linear-gradient(left, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -o-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: -moz-linear-gradient(right, rgb(57, 206, 249), rgb(80, 128, 236));
+    background: linear-gradient(to right, rgb(57, 206, 249), rgb(80, 128, 236));
+}
+
+.share-alert {
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 15%;
+    margin: 0 12%;
+    width: 76%;
+    border-radius: 10rpx;
+}
+
+.share-alert-h {
+    margin-top: 60rpx;
+}
+
+.share-alert-h image {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+    display: block;
+}
+
+.share-alert-hname {
+    font-size: 32rpx;
+    text-align: center;
+    margin: 10rpx 0;
+    margin-top: 20rpx;
+}
+
+.share-alert-hsex {
+    width: 100%;
+    text-align: center;
+    color: #eee;
+}
+
+.share-alert-hsex text {
+    padding-right: 10rpx;
+    color: #999;
+}
+
+.share-alert-code {
+    margin: 0 auto;
+    width: 250rpx;
+    background: #eee;
+    margin-top: 60rpx;
+    margin-bottom: 50rpx;
+    height: 250rpx;
+}
+
+.share-alert-code image {
+    width: 240rpx;
+    height: 240rpx;
+    margin: 0 auto;
+}
+.noexpreience{
+    text-align:center;
+    line-height:100rpx;
+    color:#666;
+}

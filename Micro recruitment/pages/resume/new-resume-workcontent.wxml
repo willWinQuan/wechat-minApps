@@ -1,0 +1,88 @@
+<!--pages/resume-index/new-resume-workcontent.wxml-->
+<import src="resume-common/work-experience-common.wxml" />
+<import src="resume-common/work-experience-content.wxml" />
+<import src="resume-common/each-experience-common.wxml" />
+<import src="resume-common/each-experience-content.wxml" />
+
+
+<view class='add-item'>
+    <view class='add-item-text'>工作经历</view>
+    <block wx:for='{{workarray}}'  wx:key="index">
+        <form bindsubmit="workchanceformSubmit">
+            <view class='experience-template'>
+                <template style="border:none;" is="{{workindex[index]?'workexperience':'workexperiencecontent'}}" data="{{item,indatevalue,outdatevalue,index,lineclamp,textareahidden}}" />
+                <input hidden='true' name="workisindex" value='{{index}}'></input>
+                <input hidden='true' name="workid" value='{{item.id}}'></input>
+            </view>
+            <view class='work-control'>
+                <view class='work-control-right'>
+                    <label data-index='{{index}}' data-workid='{{item.id}}' bindtap='delteworktemplate'>
+                        <image src='../../image/delete_gray.png'></image>
+                        <text class='label-text1'>删除</text>
+                    </label>
+                    <label data-index='{{index}}' bindtap='tapwritework'>
+                        <image wx:if="{{workindex[index]}}" src='../../image/save_gray.png'></image> 
+                        <image wx:if="{{!workindex[index]}}" src='../../image/chance.png'></image> 
+                        <text class='label-text1' wx:if="{{!workindex[index]}}" style='display:{{workindex[index]?"none":"inline-block"}}'>修改</text>
+                        <button hover-stop-propagation="true" hover-class='none' wx:if="{{workindex[index]}}" style='display:{{workindex[index]?"inline-block":"none"}}' class='savebtn' form-type='submit'>保存</button>
+                    </label>
+                </view>
+                <view class='clear'></view>
+            </view>
+        </form>
+    </block>
+    <navigator url='add-work-experience?id={{showmyresume.data.baseinfo.id}}'>
+        <view class='add-experience'>
+            <text>+</text> 添加工作经历
+        </view>
+    </navigator>
+</view>
+
+<view class='add-item'>
+    <view class='add-item-text'>教育经历</view> 
+    <block wx:for='{{eacharray}}' wx:key="index">
+        <form bindsubmit="eachchanceformSubmit">
+            <view class='experience-template'>
+                <template style="border:none;" is="{{eachindex[index]?'eachexperience':'eachexperiencecontent'}}" data="{{item,enddatevalue,index,lineclamp,textareahidden}}" />
+                <input hidden='true' name="eachisindex" value='{{index}}'></input>
+                <input hidden='true' name="eachid" value='{{item.id}}'></input>
+            </view>
+            <view class='work-control'>
+                <view class='work-control-right'>
+                    <label data-index='{{index}}' data-eachid='{{item.id}}' bindtap='delteeachtemplate'>
+                        <image src='../../image/delete_gray.png'></image>
+                        <text class='label-text1'>删除</text>
+                    </label>
+                    <label data-index='{{index}}' bindtap='tapwriteeach'>
+                        <image wx:if="{{eachindex[index]}}" src='../../image/save_gray.png'></image> 
+                        <image wx:if="{{!eachindex[index]}}" src='../../image/chance.png'></image> 
+                        <text class='label-text1' wx:if="{{!eachindex[index]}}" style='display:{{eachindex[index]?"none":"inline-block"}}'>修改</text>
+                        <button hover-stop-propagation="true" hover-class='none' wx:if="{{eachindex[index]}}" style='display:{{eachindex[index]?"inline-block":"none"}}' class='savebtn' form-type='submit'>保存</button>
+                    </label>
+                </view>
+                <view class='clear'></view>
+            </view>
+        </form>
+    </block>
+    <navigator url='add-each-experience?id={{showmyresume.data.baseinfo.id}}'>
+        <view class='add-experience'>
+            <text>+</text> 添加教育经历
+        </view>
+    </navigator>
+</view>
+
+<view class='add-item'>
+    <view class='add-item-text'>自我介绍  (<text>{{textmyself.length}}</text>/350)
+    </view>
+    <text class='form-item-textarea' style='display:{{textareahidden?"block":"none"}};width:90%;margin-left:5.25%; color:{{textmyself==""?"#ccc":"#333"}}'>{{textmyself==""?"请在此输入您的自我介绍...":textmyself}}</text>
+    <textarea hidden='{{textareahidden}}' value='{{textmyself}}' bindinput='textareinput'  placeholder='请在此输入您的自我介绍...' maxlength='350' style='width:90%;' placeholder-class='text-placeholder-class'></textarea>
+</view>
+
+<view class='add-experience-navigator' bindtap='bindaddworkexperience'>
+    <view class='add-experience-content'>
+        确定添加
+    </view>
+</view>
+
+<toast hidden="{{toastHidden}}" style="z-index:999;" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>

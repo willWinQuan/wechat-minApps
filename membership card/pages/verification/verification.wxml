@@ -1,0 +1,25 @@
+<!--pages/verification/verification.wxml-->
+<view class="verification_date_wrap" wx:for="{{verifition_count}}" wx:key="{{index}}">
+  <view class="verification_date" wx:if="{{item.is_data==0}}">{{item.time}}</view>  
+  <view class="client_record" wx:if="{{item.is_data==1}}">
+    <view class="store_name_wrap">
+      <view class="store_name">{{item.stores_name}}</view>
+      <view class="store_time">{{item.content}}</view>
+    </view>
+    <view class="client_info">
+      <view class="client_name">{{item.username}}</view>
+      <view class="client_card">卡号：{{item.card_number}}</view>
+    </view>
+    <view class="client_info">
+      <view class="client_time">{{item.detail_time}}</view>
+      <view class="client_way">{{item.paystyle}}</view>
+    </view>
+  </view>
+</view>
+  <!--加载中  -->
+<view class="loadmore_wrap" >
+  <view class="{{is_load==0?'loading':''}}" style="display:{{no_record==0?'inline-block':'none'}}"></view>
+  <view class="loadmore" style="display:{{no_record==0?'inline-block':'none'}}">{{is_load==0?'正在加载':'没有更多了'}}</view>
+</view>
+  <!--没有内容  -->
+<image class="no_record" src="../../image/no_record.png" style="display:{{no_record==0?'none':'block'}}"></image>

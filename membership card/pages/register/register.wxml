@@ -1,0 +1,4 @@
+<!--pages/register/register.wxml-->
+<view>
+ <text>手机号码：</text><input type='text' placeholder='输入手机号码'></input>
+</view>

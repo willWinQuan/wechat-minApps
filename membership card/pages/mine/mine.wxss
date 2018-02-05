@@ -1,0 +1,99 @@
+/* pages/mine/mine.wxss */
+page{
+  background: #f0eff5;
+}
+.mine_member{
+  background: #ffffff;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.member_card{
+  width: 640rpx;
+  height: 320rpx;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+.card_name{
+  color: #ffffff;
+  position: absolute;
+  top: 40rpx;
+  left: 130rpx;
+  font-size: 30rpx;
+}
+.card_title{
+  color: #ffffff;
+  position: absolute; 
+  top: 20rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 3rpx #999;
+}
+.card_number{
+  color: #ffffff;
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  text-shadow:3rpx 3rpx 1rpx #999;
+}
+.activate_member{
+  width: 690rpx;
+  height: 90rpx;
+  margin: 40rpx auto 0;
+  border: 1px solid #3c94ff;
+  color: #3c94ff;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: none;
+  background: #ffffff;
+}
+/*已经激活  */
+.already_activate{
+  padding-top: 30rpx;
+}
+.member_grade{
+  width: 33.33%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  border-left: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+.member_grade:first-child{
+  border-left: none;
+}
+.member_grade:first-child text,.member_grade:nth-child(2) text:nth-child(2){
+  font-size:36rpx;
+}
+.member_grade view{
+  font-size: 22rpx;
+  color: #999;
+}
+.member_grade:last-child text{
+  font-size:28rpx;
+}
+.member_grade:last-child view{
+  margin-top: 7rpx;
+}
+/*我的信息列表  */
+.mine_list{
+  margin-top: 50rpx;
+  border-bottom: 1px solid #d9d9d9;
+}
+.mine_item{
+  background: #ffffff;
+  padding: 20rpx;
+  border-top: 1px solid #d9d9d9;
+}
+.mine_list image{
+  width: 37rpx;
+  height: 37rpx;
+  padding-right: 20rpx;
+  vertical-align:middle;
+}
+.mine_item text{
+  display: inline-block;
+  vertical-align: middle;
+}

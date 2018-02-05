@@ -1,0 +1,115 @@
+/* pages/company/company.wxss */
+Page{
+  background: #F1EFF5;
+}
+.clear{
+  clear: both;
+}
+.top{
+  width:750rpx;
+  height: 95rpx; 
+  background: #F1EFF5;
+  padding-top: 15px;
+  position: fixed;
+  top: 0;
+}
+.top_wrap{
+  position: relative;
+}
+.top input{
+  background-color: #fff;
+  font-size: 30rpx;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px 0;
+}
+ .bg{
+  position: absolute;
+  top: 26rpx;
+  left: 220rpx;
+  z-index: 10;
+} 
+.img_box{
+  width: 20%;
+  height: 130rpx;
+  border-radius: 3rpx;
+  display: inline-block;
+}
+.img_box image{
+  width:100%;
+  height: 100%;
+  border-radius: 3px;
+}
+.text_box{
+  width: 80%;
+  padding-top: 10px;
+  display: inline-block;
+}
+.company{
+  padding: 0 20rpx;
+}
+.text_box text{
+  font-size: 30rpx;
+  color: #AAA;
+  border-right: 1px solid #F1EFF5;
+  padding: 0 20rpx;
+}
+.text_box text:last-child{
+  border: none;
+}
+.text_box .noborder{
+  border-right: none;
+}
+.text_box view{
+  border-right: none;
+}
+.fab{
+  font-size: 30rpx;
+  color: #5B89EE;
+  border-right: 1px solid #F1EFF5;
+  padding: 0 20rpx;
+}
+.content{
+  background: #fff;
+  padding-bottom: 1px;
+  margin-bottom: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.empty{
+  margin-bottom: 20rpx;
+}  
+.top image{
+  width:20px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+  top:0; 
+}
+ .jr{
+  margin: 5px 0;
+} 
+/*加载更多  */
+.loading{
+  border: none;
+  font-size: 30rpx;
+  border-radius: 0;
+  background: #F1EFF5;
+  color: #bababa;
+}
+.loading::after{
+  width: 0rpx;
+  height: 0rpx;
+  border: none;
+  border-radius: 0;
+}
+.no_data{
+  color: #bababa;
+  text-align: center;
+}
+/*搜索为空  */
+.search_empty{
+  display: block;
+  margin: 0 auto;
+}

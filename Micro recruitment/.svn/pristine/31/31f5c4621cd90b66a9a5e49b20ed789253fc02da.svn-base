@@ -1,0 +1,139 @@
+<!--index.wxml-->
+<view class="search" style="background:{{search_icon?'#FFF':'#eee'}}">
+  <!-- 顶部 -->
+  <view class="top_city">
+    <text>东莞</text>
+    <image src="../../image/icon_02_1.png" class="city_icon"></image>
+    <input type="text" placeholder="搜索职位/公司" bindinput="search_input" placeholder-class="psection"/>
+    <image src="../../image/icon_02_2.png" class="search_icon" wx:if="{{search_icon}}"></image>
+  </view>
+  <!-- 内容 -->
+  <view class="index_content" wx:if="{{no_xinxi==false}}">
+    <view class="content_nav">
+      <!--  -->
+      <view class="nav_list" bindtap="list_click1">
+        <text style="color:{{list_click==1&&click_index==1?'#507feb':''}}">职位</text>
+        <image src="../../image/icon_xl.png" wx:if="{{list_click==1}}"></image>
+        <image src="../../image/icon_xl_01.png" wx:if="{{list_click==0}}"></image>
+      </view>
+      <!--  -->
+      <view class="nav_list" bindtap="list_click2">
+        <text style="color:{{list_click1==1&&click_index1==1?'#507feb':''}}">薪资</text>
+        <image src="../../image/icon_xl.png" wx:if="{{list_click1==1}}"></image>
+        <image src="../../image/icon_xl_01.png" wx:if="{{list_click1==0}}"></image>
+      </view>
+      <!--  -->
+      <view class="nav_list" bindtap="list_click3">
+        <text style="color:{{list_click2==1&&click_index2==1?'#507feb':''}}">筛选</text>
+        <image src="../../image/icon_xl.png" wx:if="{{list_click2==1}}"></image>
+        <image src="../../image/icon_xl_01.png" wx:if="{{list_click2==0}}"></image>
+      </view>
+      <!--  -->
+      <view class="nav_list" bindtap="list_click4">
+        <text style="color:{{list_click3==1&&click_index3==1?'#507feb':''}}">区域</text>
+        <image src="../../image/icon_xl.png" wx:if="{{list_click3==1}}"></image>
+        <image src="../../image/icon_xl_01.png" wx:if="{{list_click3==0}}"></image>
+      </view>
+      <!-- 筛选内容 -->
+      <view class="screen_nav" wx:if="{{list_click==1}}">
+        <view bindtap="screen_click" wx:for="{{screen}}" data-index="{{index}}">
+          <text style="color:{{screen_index==index?'#507feb':''}}">不限1</text>
+          <image src="../../image/check.png" wx:if="{{screen_index==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_click1==1}}">
+        <view bindtap="screen_click1" wx:for="{{screen}}" data-index="{{index}}">
+          <text style="color:{{screen_index1==index?'#507feb':''}}">不限2</text>
+          <image src="../../image/check.png" wx:if="{{screen_index1==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_click2==1}}">
+        <view bindtap="screen_click2" wx:for="{{screen}}" data-index="{{index}}">
+          <text style="color:{{screen_index2==index?'#507feb':''}}">不限3</text>
+          <image src="../../image/check.png" wx:if="{{screen_index2==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_click3==1}}">
+        <view bindtap="screen_click3" wx:for="{{screen}}" data-index="{{index}}">
+          <text style="color:{{screen_index3==index?'#507feb':''}}">不限4</text>
+          <image src="../../image/check.png" wx:if="{{screen_index3==index}}"></image>
+        </view>
+      </view>
+
+    </view>
+    <!--  -->
+    <view class="content_content">
+      <view class="content_xinxi">
+        <view class="xinxi_nav">
+          <view class="nav_text1">
+            <text class="text1_left">高级开发工程师</text>
+            <text class="text1_right">今天</text>
+          </view>
+          <view class="nav_text2">
+            <text style="color:#f72a5a">15000-30000</text>
+          </view>
+          <view class="nav_text3">
+            <text>五险一金</text>
+            <text>吃住补贴</text>
+            <text>季度旅游</text>
+          </view> 
+          <view class="nav_text4">
+            <text class="text1_left">东莞商二科技有限公司</text>
+            <text class="text1_right">南城区</text>
+          </view>
+        </view>
+      </view>
+      <!--  -->
+      <view class="content_xinxi">
+        <view class="xinxi_nav">
+          <view class="nav_text1">
+            <text class="text1_left">高级开发工程师</text>
+            <text class="text1_right">今天</text>
+          </view>
+          <view class="nav_text2">
+            <text style="color:#f72a5a">15000-30000</text>
+          </view>
+          <view class="nav_text3">
+            <text>五险一金</text>
+            <text>吃住补贴</text>
+            <text>季度旅游</text>
+          </view> 
+          <view class="nav_text4">
+            <text class="text1_left">东莞商二科技有限公司</text>
+            <text class="text1_right">南城区</text>
+          </view>
+        </view>
+      </view>
+      <!--  -->
+      <view class="content_xinxi">
+        <view class="xinxi_nav">
+          <view class="nav_text1">
+            <text class="text1_left">高级开发工程师</text>
+            <text class="text1_right">今天</text>
+          </view>
+          <view class="nav_text2">
+            <text style="color:#f72a5a">15000-30000</text>
+          </view>
+          <view class="nav_text3">
+            <text>五险一金</text>
+            <text>吃住补贴</text>
+            <text>季度旅游</text>
+          </view> 
+          <view class="nav_text4">
+            <text class="text1_left">东莞商二科技有限公司</text>
+            <text class="text1_right">南城区</text>
+          </view>
+        </view>
+      </view>
+      <!-- 遮罩层 -->
+      <view class="mask" wx:if="{{mask}}"></view>
+    </view>
+  </view>
+  <!-- 没有对应的搜索信息 -->
+  <view class="no_img" wx:if="{{no_xinxi}}">
+    <image src="../../image/search_empty.png"></image>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/send_box/send_box.wxml-->
+<import src="../common/resume-list.wxml" />
+<view class='heard-nav'>
+     <text bindtap='bindnoread' style="color:{{tabread?'#4ba3f1':'#000'}};border-bottom:{{tabread?'5rpx solid #4ba3f1':'0'}};">未读</text>
+     <text bindtap='bindreaded' style="color:{{tabread?'#000':'#4ba3f1'}};border-bottom:{{tabread?'0':'5rpx solid #4ba3f1'}};">已读</text>
+</view>
+
+<!--投递箱未读为空  -->
+ <view class='nodata' wx:if="{{detail_list.length==0 && nodata_status==1}}" style='margin-top:70rpx;'>
+      <image src='../../image/email_empty.png'></image> 
+</view> 
+
+<view class='send_box_wrap'>
+<block wx:for='{{detail_list}}' wx:key="{{index}}"> 
+    <template is="resumelist" data="{{...item,index}}"  />
+</block> 
+</view>
+  
+<button class='loading' wx:if="{{detail_list.length!=0}}" loading='{{loading_state}}' >{{loading_state==true?'正在加载中':'没有更多了'}}      </button> 
+
+

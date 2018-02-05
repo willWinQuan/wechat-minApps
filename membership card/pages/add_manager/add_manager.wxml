@@ -1,0 +1,18 @@
+<form bindsubmit="formSubmit">
+  <view class="phone_number_wrap" wx:for="{{person_list}}" wx:key="{{index}}">
+    <text>{{item.name}}</text>
+    <view class="name_input" wx:if="{{item.type==0}}">
+      <input type="text" name="{{item.name}}"  placeholder="请输入{{item.name}}" data-index="{{index}}" data-name="{{item.name}}" value="{{name_value[index]}}" bindinput="closetap" bindchange="closestate"/>
+      <image src="{{isclose[index]?'../../image/close.png':''}}" data-cname="{{item.name}}" data-index="{{index}}" bindtap="clear_name"></image>
+    </view>
+  </view> 
+  <view class="phone_number_wrap message">
+    <text>备注</text>
+    <view>
+      <textarea maxlength='150' placeholder='请在此输入您的备注' bindinput='message_input'> <text>{{message_length}}/150</text> </textarea>
+    </view>
+  </view>
+
+  <!--保存-->
+  <button class="save_info" style="background:{{color}};" formType="submit">保存</button>
+</form> 

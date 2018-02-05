@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<import src="../common/resume-list.wxml" />
+
+<view class="search">
+  <!-- 顶部 -->
+  <view class="top_city">
+    <text bindtap="addressSearch" id="{{city_id}}">{{city}}</text>
+    <image src="../../image/icon_02_1.png" class="city_icon"></image>
+    <input type="text" placeholder="搜索职位/公司" bindinput="search_input" placeholder-class="psection" value='{{value}}'/>
+    <image src="../../image/icon_02_2.png" class="search_icon" wx:if="{{search_icon}}"></image>
+  </view>
+  <!-- 内容 -->
+  <view class="index_content">
+    <view class="content_nav">
+      <!--  -->
+      <view class="nav_list" bindtap="List_click" wx:for="{{list_nav}}" wx:for-item="list_nav" wx:key="{{key}}" data-id="{{index}}">
+        <text style="color:{{list_click==index?'#507feb':''}}" data-id="{{index}}">{{list_nav}}</text>
+        <image src="../../image/icon_xl.png" wx:if="{{list_click==index}}" data-id="{{index}}"></image>
+        <image src="../../image/icon_xl_01.png" wx:if="{{list_click1==-1&&list_click!=index}}" data-id="{{index}}"></image>
+      </view>
+      <!-- 筛选内容 -->
+      <view class="screen_nav" wx:if="{{list_clicks==1&&mask==true}}">
+        <view bindtap="screen_click" wx:for="{{position}}" data-index="{{index}}" wx:key="{{}}" data-id="{{item.id}}" style="color:{{screen_index==index?'#507feb':''}}">
+          {{item.name}}
+          <image src="../../image/check.png" wx:if="{{screen_index==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_clicks1==1&&mask==true}}">
+        <view bindtap="screen_click1" wx:for="{{price}}" data-index="{{index}}" wx:key="{{}}" data-id="{{item.id}}" style="color:{{screen_index1==index?'#507feb':''}}">
+          {{item.name}}
+          <image src="../../image/check.png" wx:if="{{screen_index1==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_clicks2==1&&mask==true}}">
+        <view bindtap="screen_click2" wx:for="{{label}}" data-index="{{index}}" wx:key="{{}}" data-id="{{item.id}}" style="color:{{screen_index2==index?'#507feb':''}}">
+          {{item.label}}
+          <image src="../../image/check.png" wx:if="{{screen_index2==index}}"></image>
+        </view>
+      </view>
+      <!--  -->
+      <view class="screen_nav" wx:if="{{list_clicks3==1&&mask==true}}">
+        <view bindtap="screen_click3" wx:for="{{address}}" data-index="{{index}}" wx:key="{{}}" data-id="{{item.id}}" style="color:{{screen_index3==index?'#507feb':''}}">
+          {{item.name}}
+          <image src="../../image/check.png" wx:if="{{screen_index3==index}}"></image>
+        </view>
+      </view> 
+      <!--  -->
+    </view>
+    <!--  -->
+    <!-- 没有对应的搜索信息 -->
+    <view class="no_img" wx:if="{{no_xinxi}}">
+      <image src="../../image/search_empty.png"></image>
+    </view>
+    <view class="content_content" wx:if="{{no_xinxi==false}}">
+     <!-- 列表展示 -->
+    <view class="list_nav">
+      <view class="content_content1" wx:for="{{data}}" wx:key="{{key}}">
+        <view class="content_xinxi" data-test="{{item.id}}" bindtap="details">
+          <view class="xinxi_nav" data-test="{{item.id}}">
+            <view class="nav_text1">
+              <text class="text1_left">{{item.name}}</text>
+              <text class="text1_right">{{item.time}}</text>
+            </view>
+            <view class="nav_text2">
+              <text style="color:#f72a5a">{{item.money}}</text>
+            </view>
+            <view class="nav_text3" >
+              <text wx:for="{{item.label}}" wx:for-item="label" wx:key="{{key}}">{{label}}</text>
+            </view>
+            <view class="nav_text4">
+              <text class="text1_left">{{item.company}}</text>
+              <text class="text1_right">{{item.area}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 加载 -->
+    <view class="loging" wx:if="{{loging==1}}">
+      <image src="../../image/time.gif" class="loging"></image>
+      正在加载中...
+    </view>
+    <!-- 没有更多数据 -->
+    <view class="no_more" wx:if="{{no_more==1}}">
+      没有更多数据...
+    </view>
+      <!-- 遮罩层 -->
+      <view class="mask" wx:if="{{mask}}"></view>
+    </view>
+  </view>
+</view>

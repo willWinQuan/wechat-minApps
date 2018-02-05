@@ -1,0 +1,7 @@
+<!--pages/regulation/regulation.wxml-->
+ <view class="regu_wrap">
+  <view class="regu_text">
+    <rich-text nodes="{{rudata}}"></rich-text>
+  </view>
+</view>
+

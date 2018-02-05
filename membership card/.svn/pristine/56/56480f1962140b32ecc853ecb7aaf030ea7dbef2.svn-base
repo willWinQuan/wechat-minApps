@@ -1,0 +1,122 @@
+/* pages/new_password/new_password.wxss */
+page{
+  background: #f0eff5;
+}
+/*获取手机号码  */
+.get_phone_number{
+  text-align: center;
+  padding: 20rpx;
+}
+.phone_number{
+  font-weight: bold;
+}
+.get_phone_number text{
+  font-size: 25rpx;
+  color: #bababa;
+}
+/*短信验证码  */
+.note_code{
+  background: #ffffff;
+  padding: 30rpx 5%;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.note_code text{
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.note_code input{
+  width: 260rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.send_code{
+  width: 30%;
+  color: #3c94ff;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*修改密码 */
+.password_alter{
+  background: #ffffff;
+  padding: 40rpx 5%;
+  border-bottom: 1px solid #d9d9d9;
+}
+.password_alter text{
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.password_alter input{
+  width: 60%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.eyes{
+  width: 50rpx;
+  height: 26rpx;
+  display: inline-block;
+}
+/*显示密码  */
+.show_select{
+  margin-top: 20rpx;
+  padding-left: 20rpx;
+}
+.show_select>text{
+  width: 60%;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*radio*/
+radio-group{
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.flex_box{
+  display: flex;
+  width: 100%;
+}
+.flex_item{
+  flex: 1;
+  text-align: center;
+}
+.flex_item label{
+  width: 100%;
+  padding: 20rpx 20rpx;
+  display: inline-block;
+  position: relative;
+}
+.flex_item label text:nth-child(2){
+  width:20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  left:10px;
+}
+.flex_item label text:nth-child(3){
+  width: 16px;
+  height: 16px;
+  background: black;
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: none;
+  border-radius: 10px;
+}
+.flex_item label text:nth-child(3).active{
+  display: inline-block;
+  background: #3c94ff;
+}
+/*确认修改  */
+.sure_alter{
+  width: 95%;
+  margin: 40rpx auto;
+  color: #ffffff;
+  background: #3c94ff;
+}

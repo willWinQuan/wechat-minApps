@@ -1,0 +1,54 @@
+/* pages/new_phone/new_phone.wxss */
+.get_phone_number{
+  text-align: center;
+  padding: 20rpx;
+}
+.phone_number{
+  font-weight: bold;
+}
+.get_phone_number text{
+  font-size: 25rpx;
+  color:#999;
+}
+.phone_number text{
+  font-size:28rpx;
+  color:#666;
+}
+.phone-num{
+  border-top:1px solid #e0e0e0;
+  padding:30rpx 5%;
+  display:flex;
+  border-bottom:1px solid #e0e0e0;
+}
+.phone-num text,.yanzheng-num text{
+  width:20%;
+}
+.phone-num input{
+  display:inline-block;
+}
+.yanzheng-num{
+  padding:40rpx 5%;
+  display:flex;
+  border-bottom:1px solid #e0e0e0;
+}
+.yanzheng-num input{
+  margin-left:3%;
+  width:62%;
+}
+#sendma,#sendmatext{
+  width:34%;
+  font-size:32rpx;
+  color:rgb(58,122,255);
+  text-align:right;
+  border-left:1px solid #ccc;
+}
+.holderclass{
+  font-size:30rpx;
+  color:#ccc;
+  width: 100%;
+}
+.chance-sub{
+  width: 90%;
+  color: #fff;
+  margin-top:50rpx;
+}

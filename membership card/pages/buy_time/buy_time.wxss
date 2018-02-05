@@ -1,0 +1,154 @@
+/* pages/buy_time/buy_time.wxss */
+.member_card_wrap{
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.member_card{
+  border-radius: 10px;
+  width: 640rpx;
+  height: 360rpx;
+  background-size: 640rpx 360rpx;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 20px;
+}
+.card_name{
+  color: #ffffff;
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
+}
+.card_number{
+  color: #ffffff;
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+}
+.use_rule{
+  position: absolute;
+  top: 30rpx;
+  right: 50rpx;
+  font-size: 25rpx;
+  background: #ffffff;
+  padding:0 10rpx;
+  border-radius: 10rpx;
+}
+.indata{
+  text-align: center;
+  padding: 20rpx;
+  font-size: 30rpx;
+  color:#bababa;
+}
+/*消费次数  */
+.consume_time_wrap{
+  /* margin-top: 20rpx; */
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
+}
+.consume_time{
+  width: 56%;
+  display: inline-block;
+}
+.select_time{
+  width: 33%;
+  display: inline-block;
+}
+.select_time view,.select_time text{
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  padding: 10rpx 20rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+}
+.select_time text{
+  border-right:none;
+  border-left: none;
+}
+.consume_time_wrap>text{
+  width: 10%;
+  display: inline-block;
+}
+.consume_time_wrap .resto_time{
+  width: 40%;
+  display: inline-block;
+  text-align: right;
+}
+/*确认支付  */
+.confirm_pay{
+  width: 95%;
+  background: #3c94ff;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  bottom: 80rpx;
+  left: 2.5%;
+}
+
+.inputpassd{
+  position:absolute;
+  z-index:999;
+  top:20%;
+  left:10%;
+  background:#fff;
+  width:80%;
+  border-radius:6%;
+}
+.inputpassd-h{
+  width:100%;
+  border-bottom:1px solid #ccc;
+}
+.inputpassd-h image{
+  width:40rpx;
+  height:40rpx;
+  margin:10rpx;
+  margin-left:4%;
+}
+.inputpassd-h text{
+  font-size:35rpx;
+  text-align:center;
+  width:80%;
+  display:inline-block;
+  position:relative;
+  bottom:15rpx;
+}
+.inputpassd-m{
+  width:90%;
+  border-bottom:1px solid #ccc;
+  line-height:100rpx;
+  margin-left:5%;
+  text-align:center;
+  font-size:32rpx;
+}
+.inputpassd-f{
+  width:90%;
+  dispaly:flex;
+  margin-left:8%;
+  margin-top:20rpx;
+}
+.inputpassd-dot{
+  width:15%;
+  display:inline-block;
+  border:1px solid #ccc;
+  height:80rpx;
+  border-right:0;
+}
+.inputpassd-dot:last-child{
+  border-right: 1px solid #ccc;
+}
+.inputpassd-dot text{
+  display:inline-block;
+  width:25rpx;
+  height:25rpx;
+  border-radius:50%;
+  background:#fff;
+  margin-top:28rpx;
+  margin-left:28rpx;
+}
+.passd-input{
+  color: #fff;
+  font-size: 0rpx;
+  width: 1rpx;
+  marign:0 auto;
+}

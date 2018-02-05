@@ -1,0 +1,68 @@
+/* pages/mine/mine.wxss */
+page{
+  background: #efeff4;
+}
+/*头像 ID  */
+.personal_wrap{
+  background: linear-gradient(#38cff9,#4f80eb);
+  padding: 100rpx 0;
+}
+.personal_wrap image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0rpx auto 20rpx;
+  border-radius: 50px;
+}
+.personal_wrap view{
+  text-align: center;
+  color:#ffffff;
+}
+/*我的信息列表  */
+.personal_item{
+  padding: 40rpx 0 0 40rpx;
+  background: #ffffff;
+}
+.personal_item image:first-child{
+  display: inline-block;
+  vertical-align: -2rpx;
+}
+.my_resume{
+  width: 33rpx;
+  height: 39rpx;
+}
+.my_collect{
+  width: 36rpx;
+  height: 33rpx;
+}
+.my_email{
+  width: 33rpx;
+  height: 27rpx;
+}
+.post_position{
+  width: 36rpx;
+  height: 29rpx;
+}
+.item_right{
+  width: 92%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #e1e1e1;
+}
+.personal_item:nth-child(3) .item_right,.personal_item:nth-child(4) .item_right{
+  border-bottom:none;
+}
+.item_right text{
+  width: 92%;
+  display: inline-block;
+}
+.personal_item image:last-child{
+  width: 14rpx;
+  height: 25rpx;
+  text-align: right;
+}
+.person_item_position{
+  margin-bottom: 20rpx;
+}

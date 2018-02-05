@@ -1,0 +1,42 @@
+<!--pages/resume/add-work-experience.wxml-->
+<import src="resume-common/work-experience-common.wxml" />
+<import src="resume-common/work-experience-content.wxml" />
+
+
+<block wx:for="{{workarray}}" wx:key="index">
+    <form bindsubmit="workformSubmit">
+        <view class='experience-template' style='margin-bottom:10px; padding:0 5%; padding-top:20rpx;'>
+            <template is="{{workindex[index]?'workexperiencecontent':'workexperience'}}" data="{{item,nowDate,indatevalue,outdatevalue,index,lineclamp,textareahidden}}" />
+            <input hidden='true' name="workisindex" value='{{index}}'></input>
+             <input hidden='true' name="workid" value='{{item.id}}'></input>
+            <view class='work-control'>
+                <view class='work-control-right'>
+                    <label data-index='{{index}}' data-workid='{{item.id}}' bindtap='delteworktemplate'>
+                        <image src='../../image/delete_gray.png'></image>
+                        <text class='label-text1'>删除{{isfindex[index]}}</text>
+                    </label>
+                    <label>
+                        <image wx:if="{{!workindex[index]}}" src='../../image/save_gray.png'></image> 
+                        <image wx:if="{{workindex[index]}}" src='../../image/chance.png'></image> 
+                        <text data-index='{{index}}' bindtap='tapwritework' class='label-text1' wx:if="{{workindex[index]}}" style='display:{{workindex[index]?"inline-block":"none"}}'>修改</text>
+                        <button hover-stop-propagation="true" hover-class='none' wx:if="{{!workindex[index]}}" style='display:{{workindex[index]?"none":"inline-block"}}' class='savebtn' form-type='submit'>保存</button>
+                    </label>
+                </view>
+                <view class='clear'></view>
+            </view>
+        </view>
+    </form>
+</block>
+
+<view class='add-experience' bindtap='addworktemplate'>
+    <text>+</text> 添加工作经历
+</view>
+
+<toast hidden="{{toastHidden}}" style="z-index:999;" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>
+
+<view class='add-experience-navigator' bindtap='bindnewresumeworkcontent'>
+    <view class='add-experience-content'>
+        返回
+    </view>
+</view>

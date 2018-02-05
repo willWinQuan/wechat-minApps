@@ -1,0 +1,130 @@
+/* pages/mall/mall.wxss */
+page{
+  background: #f0eff5;
+}
+.mall_wrap{
+  background: #ffffff;
+}
+/*搜索框  */
+.mall_search{
+  width: 100%;
+  padding: 20rpx 0rpx;
+  /* position: relative; */
+  border-bottom: 1px solid #d9d9d9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+}
+.mall_search image{
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 46rpx;
+  z-index: 3;
+  
+}
+.mall_search input{
+  width: 80%;
+  margin: 0 auto;
+  background: #f0eff5;
+  border-radius: 20px;
+  padding:10rpx 50rpx; 
+  /* box-sizing: border-box; */
+  font-size: 30rpx;
+} 
+/*车卡列表  */
+.card_list_wrap{
+  margin-top: 100rpx;
+}
+.card_list{
+  border-bottom:1px solid #d9d9d9;
+  padding:26rpx 26rpx 18rpx;
+}
+.card_left{
+  width: 35%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.card_left image{
+  width: 94%;
+  height: 130rpx;
+  border-radius: 8rpx;
+  box-shadow:1rpx 1rpx 3rpx #999;
+}
+/*.card-l-title{
+  position:relative;
+  top:50rpx;
+  font-size:28rpx;
+  left:6%;
+  color:#eee; 
+}
+.card-l-number{
+  position:absolute;
+  top:150rpx;
+  font-size:26rpx;
+  color:#eee;
+}*/
+.card_right{
+  width: 63%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2%;
+}
+.card_title{
+  width: 100%;
+}
+.card_name{
+  width: 70%;
+  display: inline-block;
+  font-size: 32rpx;
+  font-weight:800;
+  /* 宋体 */
+  font-family:SimSun;
+}
+.card_price{
+  width: 30%;
+  display: inline-block;
+  color: #ef614f;
+  text-align:right;
+}
+.card_indate{
+  color: #bababa;
+  font-size: 27rpx;
+  padding-top: 10rpx;
+  width:105%;
+}
+.mall_scroll{
+   height: 600px; 
+}
+/*  加载更多   */
+.loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+.loadmore_wrap {
+  width: 100%;
+  padding: 30rpx 0;
+  /* line-height: 30rpx; */
+  font-size: 14px;
+  text-align: center;
+}
+.loadmore {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*没有记录  */
+.no_record{
+  width: 236rpx;
+  height: 263rpx;
+  display: block;
+  margin: 0 auto;
+}

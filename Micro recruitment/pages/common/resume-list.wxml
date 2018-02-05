@@ -1,0 +1,24 @@
+
+<template name="resumelist" >
+     <!-- <navigator  url='../details/details?id= {{job_id}}'>  -->
+        <view class="content_xinxi" bindtap='classification' data-id="{{job_id}}" >
+            <view class="xinxi_nav"  >
+                <view class="nav_text1"  >
+                    <text class="text1_left" >{{job_name}}</text>
+                    <text class="text1_right">{{send_time}}</text>
+                </view>
+                <view class="nav_text2" >
+                    <text style="color:#f72a5a">{{min}}-{{max}}</text>
+                </view>
+                <view class="nav_text3" >
+                    <text wx:if="{{labels!=''}}" wx:for="{{labels}}">{{labels[index].label}}</text>
+                </view>
+                <view class="nav_text4">
+                    <text class="text1_left">{{company_name}}</text>
+                    <text class="text1_right">{{area}}</text>
+                </view>
+            </view>
+        </view>
+      
+     <!-- </navigator>  -->
+</template>

@@ -1,0 +1,37 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine_member">
+   <view class="member_card" style="background:url('{{card_bg}}') no-repeat;background-size:cover;" wx:if="{{card_bg != ''}}"> 
+    <text class="card_title">{{card_title}}</text>
+    <text class="card_number">卡号：{{card_number}}</text>
+  </view>
+  <!--  -->
+  <view class="member_card" style="background:{{color1}} no-repeat;background-size:cover;" wx:if="{{card_bg == ''}}"> 
+    <text class="card_title">{{card_title}}</text>
+    <text class="card_number">卡号：{{card_number}}</text>
+  </view>
+  <button class="activate_member" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="display:{{is_activate==1?'none':'block'}};border-color:{{color=='#FFFFFF'?'#3c94ff':color}};color:{{color=='#ffffff'?'#3c94ff':color}}" >激活会员卡</button>
+  <view class="already_activate" style="display:{{is_activate==1?'block':'none'}};">
+    <view class="member_grade">
+      <text style="color:{{color=='#FFFFFF'?'#3c94ff':color}}">{{member_integral}}</text>
+      <view>积分</view>
+    </view>
+    <view class="member_grade">
+      <text style="color:{{color=='#FFFFFF'?'#3c94ff':color}};">￥</text>
+      <text style="color:{{color=='#FFFFFF'?'#3c94ff':color}}">{{member_balance}}</text>
+      <view>余额</view>
+    </view>
+    <view class="member_grade">
+      <text style="color:{{color=='#FFFFFF'?'#3c94ff':color}}">{{member_grade==''?'普通会员':member_grade}}</text>
+      <view>会员等级</view>
+    </view>
+  </view>
+</view>
+
+
+<!--我的列表  -->
+<view class="mine_list">
+  <view class="mine_item" bindtap="alter_info_tap" wx:for="{{person_list}}" wx:key="{{index}}" wx:if="{{item.is_open==1}}" data-name="{{item.text}}">
+    <image src="{{item.img}}"></image>
+    <text>{{item.text}}</text>
+  </view>
+</view>

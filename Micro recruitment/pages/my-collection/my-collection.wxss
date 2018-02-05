@@ -1,0 +1,19 @@
+/* pages/my-collection/my-collection.wxss */
+@import "../common/resume-list.wxss";
+
+page{
+    background: rgb(240,239,245);
+}
+.nodata{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.nodata image{
+    width:50%;
+    margin:0 auto;
+    display:block;
+    height:300rpx;
+    padding:38% 0;
+    padding-bottom:80%;
+}
