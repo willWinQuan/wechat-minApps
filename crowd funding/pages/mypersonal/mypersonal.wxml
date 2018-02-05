@@ -1,0 +1,38 @@
+<!--pages/mypersonal/mypersonal.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+
+<view class='personal-header' style="background:url('{{phbackground}}') 50% 50%;background-size:cover;">
+    <view class='ph-img'>
+        <image src='{{avatarUrl}}'></image>
+    </view>
+    <view class='ph-name'>{{nickName}}</view>
+    <view class='ph-id'>ID:{{user_id}}</view>
+</view>
+
+
+<view class='personla-list'>
+  <!-- 我的众筹 -->
+  <view class='pl-myzhong' bindtap='myCrowdfunding'>
+      <view class='plm-left'>
+        <image src='../img/myzhongchou.png'></image>
+        <text>我的众筹</text>
+      </view>
+      <view class='plm-right'>
+          <image src='../img/jiantou02.png'></image>
+      </view>
+  </view>
+  
+  <!-- 我的订单 -->
+  <view class='pl-mydingdan' bindtap='myorder'>
+     <view class='plm-left'>
+     <image src='../img/dingdan.png'></image>
+     <text>我的订单</text>
+     </view>
+     <view class='plm-right'>
+       <image src='../img/jiantou01.png'></image>
+     </view>
+  </view>
+
+</view>
+
+ <template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/> 

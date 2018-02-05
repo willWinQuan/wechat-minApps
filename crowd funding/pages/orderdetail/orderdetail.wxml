@@ -1,0 +1,89 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view class='orderdetail-status'>
+  <view class='orderdetail-status-text'>订单状态</view>
+  <view class='orderdetail-status-ing'>
+     <block wx:for="{{statusimglist}}" wx:key="{{index}}">
+      <image class='oderdetail-statusIng-img' src='{{item}}'></image>
+     </block>
+     <view class='orderdetail-statusIng-text'>
+        <text class='orderdetail-statusIng-textblack'>已提交</text>
+        <text class='orderdetail-statusIng-textblack'>已发货</text>
+        <text class='orderdetail-statusIng-textdefault'>待完成</text>
+     </view>
+  </view>
+</view>
+
+<view class='orderdetail-addr'>
+    <view class='orderdetail-addr-left'>
+       <image src='../img/detailaddre.png'></image>
+    </view>
+    <view class='orderdetail-addr-right'>
+       <view class='orderdetail-personal-name'>
+        <text>收货人:么么哒</text>
+        <text>13713400142</text>
+       </view>
+       <view class='orderdetail-personal-addr'>
+         地址：铜锣湾钵兰街
+       </view>
+    </view>
+</view>
+
+<view class='order-list'>
+    <view class='orderlist-item' >
+
+        <view class='orderlist-item-h' bindtap='orderdetail'>
+           <image class='orderlist-item-icon' src='../img/gift.png'></image>
+           <text>官方旗舰店</text>
+           <image class='orderlist-item-icon2' src='../img/jiantou02.png'></image>
+           <!-- <text class='orderitem-stauts'>等待付款</text> -->
+        </view>
+        
+        <view class='orderlist-shop'>
+           <image class='orderlist-shop-img' src='../img/shop001.png'></image>
+           <view class='orderlist-shop-right'>
+              <view class='orderlist-shop-name'>商品名称</view>
+              <view class='orderlist-shop-op'>属性</view>
+              <!-- 七天退换 ？？？？ -->
+              <image src=""></image>
+              <text>12314元</text>
+           </view>
+        </view>
+
+       <!-- <view class='orderlist-btn'>付款</view> -->
+       <view class='orderlist-yun'>
+           <text>运费</text>
+           <text>¥0.0</text>
+       </view>
+       <view class='orderlist-shifu'>
+           <text>实付款</text>
+           <text>¥478.4</text>
+       </view>
+     </view>
+</view>
+
+   <view class='orderdetail-desc'>
+     <view class='orderdetail-desc-num'>
+       <text>订单编号:1104y98235</text>
+       <text class='orderdetail-desc-btn'>复制</text>
+     </view>
+     <view>支付宝交易号：1224302505972052590550809989</view>
+     <view>创建时间：102349210572502135702</view>
+     <view>付款时间：104034454544464646</view>
+     <view>发货时间：194972597w9125r7</view>
+     <view>成交时间：2139451295757wr</view>
+   </view>
+
+   <view class='orderdetail-msg'>
+     <view class='orderdetail-msg-buyer'>
+      <view class='orderdetail-msg-h'>买家留言：</view>
+      <view class='orderdetail-msgbuyer-text'>铜锣湾扛把子，卑不卑面？</view>
+     </view>
+     <view class='orderdetail-msg-seller'>
+      <view class='orderdetail-msg-h'>卖家留言：</view>
+      <view class='orderdetail-msgseller-text'>不给！追的到我，我就让你嘿嘿...</view>
+     </view>
+   </view>
+
+   <view class='orderdetail-footer'>
+      <text>查看物流</text>
+   </view>

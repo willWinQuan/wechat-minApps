@@ -1,0 +1,210 @@
+<!--details.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+		<view class='header'>
+			<view class="business" wx:if="{{detail.apply_data.mshop_code}}">
+				<image src="../img/zc_9.png" class='i'></image>
+				{{detail.product_data.customer_name}}
+				<view class="clear"></view>
+			</view>
+			<view class="details">
+				<view class='img-wraview'>
+					<view class="img-container">
+						<view class="img" style="	background: url({{detail.product_data.product_img}}) no-repeat 50% 50%;background-size: cover;"></view>
+					</view>
+				</view>
+				<view class="right">
+					<view class='p' bindtap="tabshowside">{{detail.product_data.product_name}}</view>
+					<view class="sviewec">{{(detail.product_data.property==null)?'':detail.product_data.property}}
+          <text class='font'>{{detail.apply_data.crowdfund_status}}</text>
+          </view>
+					<view class="money p">
+						￥{{detail.product_data.price}}
+					</view>
+				</view>
+				<view class="clear"></view>
+			</view>
+		</view>
+    <!--  -->
+		<view class='nav'>
+			<view class="naver">
+				<view class="name">
+					<text class='i' style="	background: url({{detail.apply_data.weixin_img}}) no-repeat 50% 50%;background-size:cover;"></text>
+					<view class="time">
+						<view class='p'>{{detail.apply_data.weixin_name}}</view>
+						<view class='p'>发起时间\t{{detail.apply_data.create_time}}</view>
+					</view>
+				</view>
+			</view>
+      <!--  -->
+      <view class="jinduNav">
+				<view class="jindu">
+					<view class="jindu_X" style="width:{{detail.apply_data.crowdfund_progress}}">
+						<view class="jindu_Q"></view>
+					</view>
+				</view>
+				<text class='span'>{{detail.apply_data.crowdfund_progress}}</text>
+			</view>
+      <!--  -->
+      <view class="jinduXx">
+				<view class="border viewT">
+					<view class='p'>￥{{detail.apply_data.pay_other}}</view>
+					<view class="text p">已筹</view>
+				</view>
+				<view class="border viewT">
+					<view class='p' wx:if="{{detail.apply_data.time!=null}}">{{detail.apply_data.time}}</view>
+          <view class='p' wx:if="{{detail.apply_data.time==null}}">已过期</view>
+					<view class="text p">剩余</view>
+				</view>
+				<view class="viewT">
+					<view class='p' >￥{{detail.apply_data.price}}</view>
+					<view class="text p">目标</view>
+				</view>
+				<view class="clear"></view>
+			</view>
+
+    <view class="FTbutton">
+     <view class='ftb-left'>
+			<view class="FTbutton1">
+				<image src="../img/gouwuche.png" class='span'></image>
+			</view>
+			<view class="FTbutton4" wx:if="{{detail.pay_status==1 || detail.pay_status==2}}" bindtap="tabcompletepay" data-isme="{{isme}}" >{{isme ?'我要自付购买':'帮助TA'}}</view>
+      <view class="{{failpay?'FTbutton4':'FTbutton4beaulft'}}" wx:elif="{{detail.pay_status==3 || detail.pay_status==4}}">{{failpay?'已支付':'已过期'}}</view>
+       </view>
+       <view class="Invitation" bindtap="tabshare" wx:if="{{isme}}">
+          <image src="../img/yaoqing01.png" class='i'></image>
+          邀请朋友来帮忙
+      </view>
+		</view>	
+    
+      <!--  -->
+     
+    </view>
+
+    <template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/>
+
+     <!-- 回复输入框 -->
+    <view class="reply" style="display:{{replyflag}}">
+    <input class="reply-input" placeholder="输入5-20字符"  cursor-spacing='120' bindblur="inputblur" bindconfirm="inputconfirm"  type="text" confirm-type="done" focus="{{isfocus}}" />
+    <button class="reply-btn" bindtap="tabsendreply">发送</button>
+    <view class="clear"></view>
+    </view>
+
+    <!--  -->
+    <view class="navDh">
+			<view class="navDhLeft" bindtap="tabcomment1">
+				<view class="{{tabflag?'navDh_X':''}}">
+					<image class='i' src="{{tabflag?'../img/zc_10.png':'../img/zc_10_1.png'}}"></image>
+					<text class='font'>留言</text>
+				</view>
+			</view>
+			<view class="navDhRight" bindtap="tabsumlist1">
+				<view class="{{tabflag?'':'navDh_X'}}">
+					<image class='i' src="{{tabflag?'../img/zc_27.png':'../img/sumlist.png'}}" ></image>
+					<text class='font'>排行榜</text>
+				</view>
+			</view>
+			<view class="clear"></view>
+		</view>
+    <!--  -->
+    <view class="comment" wx:if="{{tabflag==true}}">
+     <view class="nodata" wx:if="{{detail.message_list_only2 ==null}}">
+        <image class="nodata-img" src="../img/nodata01.png"></image>
+        <view>没有留言..</view>
+     </view>
+      <view class="commentNav"  wx:if="{{detail.message_list_only2 !=null}}" wx:for="{{detail.message_list_only2}}" wx:key="index">
+            <view class='img-wrap'>
+              <view class="img-container">
+                <view class="img" style="background:url({{item.pic}}) no-repeat 50% 50%;background-size:cover;"></view>
+              </view>
+            </view>
+            <view class="nav">
+              <view class="navXx">
+                <view class="name">{{item.weixin_name}}</view>
+                <view>支持了<font class="money">{{item.money}}</font> 元</view>
+                <view>{{item.create_time}} </view>
+                <image src="../img/zc_12.png" class="i" wx:if="{{item.write=='ok'}}" bindtap="tabreply" data-supportid="{{item.support_id}}">这是回复图标</image>
+              </view>
+              <view class="text">
+                <view>
+                  {{item.support_message}}
+                </view>
+                <view class="Reply" wx:for="{{item.message}}"  wx:for-item="messagelist" wx:key="index">
+                  <text>{{messagelist.message_role}}</text> 回复 <text>{{messagelist.receive_role}}</text>:
+                  <view>{{messagelist.message_content}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="clear"></view>
+          </view>
+      <!--  -->
+      <view class="More" bindtap="tabcomment">
+				<image src="../img/zc_11.png" class='i'></image>
+				更多留言
+			</view>	
+		</view>
+
+    
+    <!--  -->
+    <view class="Ranking" wx:if="{{tabflag==false}}">
+			<view class="RankingName">
+				<view class="PM p">排名</view>
+				<view class="YH p">用户</view>
+				<view class="JE p">支付金额</view>
+				<view class="clear"></view>
+			</view>
+
+      <view class="nodata" wx:if="{{detail.rank_list_only5==null}}">
+        <image class="nodata-img" src="../img/nodata01.png"></image>
+        <view>没有排名..</view>
+      </view>
+
+    <view class="RankingXx" wx:if="{{detail.rank_list_only5!=null}}" wx:for="{{detail.rank_list_only5}}" wx:key="index">
+				<image src="../img/zc_15.png" class="PMimg" wx:if="{{index==0}}" ></image>
+        <image src="../img/zc_17.png" class="PMimg" wx:if="{{index==1}}" ></image>
+        <image src="../img/zc_16.png"  class="PMimg" wx:if="{{index==2}}"></image>
+        <text class="PMimg" wx:if="{{index!=0 && index!=1 && index!=2}}">{{index}}</text>
+        <view class="RankingXxTx">
+					<image src="{{item.weixin_img}}"></image>
+					<view class="time">
+						<view>{{item.weixin_name}}</view>
+						<view class="time2">{{item.support_time}}</view>
+					</view>
+				</view>
+				<text class="suportmoney">¥ {{item.price}}</text>
+				<view class="clear"></view>
+			</view>
+
+      <!--  -->
+      <view class="More" bindtap="tabsumlist">
+				<image src="../img/zc_11.png" class='i'></image>
+				更多留言
+			</view>
+		</view>
+    
+    <view class="writebychq"></view>
+
+  
+    <!-- 商品详情滑框 -->
+   <view class="shopdetailsilde" style="width:{{issilde?'100%':'0'}}; top:0; height:{{issilde?'100%':'0'}};opacity:{{issilde?'1':'0'}};" bindtap="tabhiddenside">
+      <view class="showdetailtitle">{{detail.product_data.product_name}}</view>
+      <view class="nocontent" wx:if="{{detail.description.description_imgurl=='' && detail.description.description_text==''}}">
+        <image class="image" src="../img/nocontent.png"></image>
+        <view>没有内容..</view>
+      </view>
+      <view class="showdetailcontent">
+          <block wx:for="{{detail.description.description_imgurl}}" wx:key="index">
+          <image src="{{item}}" mode="widthFix"></image>
+        </block>
+        <view class="detailtext">{{detail.description.description_text}}</view>
+      </view>
+   </view>
+    
+<image class="shareImg" bindtap="shareImgHidden"  style="display:{{maskflag?'none':'block'}}" src="../img/share02.png"></image>
+    <!-- 遮罩层 -->
+<mask hidden="{{maskflag}}" style="z-index:1; background:rgb(25,25,25)" hover-style="none"/>
+
+ 		<!--提示框 begin-->
+    <toast hidden="{{hiddenToast}}" icon="warn" duration="3000" bindchange="toastHidden" >{{ToastContent}}</toast>
+		<!--提示框 end-->
+
+        

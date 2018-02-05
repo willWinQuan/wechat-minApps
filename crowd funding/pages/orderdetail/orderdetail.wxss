@@ -1,0 +1,259 @@
+/* pages/orderdetail/orderdetail.wxss */
+page{
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+  background: rgb(245,245,245);
+}
+
+/* 订单状态 begin*/
+.orderdetail-status{
+  background: #fff;
+}
+.orderdetail-status-text{
+  font-size:32rpx;
+  color:#666;
+  line-height:60rpx;
+  height:60rpx;
+  width:93%;
+  border-bottom:1px solid #eee;
+  padding-left: 5%;
+}
+.orderdetail-status-ing{
+  width:76%;
+  padding-bottom:20rpx;
+  padding-left:12%;
+  padding-top:10rpx;
+}
+.oderdetail-statusIng-img{
+  width: 40rpx;
+  height: 40rpx;
+}
+.oderdetail-statusIng-img:nth-child(2),.oderdetail-statusIng-img:nth-child(4){
+  width:200rpx;
+  height:5rpx;
+  position:relative;
+  top:-16rpx;
+}
+.orderdetail-statusIng-text{
+  font-size: 29rpx;
+}
+.orderdetail-statusIng-textdefault{
+  color: #999;
+}
+.orderdetail-statusIng-textblack{
+  color: #333;
+}
+.orderdetail-statusIng-text text{
+  padding-right: 25%;
+}
+
+.orderdetail-status-text text:last-child{
+   margin-right: 0;
+}
+/* 订单状态 end */
+
+
+/* 收货地址 begin */
+.orderdetail-addr{
+  width:100%;
+  display:flex;
+  padding:20rpx 0;
+  background:#fff;
+  margin:20rpx 0;
+}
+.orderdetail-addr-left{
+  width:5%;
+  padding-left:5%;
+  padding-right:3%;
+}
+.orderdetail-addr-left image{
+  width:30rpx;
+  height:40rpx;
+  position:relative;
+  top:20rpx;
+}
+.orderdetail-addr-right{
+  width:80%;
+  font-size:29rpx;
+  color:#666;
+}
+.orderdetail-addr-right text{
+  margin-right: 20rpx;
+}
+.orderdetail-personal-name{
+  margin-right:10rpx;
+}
+.orderdetail-personal-addr{
+  padding-top:10rpx;
+}
+/* 收货地址 end */
+
+
+/* 商品  begin*/
+.order-list{
+  background: #fff;
+}
+
+.orderlist-item{
+  width:100%;
+  margin-top:20rpx;
+}
+.orderlist-item-h{
+  width:100%;
+  padding:20rpx 0;
+}
+.orderlist-item-h text{
+  font-size:32rpx;
+  margin-left:2%;
+  color:#999;
+}
+.orderlist-item-icon{
+  width:50rpx;
+  height:40rpx;
+  padding-left:5%;
+  position:relative;
+  top:10rpx;
+
+}
+.orderlist-item-icon2{
+  width:15rpx;
+  height:25rpx;
+  margin-left:2%;
+  position:relative;
+  top:5rpx;
+}
+.orderitem-stauts{
+  float:right;
+  margin-right:5%;
+  padding-top:10rpx;
+}
+
+.orderlist-shop{
+  width:100%;
+  background:rgb(233,233,233);
+  display:flex;
+}
+.orderlist-shop-img{
+  width:28%;
+  height:220rpx;
+  padding:20rpx 0;
+  padding-left:4%;
+}
+.orderlist-shop-right{
+  padding:20rpx 0;
+  color:#666;
+  width:61%;
+  margin-left:2%;
+}
+.orderlist-shop-name{
+  font-size:32rpx;
+  line-height:50rpx;
+  height:50rpx;
+}
+.orderlist-shop-op{
+  font-size:30rpx;
+  color:#999;
+  line-height:40rpx;
+  height:40rpx;
+}
+.orderlist-shop-right image{
+   width: 50rpx;
+   height: 50rpx;
+}
+.orderlist-shop-right text{
+  font-size:30rpx;
+  float:right;
+  position:relative;
+  top:-85rpx;
+}
+.orderlist-yun{
+  width:96%;
+  margin:0 2%;
+  font-size:28rpx;
+  padding-top:15rpx;
+  color:#888;
+}
+.orderlist-yun text:last-child{
+  float: right;
+}
+.orderlist-shifu{
+  width:96%;
+  margin:0 2%;
+  padding-bottom:20rpx;
+  font-size:32rpx;
+}
+.orderlist-shifu text:last-child{
+  float: right;
+  color:red;
+}
+/* 商品 end */
+
+/* 订单描述 begin */
+.orderdetail-desc{
+  width:100%;
+  margin:10rpx 0;
+  background:#fff;
+  font-size:27rpx;
+  padding-top:20rpx;
+  padding-bottom:40rpx;
+  color:#888;
+}
+.orderdetail-desc view{
+  margin-left:3%;
+  width:94%;
+  word-wrap:break-word;
+  word-break:break-all;
+}
+
+.orderdetail-desc-btn{
+  float:right;
+  display:inline-block;
+  padding:5rpx 12rpx;
+  position:relative;
+  top:-15rpx;
+  border:1px solid #eee;
+}
+/* 订单描述 end */
+
+/* 留言 begin */
+.orderdetail-msg{
+  width:100%;
+  background:#fff;
+  padding:10px 0;
+}
+.orderdetail-msg-buyer,.orderdetail-msg-seller{
+  width:80%;
+  margin:0 8%;
+  margin-bottom:18rpx;
+  background:rgb(238,238,238);
+  padding:10rpx 2%;
+}
+.orderdetail-msg-h{
+  color:red;
+  font-size:28rpx;
+}
+.orderdetail-msgbuyer-text,.orderdetail-msgseller-text{
+  color: #999;
+  font-size: 28rpx;
+}
+/* 留言 end */
+
+/* 订单详情屁股 begin */
+.orderdetail-footer{
+  width:100%;
+  background:#fff;
+  border-top:1px solid #ccc;
+  padding-bottom:20rpx;
+
+}
+.orderdetail-footer text{
+  width:200rpx;
+  color:#333;
+  margin:20rpx auto;
+  display:block;
+  border:1px solid #eee;
+  padding:10rpx;
+  margin-bottom:0;
+  text-align:center;
+  font-size:35rpx;
+}
+/* 订单详情屁股 end */

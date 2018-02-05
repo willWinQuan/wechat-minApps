@@ -1,0 +1,111 @@
+/* sumlist.wxss */
+page{
+   font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+}
+.clear{
+  clear: both;
+}
+.RankingName{
+font-size:30rpx;
+color:#969696;
+border-bottom:1rpx solid #eee;
+margin-top:30rpx;
+
+}
+.nodata{
+  font-size:30rpx;
+  text-align:center;
+  line-height:80rpx;
+  color:#666;
+}
+ .RankingName text{
+	float: left;
+	line-height: 60rpx;
+}
+ .RankingName .PM{
+	width: 20%;
+	text-align: center;
+	float: left;
+}
+.RankingName .YH{
+margin-left:28%;
+}
+ .RankingName .JE{
+float:right;
+margin-right:5%;
+margin-top:-32rpx;
+margin-bottom:15rpx;
+
+}
+.RankingXx{
+	font-size: 28rpx;
+	padding: 10rpx 0;
+	border-bottom: 1px solid #C9C9C9;
+}
+.RankingXx .PMimg{
+	display: inline-block;
+  width:50rpx;
+  height:90rpx;
+  float:left;
+  margin-right:15%;
+  margin-left:5%;
+}
+ .RankingXx:nth-child(2) .PMimg{
+	background: url(../img/zc_15.png) no-repeat 50% 50%;
+	background-size: 40rpx;
+}
+ .RankingXx:nth-child(3) .PMimg{
+	background: url(../img/zc_17.png) no-repeat 50% 50%;
+	background-size: 40rpx;
+}
+ .RankingXx:nth-child(4) .PMimg{
+	background: url(../img/zc_16.png) no-repeat 50% 50%;
+	background-size: 40rpx;
+}
+ .RankingXx:nth-child(5) .PMimg{
+	background: url(../img/zc_30.png) no-repeat 50% 50%;
+	background-size: 20rpx;
+}
+ .RankingXx:nth-child(6) .PMimg{
+	background: url(../img/zc_29.png) no-repeat 50% 50%;
+	background-size: 20rpx;
+}   
+.RankingXx .RankingXxTx{
+	float: left;
+}
+.RankingXx .RankingXxTx image{
+height:80rpx;
+border-radius:50%;
+margin-top:10rpx;
+float:left;
+width:80rpx;
+
+}
+.RankingXx .RankingXxTx .time{
+	float: left;
+	margin-top: 15rpx;
+	margin-left: 20rpx;
+}
+
+.time2{
+	font-size: 21rpx;
+	margin-top: 5rpx;
+	color: #888;
+}
+.RankingXx text{
+	float: right;
+	line-height: 100rpx;
+	margin-right: 5%;
+}
+.nocontent{
+font-size:36rpx;
+text-align:center;
+color:#c9c9c9;
+margin-top:15%;
+}
+.nocontent .image{
+  width:40%;
+  height:225rpx;
+  margin:0 auto;
+  float: none;
+}

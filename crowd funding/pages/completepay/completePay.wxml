@@ -1,0 +1,141 @@
+<!--completePay.wxml-->
+		<!--write by 陈海泉 20170801-->
+		<!--众筹商品 begin-->
+		<view class="shopShow">
+		    <!--商店名称 begin-->
+			<view class="storeName" wx:if="{{completePayData.mshop_code=='1'}}">
+				<text class="storeName-icon" style="background: url({{completePayData.mshop_data.shop_logo}}) no-repeat 50% 50%;background-size: contain;"></text>
+				<view id="storeName">{{completePayData.mshop_data.shop_logo}}</view>
+			</view>
+			<!--商店名称 end-->
+				
+			<!--商品展示 begin-->
+			<view class="checkShopList-show">
+			<view class="checkShopList-left" style="background: url({{completePayData.default_imgurl}}) no-repeat 50% 50%;background-size: contain;"></view>
+			<view class="checkShopList-right">
+				<view class="checkShopList-name">{{completePayData.name}}</view>
+				<text class="checkShopList-dec">{{completePayData.pro_name}}</text>
+				<text class="checkShopList-num">¥</text>
+				<text class="checkShopList-num checkShopList-num2">{{completePayData.price}}</text>
+				<view class="checkShop-status">{{completePayData.activity_expire_desc}}</view>
+			</view>
+			</view>
+			<!--商品展示 end-->
+		</view>		
+		<!--众筹商品 end-->
+		
+		<!--发起者&& 众筹进度  begin-->
+		<view class="beginerIng">
+			<!--发起者-->
+			<view class="beginerIng-header">
+				<view class="beginerIng-hleft" style="background: url({{completePayData.headimgurl}}) no-repeat 50% 50%;background-size: contain;"></view>
+				<view class="beginerIng-hright">
+					<view>{{completePayData.nickname}}</view>
+				   <view class="beginerIng-hright-time">
+				   	   <label for="beginerIng-hright-time">发起时间：</label>
+				   	   <text>{{completePayData.apply_time}}</text>
+				   </view>
+				</view>
+			</view>
+			
+			<!--进度条-->
+			<view class="beginerIng-progressBar">
+				<view class="progressBar-white"></view>
+				<view class="progressBar-orange" style="width:{{completePayData.cr_percent}}%">
+        <!--末端小圈-->
+        <text class="lastCircle"></text>
+        </view>
+        <view class="clear"></view>
+			</view>
+				<!--百分比-->
+				<text class="percentum">{{completePayData.cr_percent}}%
+         <view class="clear"></view>
+        </text>
+
+		    <!--众筹情况展区 begin-->
+		    <view class="crowdDescShow">
+			    	<!--已筹-->
+			    <view class="nowCrowd">
+			    	<text>¥</text>
+			    	<text>{{completePayData.cr_money}}</text>
+			    	<view>已筹</view>
+			    </view>
+			        <!--剩余时间-->
+			    <view class="surplusTime">			    	
+			    	<text>{{completePayData.days}}天{{completePayData.hours}}小时</text>
+			    	<view>剩余</view>
+			    </view>
+			        <!--目标-->
+			    <view class="crowd-target">
+			    	<text>¥</text>
+			    	<text>{{completePayData.price}}</text>
+			    	<view>目标</view>
+			    </view>    		    
+		    </view>
+		
+		    <!--众筹情况展区 end-->
+		    
+		</view>
+		<!--发起者&& 众筹进度  end-->
+		
+		<!--支持金额 begin-->
+		<view class="supportMoney">
+			<label for="inSum">
+				<text>*</text>
+				支持金额：
+			</label>
+			<input type="digit" name="inSum" bindblur="moneyblur" focus="{{isfocus}}" placeholder="请输入金额" placeholder-style="font-size:26rpx; color:#ccc;" value='{{chancemoney}}'/>
+				<image src="../img/chageMoney.png"  class="changeMoney-icon" bindtap="tabchancemoney"></image>
+				<text>切换金额</text>
+		</view>
+		<!--支持金额 end-->
+		
+		<!--默认留言 begin-->
+		<view class="leMsg">
+			<text class="leMsg-title">默认留言：</text>
+			<view>
+				<!-- <view wx:for="{{completePayData.default_message}}" wx:key="index">
+					<text class="leMsg-left">{{item}}</text>
+					<text class="leMsg-right" data-msg="{{item}}" bindtap="chancemsg"></text>
+				</view> -->
+
+        <radio-group class="radio-group" bindchange="radioChange">
+          <view class="radio" wx:for-items="{{completePayData.default_message}}">
+              <text class="leMsg-left">{{item}}</text>
+              <radio class="leMsg-right" color="rgb(245,132,47)"   value="{{item}}" name="chen"/>
+          </view>
+      </radio-group>
+			</view>
+		</view>
+		<!--默认留言 end-->
+		
+		<!--自己留言 begin-->
+		<view class="myselfMsg">
+			<text class="myselfMsg-title">自己留言  :</text>
+      <textarea class="reply-input" focus="{{msgisfocus}}" placeholder="请输入你的留言" placeholder-style="font-size:30rpx; color:#ccc;" bindblur="inputblur"  confirm-type="done" />
+		</view>
+		<!--自己留言 end-->
+		
+		<!--前往支付 begin-->
+		<view class="paybtn" data-money="{{chancemoney}}"   bindtap="tappay">
+			前往支付
+		</view>
+		<!--前往支付 end-->
+		
+	    <!--你还没有完成支付弹框 begin-->
+	    <view class="noPay-alert">
+	    	<view class="noPay-msg">
+	    		<text class="noPay-icon"></text>
+	    		<text>您的订单还没有完成付款噢！</text>
+	    	</view>
+	    	<view class="noPay-btn">
+	    		<text class="noPay-btn1">忍心离开</text>
+	    		<text class="noPay-btn2">继续支付</text>
+	    	</view>
+	    	<view id="close"></view>
+	    </view>
+	    <!--你还没有完成支付弹框 end-->
+
+	 	<!--遮罩层 begin-->
+		<view class="mask"></view>
+		<!--遮罩层 end-->

@@ -1,0 +1,25 @@
+
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/details",
+    "pages/mycrowdfunding/mycrowdfunding",
+    "pages/crowdfundingDetails/crowdfundingDetails",
+    "pages/launchCrowd/launchCrowd",
+    "pages/sumlist/sumlist",
+    "pages/comment/comment",
+    "pages/launchPay/launchPay",
+    "pages/completepay/completePay",
+    "pages/completePayNext/completePayNext",
+    "pages/tabbar/tabbar",
+    "pages/mypersonal/mypersonal",
+    "pages/myorder/myorder",
+    "pages/orderdetail/orderdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "火爆众筹活动",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,128 @@
+/* pages/myorder/myorder.wxss */
+page{
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+  background: rgb(245,245,245);
+}
+.myorder-nav{
+  display: flex;
+  padding-top:6rpx;
+  background: #fff;
+  margin-bottom: 5rpx;
+}
+.myorder-nav-item{
+  width: 25%;
+  text-align: center;
+  padding:20rpx 0;
+}
+
+.myorder-nav-item image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  padding-left:27%;
+}
+.myorder-nav-item text{
+  font-size: 32rpx;
+  color: #999;
+}
+.order-nodata{
+  color:#999;
+  text-align:center;
+  font-size:32rpx;
+  padding:10rpx 0;
+}
+
+.order-nodata{
+  color:#999;
+  text-align:center;
+  font-size:32rpx;
+  padding:10rpx 0;
+}
+
+.order-list{
+  padding-bottom: 73px;
+}
+
+.orderlist-item{
+  width:100%;
+  background: #fff;
+  padding-bottom:88rpx;
+}
+.orderlist-item-h{
+  width:100%;
+  padding:20rpx 0;
+}
+.orderlist-item-h text{
+  font-size:32rpx;
+  margin-left:2%;
+  color:#999;
+}
+.orderlist-item-icon{
+  width:50rpx;
+  height:40rpx;
+  margin-left:5%;
+  position:relative;
+  top:10rpx;
+
+}
+.orderlist-item-icon2{
+  width:15rpx;
+  height:25rpx;
+  margin-left:2%;
+  position:relative;
+  top:5rpx;
+}
+.orderitem-stauts{
+  float:right;
+  margin-right:5%;
+  padding-top:10rpx;
+}
+
+.orderlist-shop{
+  width:100%;
+  background:rgb(233,233,233);
+  display:flex;
+}
+.orderlist-shop-img{
+  width:28%;
+  height:220rpx;
+  padding:20rpx 0;
+  margin-left:4%;
+}
+.orderlist-shop-right{
+  padding:20rpx 0;
+  color:#666;
+  width:61%;
+  margin-left:2%;
+}
+.orderlist-shop-name{
+  font-size:32rpx;
+  line-height:50rpx;
+  height:50rpx;
+
+}
+.orderlist-shop-op{
+  font-size:30rpx;
+  color:#999;
+  line-height:40rpx;
+  height:40rpx;
+}
+.orderlist-shop-right image{
+   width: 50rpx;
+   height: 50rpx;
+}
+.orderlist-shop-right text{
+  font-size:30rpx;
+  float:right;
+  position:relative;
+  top:-85rpx;
+}
+.orderlist-btn{
+  font-size:32rpx;
+  float:right;
+  margin-right:3%;
+  margin-top:10rpx;
+  padding:10rpx 30rpx;
+  background:#ccc;
+  color:#666;
+}

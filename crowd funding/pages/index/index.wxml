@@ -1,0 +1,132 @@
+<import src="../tabbar/tabbar.wxml"/>
+
+<!--index.wxml-->
+<view class="Header">
+  <view class="header">
+    <view class="input">
+       <image class="img" src="../img/zc_2.png"></image>
+      <input type="text" bindfocus="inputfocus" bindblur="inputblur" bindinput="inputvalue" confirm-type="search" bindconfirm="inputconfirm" placeholder="输入关键字搜索" id="input"/>
+      <view class="clear"></view>
+    </view>
+    <view>
+    <image src="../img/mylaun.png"  bindtap="myCrowdfunding"></image>
+     <view class="mylaun">我的众筹</view> 
+    </view>
+  </view>
+</view>
+<!-- 轮播 -->
+    <view class="swipe">
+      <swiper autoplay="auto" interval="2000" indicator-dots="true" indicator-color="rgb(241,191,118)" indicator-active-color="rgb(229,139,9)"  duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" circular='true' class="swiper">
+        <block>
+          <swiper-item wx:for="{{list_activity.ad_imgurl}}" wx:key="index">
+              <image src="{{item.pic}}" class="slideImage" mode="aspectFill"/>
+          </swiper-item>
+          <view class="clear"></view>
+        </block>
+      </swiper>
+    </view>   
+<!-- 倒计时 -->
+   <view class="Countdown" wx:if="{{activity_expire_code==1}}">
+       <text>距离活动开始仅剩：</text>
+       <text class="day time">{{day}}</text>\t天
+      <text class="hour time">{{hours}}</text>\t时
+      <text class="mintue time">{{min}}</text>\t分
+      <text class="seconds time">{{second}}</text>\t秒
+   </view>
+
+    <view class="Countdown" wx:if="{{activity_expire_code==2}}">
+      <text>距结束仅剩:</text>\t
+      <text class="day time">{{day}}</text>\t天
+      <text class="hour time">{{hours}}</text>\t时
+      <text class="mintue time">{{min}}</text>\t分
+      <text class="seconds time">{{second}}</text>\t秒
+    </view>
+
+    <view class="Countdown" wx:if="{{activity_expire_code==3}}">
+       <text>活动已经结束..</text>
+    </view>
+
+        <view class="Countdown" wx:if="{{activity_expire_code==4}}">
+       <text>活动已经终止..</text>
+       
+    </view>
+<!-- nav -->
+    <view class="nav">
+      <view class="navDh">
+				<view class="navDhLeft"  bindtap="tabcorwdGet">
+					<view class="{{tabflag ? 'font-orange':'font-deauflt'}}">
+             <image class="i" src="{{tabflag ? '../img/zc_5_1.png':'../img/zc_5.png'}}"></image>
+						<text class="font">众筹商品</text>
+					</view>
+				</view>
+				<view class="navDhRight" bindtap="tabcrowedGet" >
+					<view class="{{tabflag1 ? 'font-orange':'font-deauflt'}}">
+            <image class="i" src="{{tabflag1 ? '../img/zc_3.png':'../img/zc_3_1.png'}}"></image>
+						<text class="font">已发起众筹</text>
+					</view>
+				</view>
+				<view class="clear"></view>
+			</view>
+      <!--  -->
+      <view class="navCp" wx:for="{{list_goods_ed}}" wx:key="item.apply_id" style="display:{{isnone}}">
+        <view class="navCp_nav">
+          <view class="navCpXq">
+            <view class="navCpXq_er">
+              <view class="name">
+                <text class="i" style="background:url({{item.headimgurl}}) no-repeat 50% 50%; background-size: cover;"></text>
+                <!-- 发起者名字 -->
+                {{item.nickname}}
+                <view class="clear"></view>
+              </view>
+              <text class="span">{{item.apply_time}}</text>
+              <view class="clear"></view>
+            </view>
+            <view class='img-wrap'>
+              <view class="img-container">
+                <view class="img" style="background:url({{item.default_imgurl}}) no-repeat 50% 50%; background-size: cover;"></view>
+                <block wx:if="{{item.cr_status=='1'}}">
+                <image src="../img/zc_20.png" />
+                </block>
+                 <block wx:if="{{item.cr_status=='2'}}">
+                <image src="../img/zc_6.png" />
+                </block>                
+              </view>
+            </view>
+            <view class="right">
+              <view class="right_T">{{item.name}}</view>
+              <view class="money right_T">￥{{item.price}}</view>
+              <view class="jindu">
+                <view class="jindu_X" style="width:{{item.cr_percent}}%">
+                  <view class="jindu_Q"></view>
+                </view>
+              </view>
+              <text class="span">{{item.cr_percent}}%</text>
+            </view>
+            <view class="clear"></view>
+          </view>
+        </view>
+      </view>
+      <!--  -->
+       <view class="navCp" wx:for="{{list_goods}}" wx:key="{{item.id}}" style="display:{{isblock}}">
+        <view class="navCp_nav">
+          <view class="navCpXq">
+            <view class='img-wrap'>
+              <view class="img-container">
+                <view class="img" style="background:url({{item.default_imgurl}}) no-repeat 50% 50%; background-size: cover;"></view>
+              </view>
+            </view>
+            <view class="right" data-id="{{item.id}}" data-applyid="{{item.apply_id}}" bindtap="{{(item.apply_status==0)?'crowdfundingDetails':'details'}}">
+              <view class="right_T">{{item.name}}</view>
+              <view class="money right_T">￥{{item.price}}</view>
+              <view class="faqi">{{(item.apply_status==0)?'立即发起':'查看众筹'}}</view>
+            </view>
+            <view class="clear"></view>
+          </view>
+        </view>
+      </view> 
+    </view>
+
+ <template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/> 
+          <!-- 遮罩层 -->
+<mask hidden="{{maskflag}}" style="z-index:1" hover-style="none"/>
+

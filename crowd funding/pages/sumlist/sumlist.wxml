@@ -1,0 +1,31 @@
+<!--sumlist.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+
+			<view class="RankingName">
+				<view class="PM">排名</view>
+				<view class="YH">用户</view>
+				<view class="JE">支付金额</view>
+				<view class="clear"></view>
+			</view>
+      <view class="nocontent" wx:if="{{comment==null}}">
+        <image class="image" src="../img/nocontent.png"></image>
+        <view>没有排行..</view>
+      </view>
+			<view class="RankingXx" wx:if="{{sumlist!=null}}" wx:for="{{sumlist}}" wx:key="index">
+				<image class="PMimg" wx:if="{{index==0}}" src="../img/zc_15.png"></image>
+        <image class="PMimg" wx:if="{{index==1}}" src="../img/zc_17.png"></image>
+        <image class="PMimg" wx:if="{{index==2}}" src="../img/zc_16.png"></image>
+        <text class="PMimg" wx:if="{{index!=0 && index!=1 && index!=2}}">{{index}}</text>
+        <view class="RankingXxTx">
+					<image src="{{item.weixin_img}}"></image>
+					<view class="time">
+						<view>{{item.weixin_name}}</view>
+						<view class="time2">{{item.support_time}}</view>
+					</view>
+				</view>
+				<text>¥ {{item.price}}</text>
+				<view class="clear"></view>
+			</view>
+	
+<template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/>
+	

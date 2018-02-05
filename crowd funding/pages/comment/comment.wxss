@@ -1,0 +1,229 @@
+/* comment.wxss */
+page{
+   font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+}
+.clear{
+  clear: both;
+}
+.nodata{
+font-size:32rpx;
+text-align:center;
+margin-top:25%;
+color:#666;
+}
+.comment{
+	width: 100%;
+	background: #FFFFFF;
+}
+.commentNav{
+	width: 100%;
+	font-size: 23.8rpx;
+	padding-top: 20rpx;
+	border-bottom: 1px solid #C9C9C9;
+  background: #fff;
+}
+.commentNav .img-wrap {
+	width: 10%;
+	/* 这里设置占屏幕宽度百分比 */
+	float: left;
+	margin-right: 3%;
+  margin-left:2%;
+}
+/* 创建一个正方形容器 */
+.commentNav .img-container {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+	margin: 0;
+	position: relative;
+}
+/* 采用绝对定位 */
+.commentNav .img-wrap .img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(../img/zc_25.png) no-repeat 50% 50%;
+	background-size:cover;
+	border-radius:50% ;
+}
+/**/
+.commentNav .nav{
+	float: left;
+	width: 85%;
+}
+.commentNav .nav .navXx{
+	position: relative;
+	overflow: hidden;
+}
+.commentNav .nav .navXx view{
+	margin-bottom: 10rpx;
+	color: #AAAAAA;
+}
+.commentNav .nav .navXx .name{
+	font-size: 27.8rpx;
+	color: #000000;
+}
+.commentNav .nav .navXx .money{
+	color: #F4212B;
+}
+.commentNav .nav .navXx .i{
+	width: 30rpx;
+	height: 30rpx;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom:10%;
+  margin-right:5%;
+}
+.commentNav .nav .text{
+	width: 95%;
+	background: #f2f2f2;
+	margin-top: 30rpx;
+	font-size: 28.9rpx;
+}
+.commentNav .nav .text view{
+	margin:0 20rpx;
+	line-height: 40rpx;
+	margin-bottom: 20rpx;
+}
+.commentNav .nav .text .Reply text{
+	color: #8cb7ee;
+}
+/**/
+ .More{
+	text-align: center;
+	font-size:27.8rpx;
+	color: #F98B40;
+	line-height: 80rpx;
+	margin-bottom: 10rpx;
+}
+ .More text{
+	width: 30rpx;
+	height: 30rpx;
+	background: url(../img/zc_11.png) no-repeat 50% 50%;
+	background-size: 30rpx;
+	display: inline-block;
+	vertical-align: -4rpx;
+}
+
+.caini{
+  margin-left: 2%;
+  font-size: 32rpx;
+  line-height:55rpx;
+}
+.box{
+	font-size: 28rpx;
+  position:relative;
+  bottom:25rpx;
+}
+.box .img-wrap {
+	width: 29%;
+	/* 这里设置占屏幕宽度百分比 */
+	float: left;
+	margin-left: 3%;
+}
+/* 创建一个正方形容器 */
+			
+.box .img-container {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+	margin: 0;
+	position: relative;
+}
+/* 采用绝对定位 */
+			
+.box .img-wrap .img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(../img/zc_26.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.box .img-wrap view{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.box .img-wrap .Notes{
+	color: #969696;
+}
+.box .img-wrap .money{
+	font-size: 23rpx;
+}
+.money-font2{
+  color: #888;
+  margin-left: 5rpx;
+  text-decoration:line-through; 
+}
+.box .img-wrap .money font:nth-child(1){
+	color: #F4212B;
+}
+
+/* 换一组 */
+.chance{
+position:relative;
+font-size:30rpx;
+color:rgb(245,132,47);
+top:-48rpx;
+left:22%;
+}
+.chance-icon{
+width:50rpx;
+height:50rpx;
+background:url(../img/qiehuan.png) no-repeat 50% 50%;
+background-size:contain;
+display:inline-block;
+}
+.guesslike{
+background:#fff;
+margin-top:50rpx;
+}
+.chance-text{
+position:relative;
+top:-12rpx;
+}
+
+/* 回复 */
+.reply{
+border:1rpx solid #ccc;
+background:#eee;
+padding:2%;
+position:fixed;
+bottom:0;
+width:95.4%;
+}
+.reply-input{
+border:1rpx solid #ccc;
+width:78%;
+display:inline-block;
+position:relative;
+left:3%;
+line-height:72rpx;
+font-size:32rpx;
+height:72rpx;
+border-radius:12rpx;
+background:#fff;
+}
+.reply-btn{
+width:15%;
+display:inline-block;
+float:right;
+font-size:26rpx;
+margin-top:8rpx;
+padding:0rpx;
+}
+.nocontent{
+  font-size:40rpx;
+  text-align:center;
+  color:#c9c9c9;
+  margin-top:25%;
+}
+.nocontent .image{
+  width:40%;
+  height:225rpx;
+  margin:0 auto;
+  float: none;
+}

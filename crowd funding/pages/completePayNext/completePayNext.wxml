@@ -1,0 +1,22 @@
+<!--completePayNext.wxml-->
+<!--write by 陈海泉 20170802-->
+		<!--谢谢支持 begin-->
+		<view class="thankSupport">
+			<image src="../img/thank_heart.png" class="thankSupport-icon"></image>
+			<text>感谢您的支持！</text>
+		</view>
+		<!--谢谢支持 end-->
+		
+		<!--返回 begin-->
+		<view class="comeBack" bindtap="tapindex">
+			返回众筹首页
+			<text class="dispatching-alt"></text>
+		</view>
+		<!--返回 end-->
+		
+		<!--查看记录 begin-->
+		<view class="kan" bindtap="tapcheckmy">
+			查看记录
+		</view>
+		<!--查看记录 end-->
+  <template is="tabbar" data=""/>  

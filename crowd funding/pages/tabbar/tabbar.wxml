@@ -1,0 +1,18 @@
+<!--pages/tabbar/tabbar.wxml-->
+
+<template name="tabbar">
+  <view class='tabbar-main'>
+    <view class='tabbar-index' bindtap='tabindex'>
+       <image class='tabbar-index-icon' src="{{indexflag?'../img/index02.png':'../img/index01.png'}}"></image>
+       <view class='tabbar-index-text' style="color:{{indexflag?'rgb(243,145,47)':'#999'}}">首页</view>
+    </view>
+    <view class='tabbar-mycrowd' bindtap='tabmyCrowdfunding'>
+       <image class='tabbar-mycrowd-icon' src="{{myCrowdflag?'../img/myzhongchou02.png':'../img/zhongchouhui.png'}}"></image>
+       <view class='tabbar-mycrowd-text' style="color:{{myCrowdflag?'rgb(243,145,47)':'#999'}}">我的众筹</view>
+    </view>
+     <view class='tabbar-personal' bindtap='tabpersoanl'>
+       <image class='tabbar-personal-icon' src="{{personalflag?'../img/persoanl01.png':'../img/personal03.png'}}"></image>
+       <view class='tabbar-personal-text' style="color:{{personalflag?'rgb(243,145,47)':'#999'}}">我的</view>
+    </view>
+  </view>
+</template>

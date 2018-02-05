@@ -1,0 +1,38 @@
+<import src="../tabbar/tabbar.wxml"/>
+      <view class="nocontent" wx:if="{{comment==null}}">
+        <image class="image" src="../img/nocontent.png"></image>
+        <view>没有留言..</view>
+      </view>
+			<view class="commentNav" wx:if="{{comment!=null}}" wx:for="{{comment}}" wx:key="index">
+				<view class='img-wrap'>
+					<view class="img-container">
+						<view class="img" style="background:url({{item.pic}}) no-repeat 50% 50%;background-size:cover;"></view>
+					</view>
+				</view>
+				<view class="nav">
+					<view class="navXx">
+						<view class="name">{{item.weixin_name}}</view>
+						<view>支持了<font class="money">{{item.money}}</font> 元</view>
+						<view>{{item.create_time}}</view>
+					<image class="i" src="../img/zc_12.png"  wx:if="{{item.write=='ok'}}" bindtap="tabreply" data-supportid="{{item.support_id}}"></image>
+					</view>
+					<view class="text">
+						<view>
+							{{item.support_message}}
+						</view>
+						<view class="Reply" wx:for="{{item.message}}"  wx:for-item="messagelist" wx:key="index">
+							<text>{{messagelist.message_role}}</text> 回复 <text>{{messagelist.receive_role}}</text>:
+							<view>{{messagelist.message_content}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="clear"></view>
+			</view>
+    <!-- 回复输入框 -->
+    <view class="reply" style="display:{{replyflag}}">
+    <input class="reply-input" placeholder="输入5-20字符"  cursor-spacing='120' bindblur="inputblur" bindconfirm="inputconfirm"  type="text" confirm-type="done" focus="{{isfocus}}" />
+    <button class="reply-btn" bindtap="tabsendreply">发送</button>
+    <view class="clear"></view>
+    </view>
+<template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/>  
+	

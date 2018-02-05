@@ -1,0 +1,137 @@
+<!--launchPay.wxml-->
+		<!--write by 陈海泉 20170817-->
+
+		<!--地址 begin-->
+		  <view class="address"> 
+			
+			<!--地址dec begin-->
+			 <view class="address-dec">
+				<text id="addDec-name">{{userName}}</text>
+				<text id="addDec-number">{{telNumber}}</text>
+				<view id="addDec-msg">
+        {{provinceName}}
+        {{cityName}}
+        {{countyName}}
+        {{detailInfo}}
+        </view>
+				<text class="address-decText" wx:if="{{launchCrowdData.addr_code=='1'}}">默认</text>
+			</view> 
+			<!--地址dec end-->
+			
+			<!--编辑地址 begin-->
+			 <view class="address-editor">
+				<view class="addEditor-left">
+				<image src="../img/true01.png" class="true-icon"></image>
+				<text>设为默认地址</text>
+				</view>
+				<view class="addEditor-right">
+					<view class="addEditor-right-ul">
+						<view class="addEditor-right-li" bindtap="writeAddre">
+							<image src="../img/compile.png" class="addEditor-icon"></image>
+							<text>编辑</text>	
+						</view>
+						<view class="addEditor-right-li" bindtap="launchPay">
+							<image src="../img/trashCan.png" class="addDelte-icon"></image>
+							<text>删除</text>
+						</view>
+					</view>
+				</view>
+				
+			</view> 
+			
+			<!--清除浮动-->
+			 <view class="clear"></view> 
+			<!--编辑地址 end-->
+			
+			
+		 </view>  
+		<!--地址 end-->
+			
+		<!--选择的商品列表 begin-->
+		<view class="checkShopList">
+			
+			<!--选择了商品 begin-->
+			<view>
+				<view>
+					<!--商店名称 begin-->
+					<view class="storeName" wx:if="{{mshop_code==1}}">
+						<text class="storeName-icon"></text>
+						<view id="storeName">{{product_data.customer_name}}</view>
+					</view>
+					<!--商店名称 end-->
+					
+					<!--商品展示 begin-->
+					<view class="checkShopList-show">
+					<view class="checkShopList-left" style="background: url({{product_data.product_img}}) no-repeat 50% 50%;background-size: contain;" ></view>
+					<view class="checkShopList-right">
+						<view class="checkShopList-name">{{product_data.product_name}}</view>
+						<text class="checkShopList-dec">{{(product_data.property==null)?'':product_data.property}}</text>
+						<text class="checkShopList-num">¥</text>
+						<text class="checkShopList-num checkShopList-num2">{{product_data.price}}</text>
+						<view class="checkShopList-time">
+							<label for="checkShopList-time">活动时间：</label>
+							<text id="checkShopList-time">{{start_time}}至{{end_time}}</text>
+						</view>
+					</view>
+					</view>
+					<!--商品展示 end-->
+					
+					<!--配送 begin-->
+					 <view class="dispatching">
+						<text class="dispatching-left">配送方式</text>
+						<view class="dispatching-right">
+							<text>快递</text>
+							<text wx:if="{{product_data.is_free_shipping==0}}">自费邮</text>
+              <text wx:if="{{product_data.is_free_shipping==1}}">免邮</text>
+              <text wx:if="{{product_data.is_invoice==0}}">有发票</text>
+              <text wx:if="{{product_data.is_invoice==1}}">无发票</text>
+							<text class="dispatching-alt"></text>
+						</view>
+					</view> 
+					<!--配送 end-->
+					
+				</view>
+			</view>
+			<!--选择了商品 end-->
+	
+		</view>
+		<!--选择的商品列表 end-->
+		
+		<!--留言 begin-->
+	      <view class="lemsg">
+	     	<text class="text">备注：</text>
+	     	<input type="text" bindblur="inputblur" placeholder="请输入你的备注" placeholder-style="font-size:28rpx;color:#ccc;"/>
+	     </view> 
+		<!--留言 end-->
+	
+		<!--合计-确认发起 begin-->
+		<view class="totalSure">
+			<view class="totalSure-left">
+				<label for="toal-Mnum">合计：</label>
+				<text class="toal-Mnum">¥</text>
+				<text id="toal-Mnum">{{paymoney}}</text>
+				<view class="toal-shopNum">
+					共<text>1</text>件商品
+				</view>
+			</view>
+			<view class="totalSure-right" bindtap="tappay">确认支付</view>
+      <view class="clear"></view>
+		</view>
+		<!--合计-确认发起 end-->
+
+    <!-- 弹出众筹成功确认框   -->
+    <view class="truealert" style="display:none;">
+      <text>you are good!支付成功</text>
+      <button>确定</button>>
+    </view>
+
+		<!--提示框 begin-->
+		<view class="prompt">
+			带*号的必须填写
+		</view>
+		<!--提示框 end-->
+		
+		<!--遮罩层 begin-->
+		<view class="mask"></view>
+		<!--遮罩层 end-->
+		

@@ -1,0 +1,39 @@
+<!--pages/myorder/myorder.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+
+<view class='myorder-nav'>
+   <view class='myorder-nav-item' bindtap='tabchance' data-id="{{item.id}}" wx:for="{{navlist}}" wx:key="{{item.id}}">
+     <image src='{{item.img}}'></image>
+     <text style='color:{{item.fontcolor}}'>{{item.text}}</text>
+   </view>
+</view>
+
+<view class='order-list'>
+    <view class='orderlist-item' >
+
+        <view class='orderlist-item-h' bindtap='orderdetail'>
+           <image class='orderlist-item-icon' src='../img/gift.png'></image>
+           <text>官方旗舰店</text>
+           <image class='orderlist-item-icon2' src='../img/jiantou02.png'></image>
+           <text class='orderitem-stauts'>等待付款</text>
+        </view>
+        
+        <view class='orderlist-shop'>
+           <image class='orderlist-shop-img' src='../img/shop001.png'></image>
+           <view class='orderlist-shop-right'>
+              <view class='orderlist-shop-name'>商品名称</view>
+              <view class='orderlist-shop-op'>属性</view>
+              <!-- 七天退换 ？？？？ -->
+              <image src=""></image>
+              <text>12314元</text>
+           </view>
+        </view>
+
+         <view class='orderlist-btn'>付款</view>
+     </view>
+
+</view>
+
+<view class='order-nodata'>---暂无更多记录---</view>
+
+<template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/> 

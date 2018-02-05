@@ -1,0 +1,330 @@
+/* mycrowdfunding.wxss */
+page{
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+  overflow-x: hidden;
+}
+.clear{
+	clear: both;
+}
+.crowdfunding{
+  padding-bottom: 73px;
+}
+.crowdfunding .header{
+	width: 100%;
+	height: 100rpx;
+	background: #FFFFFF;
+	margin-bottom: 10rpx;
+	font-size: 29.8rpx;
+  border-bottom:1px solid #ccc;
+}
+.crowdfunding .header .launch,.crowdfunding .header .support{
+	width: 50%;
+	text-align: center;
+	float: left;
+	box-sizing: border-box;
+	line-height: 100rpx;
+	/* color: #666666; */
+}
+.crowdfunding .header .launch .i{
+	width: 0rpx;
+	height: 80rpx;
+	float: right;
+	display: inline-block;
+	margin-top: 10rpx;
+}
+.crowdfunding .header .xuanze{
+	border-bottom: 1px solid #F98B40;
+	color: #F98B40;
+}
+/**/
+.nocontent{
+  font-size:35rpx;
+  text-align:center;
+  margin-top:10%;
+  color:#c9c9c9;
+}
+.nocontent image{
+  width:30%;
+  height:138rpx;
+  margin:0 auto;
+}
+
+.crowdfunding .nav{
+	font-size: 27.8rpx;
+	background: #FFFFFF;
+	margin-bottom: 10rpx;
+  border-bottom:1px solid #eee;
+}
+.crowdfunding .nav .box{
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding: 20rpx 0;
+}
+.crowdfunding .nav .box .box1{
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.crowdfunding .nav .box .box2{
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
+}
+.crowdfunding .nav .box .box3{
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
+}
+.crowdfunding .nav .box .box4{
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
+}
+/**/
+.crowdfunding .footer{
+	font-size: 27.8rpx;
+}
+.crowdfunding .footer .commodity {
+	width: 100%;
+	margin-bottom: 10rpx;
+	background: #FFFFFF;
+}
+.crowdfunding .footer .commodityBox{
+	width: 96%;
+	margin-left: 2%;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #eee;
+}
+.crowdfunding .footer .num{
+	font-size: 23.4rpx;
+	line-height: 80rpx;
+	color: #666666;
+}
+.crowdfunding .footer .num .numbox{
+	width: 96%;
+	margin-left: 2%;
+}
+.crowdfunding .footer .num .span1{
+	float: right;
+	margin-left: 50rpx;
+}
+.crowdfunding .footer .commodity .img-wrap {
+	width: 30%;
+	/* 这里设置占屏幕宽度百分比 */
+	float: left;
+	margin-right: 3%;
+}
+/* 创建一个正方形容器 */
+			
+.crowdfunding .footer .commodity .img-container {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	overflow: hidden;
+	margin: 0;
+	position: relative;
+}
+/* 采用绝对定位 */
+			
+.crowdfunding .footer .commodity .img-wrap .img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.crowdfunding .footer .commodity .right{
+	width:67%;
+	float: left;
+}
+.crowdfunding .footer .commodity .right .span{
+  font-size:32rpx;
+  color: #FF9900;
+  margin-left: 25rpx;
+}
+.crowdfunding .footer .commodity .right .p{
+	font-size: 32.1rpx;
+	margin-bottom: 2%;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.crowdfunding .footer .commodity .right .jindu{
+	width: 82%;
+	height: 16rpx;
+	background: #eee;
+	border-radius:20rpx ;
+	display: inline-block;
+	position: relative;
+	
+}
+
+.crowdfunding .footer .commodity .right .jindu .jindu_X{
+	width: 0%;
+	height: 16rpx;
+	background: linear-gradient(to left, #FF6600 0%,#FF9900 100%);
+	border-radius:20rpx ;
+	position: relative;
+}
+.crowdfunding .footer .commodity .right .jindu .jindu_X .jindu_Q{
+	width: 25rpx;
+	height: 25rpx;
+	background: #FFFFFF;
+	position: absolute;
+	top: -3rpx;
+	right: -15rpx;
+	border-radius:50%;
+	box-sizing: border-box;
+	border: 7rpx solid #F98B40;
+}
+.crowdfunding footer .commodity .right .span{
+	font-size: 23rpx;
+	color: #F98B40;
+}
+.crowdfunding .footer .commodity .right .rightXx{
+	margin-top:2%;
+	line-height: 50rpx;
+	color: #C9C9C9;
+  font-size:30rpx;
+}
+.crowdfunding .footer .commodity .right .rightXx .right_img{
+	float: left;
+}
+.crowdfunding .footer .commodity .right .rightXx .right_money{
+	float: right;
+}
+.crowdfunding .footer .commodity .right .right_img .i{
+	width: 30rpx;
+	height: 30rpx;
+	display: inline-block;
+	vertical-align: -5rpx;
+}
+.right-img-text{
+  margin-left: 10rpx;
+  position:relative;
+  top:3px;
+}
+.crowdfunding .footer .commodity .right .rightZt{
+	line-height: 50rpx;
+}
+.crowdfunding .footer .commodity .right .rightZt .p{
+	float: left;
+	font-size: 35rpx;
+	color: #F4212B;
+}
+.crowdfunding .footer .commodity .right .rightZt view{
+	float: right;
+}
+.crowdfunding .footer .commodity .right .rightZt .span{
+	display: block;
+}
+/*状态*/
+.crowdfunding .footer .commodity .right .rightZt .CG{
+	color: #F98B40;
+}
+.crowdfunding .footer .commodity .right .rightZt .ING{
+	color: #72d26d;
+}
+.crowdfunding .footer .commodity .right .rightZt .ING{
+	color: #969696;
+}
+/**/
+.crowdfunding .BombBox{
+	font-size: 31.5rpx;
+	text-align: center;
+	background: #FFFFFF;
+	width:80%;
+	border-radius: 5px;
+  position:fixed;
+  top:25%;
+  left:10%;
+  z-index: 999;
+}
+.crowdfunding .BombBox .boxHeader{
+	color: #969696;
+}
+.crowdfunding .BombBox .boxHeader image{
+	width: 30%;
+  height:140rpx;
+	margin: 30rpx;
+}
+.crowdfunding .BombBox .boxFooter{
+	margin-top: 60rpx;
+}
+.boxFooter .boxFooterBox{
+	width: 50%;
+	line-height: 70rpx;
+	box-sizing: border-box;
+	float: left;
+	margin-bottom: 50rpx;
+}
+.boxFooter .boxFooterBox .font{
+	border: 1px solid #C9C9C9;
+	padding: 10rpx 20rpx;
+}
+.mask{
+	width: 100%;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+/* tab切换样式修改 */
+
+/* 我发起的 || 我支持的 */
+.font-deauflt{
+  color: #666;
+  border-bottom:none;
+}
+.font-orange{
+  color: rgb(245,132,47);
+  border-bottom:1rpx solid #f98b40;
+}
+
+/* 众筹 */
+.font-zdeauflt{
+  color: #000;
+}
+.font-zorange{
+  color: rgb(245,132,47);
+}
+
+.taball-icon-deauflt{
+  background:url(../img/zc_dh_03_1.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+.taball-icon-orange{
+background:url(../img/zc_dh_03.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+
+.tabsuccess-icon-deauflt{
+  background:url(../img/zc_dh_05.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+.tabsuccess-icon-orange{
+  background:url(../img/zc_dh_05_1.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+
+.tabing-icon-deauflt{
+  background:url(../img/zc_dh_07.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+.tabing-icon-orange{
+  background:url(../img/zc_dh_07_1.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+
+.tabfail-icon-deauflt{
+  background:url(../img/zc_dh_09.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+.tabfail-icon-orange{
+  background:url(../img/zc_dh_09_1.png) no-repeat 50% 50%;
+  background-size:40rpx;
+}
+
+

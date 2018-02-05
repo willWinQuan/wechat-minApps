@@ -1,0 +1,102 @@
+<!--mycrowdfunding.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+
+    <view class="crowdfunding">
+			<view class="header">
+				<view class="launch {{crowdstauts?'font-orange':'font-deauflt'}}">
+					<text class='font' bindtap="tabisapply">我发起的</text>
+					<image src='../img/zc_22.png' class='i'></image>
+				</view>
+				<view class="support {{crowdstauts?'font-deauflt':'font-orange'}}">
+					<text class='font' bindtap="tabissupport">我支持的</text>
+				</view>
+			</view>
+      
+      <view class="nav">
+        <view class="box {{alltabstauts?'font-zorange':'font-zdeauflt'}}" bindtap="{{crowdstauts?'tabapply':'tabsupport'}}">
+          <image src="{{alltabstauts?'../img/zc_dh_03.png':'../img/zc_dh_03_1.png'}}" class="box1"></image>
+          <view>全部众筹</view>
+        </view>
+        <view class="box {{successtabstauts?'font-zorange':'font-zdeauflt'}}" bindtap="{{crowdstauts?'tabapply_success':'tabsupport_success'}}">
+          <image src="{{successtabstauts?'../img/zc_dh_05_1.png':'../img/zc_dh_05.png'}}" class="box2"></image>
+          <view >众筹成功</view>
+        </view>
+        <view class="box {{ingtabstauts?'font-zorange':'font-zdeauflt'}}" bindtap="{{crowdstauts?'tabapply_playing':'tabsupport_playing'}}">
+          <image src="{{ingtabstauts?'../img/zc_dh_07_1.png':'../img/zc_dh_07.png'}}" class="box3"></image>
+          <view >进行中</view>
+        </view>
+        <view class="box {{failtabstauts?'font-zorange':'font-zdeauflt'}}" bindtap="{{crowdstauts?'tabapply_lose':'tabsupport_lose'}}">
+          <image src="{{failtabstauts?'../img/zc_dh_09_1.png':'../img/zc_dh_09.png'}}" class="box4"></image>
+          <view >众筹失败</view>
+        </view>
+        <view class="clear"></view>
+      </view>
+      
+     <view class="nocontent" wx:if="{{mycrowd==null}}">
+            <image src="../img/nocontent.png"></image>
+            <view>没有内容..</view>
+     </view>
+      <view class='footer' wx:if="{{mycrowd!=null}}" wx:for="{{mycrowd}}" wx:key="index">
+        <view class="commodity">
+          <view class="commodityBox">
+            <view class='img-wrap'>
+              <view class="img-container">
+                <view class="img" style="background: url({{item.product_img}}) no-repeat 50% 50%;background-size: contain;"></view>
+              </view>
+            </view>
+            <view class="right">
+              <view class='p' data-crowdfundstatuscode="{{item.crowdfund_status_code}}" data-applyid="{{item.apply_id}}" data-useriden="{{item.user_id_en}}" data-userid="{{item.user_id}}" bindtap="mycrwdtab">{{item.product_name}}</view>
+              <view class="jindu">
+                <view class="jindu_X" style="width:{{item.crowdfund_progress}}">
+                  <view class="jindu_Q"></view>
+                </view>
+                <text class='i'></text>
+              </view>
+              <text class='span'>{{item.crowdfund_progress}}</text>
+              <view class="rightXx">
+                <view class="right_img">
+                  <image src="../img/zc_19.png" class='i'></image>
+                  <text class="right-img-text">{{item.support_num}}</text>
+                </view>
+                <view class="right_money">
+                  已筹款￥{{item.pay_other}}
+                </view>
+                <view class="clear"></view>
+              </view>
+              <view class="rightZt">
+                <view class='p'>￥{{item.price}}</view>
+                <view class="CG">{{item.crowdfund_status}}</view>
+                <view class="clear"></view>
+              </view>
+            </view>
+            <view class="clear"></view>
+          </view>
+          <view class="num" wx:if="{{crowdstauts==false}}">
+            <view class="numbox">
+              <text>我的支持:</text>
+              <text class="span1">共计￥{{item.pay_myself}}</text>
+              <text class="span1">已支持{{item.support_num}}次</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+        <view class="BombBox" wx:if="{{maskflag==false}}">
+          <view class="boxHeader">
+            <image src="../img/zc_24.png" />
+            <view class='p'>该众筹已失败，无法查看！</view>
+          </view>
+          <view class="boxFooter">
+            <view class="boxFooterBox" bindtap="tabindex">
+              <text class='font'>返回众筹首页</text>
+            </view>
+            <view class="boxFooterBox" bindtap="tabhidden">
+              <text class='font'>继续留在本页</text>
+            </view>
+            <view class="clear"></view>
+          </view>
+        </view>
+      </view>
+ <template is="tabbar" data="{{indexflag,myCrowdflag,personalflag}}"/> 
+                <!-- 遮罩层 -->
+<mask hidden="{{maskflag}}" style="z-index:1" hover-style="none"/>

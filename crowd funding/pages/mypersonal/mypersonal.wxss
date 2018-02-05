@@ -1,0 +1,79 @@
+/* pages/mypersonal/mypersonal.wxss */
+page{
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+  background: #fff;
+}
+.personal-header{
+  text-align:center;
+}
+.ph-img{
+  width:100%;
+  padding-top:10%;
+}
+.ph-img image{
+  border-radius:50%;
+  width:160rpx;
+  height:160rpx;
+  border:5rpx solid #fff;
+}
+.ph-name{
+  font-size:32rpx;
+  color:#eee;
+  padding-top:10rpx;
+}
+.ph-id{
+  font-size:27rpx;
+  color:#eee;
+  padding-bottom:18%;
+  padding-top: 15rpx;
+}
+
+/*  */
+.personla-list{
+  display:block;
+  margin-top:30rpx;
+}
+/*  */
+.pl-myzhong{
+  width:100%;
+  border-top:1px solid rgb(222,222,222);
+  border-bottom:1px solid #eee;
+}
+.plm-left{
+  display:inline-block;
+  margin-left:5%;
+  padding:20rpx 0;
+  width:85%;
+}
+.plm-left image{
+  width:52rpx;
+  height:52rpx;
+}
+.plm-left text{
+  font-size:35rpx;
+  display:inline-block;
+  margin-left:6%;
+  position:relative;
+  bottom:6px;
+  color:#666;
+}
+.plm-right{
+  display:inline-block;
+  float:right;
+  margin-top:3%;
+  margin-right:5%;
+}
+.plm-right image{
+  width:30rpx;
+  height:35rpx;
+}
+/*  */
+
+.pl-mydingdan{
+  width: 100%;
+  border-bottom:1px solid rgb(222,222,222);
+}
+
+
+
+

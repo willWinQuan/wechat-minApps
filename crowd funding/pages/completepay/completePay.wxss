@@ -1,0 +1,382 @@
+/* completePay.wxss */
+/*write by 陈海泉 20170801*/
+page{
+   font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+   overflow-x: hidden;
+   background: rgb(245,245,245);
+}
+.clear{
+  clear: both;
+}
+.shopShow{
+  background: #fff;
+}
+/*众筹商品 begin*/
+.storeName{
+    border-bottom: 1rpx solid #ccc;
+    padding-bottom: 13rpx;
+    display: flex;
+}
+.storeName .storeName-icon{
+    display: inline-block;
+    margin-left: 5%;
+    width: 45rpx;
+    height: 45rpx;
+}
+#storeName{
+    display: inline-block;
+    font-size: 32rpx;
+    width: 100%;
+    color: #888;
+    line-height: 50rpx;
+    margin-left: 1%;
+}
+.checkShopList-show{
+	display: flex;
+    margin-top: 30rpx;
+    height: 260rpx;
+    padding-bottom: 35rpx;
+    background: #fff;
+}
+.checkShopList-left{
+    width: 300rpx;
+    height: 250rpx;
+    margin-left: 5%;
+    margin-top:20rpx;
+}
+.checkShopList-right{
+	width: 100%;
+    margin-right: 5%;
+    margin-left: 25rpx;
+}
+.checkShopList-name{
+	font-size: 30rpx;
+  padding-top:20rpx;
+}
+.checkShopList-dec{
+	font-size: 30rpx;
+  color: rgb(254,132,47);
+  display: block;
+  line-height: 60rpx;
+  height:60rpx;
+}
+.checkShopList-num{
+	font-size: 35rpx;
+    color: red;
+    position: relative;
+}
+.checkShopList-num2{
+	left: 10rpx;
+}
+.checkShop-status{
+font-size: 28rpx;
+top:-20%;
+left:76%;
+color:rgb(245,132,47);
+position:relative;
+width:20%;
+
+}
+/*众筹商品 end*/
+
+/*发起者&& 众筹进度  begin*/
+.beginerIng{
+	background: #fff;
+}
+/*发起者*/
+.beginerIng-header{
+	display: flex;
+  margin-top: 20rpx;
+  padding-top:20rpx;
+}
+.beginerIng-hleft{
+	display: inline-table;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+.beginerIng-hright{
+	font-size: 35rpx;
+    margin-left: 20rpx;
+}
+.beginerIng-hright-time{
+	font-size: 23rpx;
+    color: #888;
+    line-height: 50rpx;
+}
+/*进度条*/
+.beginerIng-progressBar{
+	margin-left: 5%;
+  font-size: 30rpx;
+  color: rgb(245,132,47);
+  margin-top: 25rpx;
+  width:80%;  
+}
+.progressBar-white{
+	height: 16rpx;
+    width: 100%;
+    background: #efefef;
+    border-radius: 25rpx;
+}
+.progressBar-orange{
+	position: relative;
+    height: 16rpx;
+    top: -16rpx;
+    width: 42%;
+    border-radius: 25rpx;
+    background: -webkit-linear-gradient(left, rgb(255,179,49) , rgb(255,136,49)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, rgb(255,179,49) , rgb(255,136,49)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, rgb(255,179,49) , rgb(255,136,49)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, rgb(255,179,49) , rgb(255,136,49)); /* 标准的语法（必须放在最后） */
+}
+/*末端小圈*/
+.lastCircle{
+display:inline-table;
+width:13rpx;
+height:13rpx;
+border:6rpx solid;
+border-radius:50%;
+float:right;
+margin-top:-4rpx;
+margin-right:-17rpx;
+}
+/*百分比*/
+.percentum{
+float:right;
+margin-right:5%;
+margin-top:-46rpx;
+font-size:29rpx;
+color:rgb(245,132,47);
+
+}
+/*众筹情况展区*/
+.crowdDescShow{
+	display: flex;
+    padding-bottom: 30rpx;
+    width: 100%;
+}
+
+/*已筹*/
+/*剩余时间*/
+/*目标*/
+.nowCrowd{
+    margin-left: 5%;
+}
+.nowCrowd,.surplusTime,.crowd-target{
+	font-size: 32rpx;
+    width: 30%;
+    text-align: center;
+    border-right: 2rpx solid #ccc;
+}
+
+.nowCrowd text,.surplusTime text,.crowd-target text{
+	color: rgb(245,132,47);
+  font-size: 30rpx;
+}
+.nowCrowd view,.surplusTime view,.crowd-target view{
+	font-size: 30rpx;
+    color: #666;
+    line-height: 40rpx;
+}
+.crowd-target{
+	border-right: none;
+}
+/*发起者&& 众筹进度  end*/
+
+/*支持金额 begin*/
+.supportMoney{
+    font-size: 32rpx;
+    background: #fff;
+    line-height: 80rpx;
+    margin:20rpx 0;
+    padding:10rpx 0;
+}
+.supportMoney label{
+	margin-left: 5%;
+  color: #666;
+}
+.supportMoney label text{
+color:rgb(245,132,47);
+float:none;
+margin-right:0;
+
+}
+.supportMoney input{
+display:inline-block;
+font-size:32rpx;
+width:42%;
+line-height:60rpx;
+position:relative;
+bottom:-10px;
+}
+.supportMoney input::-webkit-input-placeholder{ 
+	color: #999; 
+	font-size: 20rpx;
+} 
+.supportMoney input:-moz-placeholder{ 
+	color: #999; 
+	font-size: 20rpx;
+} 
+.supportMoney input::-moz-placeholder{ 
+	color: #999; 
+	font-size: 20rpx;
+} 
+.supportMoney input:-ms-input-placeholder{ 
+	color: #999; 
+	font-size: 20rpx;
+} 
+.supportMoney text{
+	display: inline-block;
+  font-size: 30rpx;
+  color: #666;
+}
+.changeMoney-icon{
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  margin-right:10rpx;
+  margin-top:3rpx;
+}
+/*支持金额 end*/
+
+/*默认留言 begin*/
+.leMsg{
+	background: #fff;
+}
+.leMsg-title{
+	font-size: 30rpx;
+    margin-left: 5%;
+    display: inherit;
+    color: #888;
+    line-height: 80rpx;
+}
+.leMsg-left{
+	font-size: 32rpx;
+    margin-left: 5%;
+    display: inherit;
+    line-height: 80rpx;
+    border-bottom:2rpx solid #eee;
+}
+.leMsg-right{
+	display: inherit;
+  float: right;
+  margin-right: 5%;
+  margin-top:-68rpx;
+}
+/*默认留言 end*/
+
+/*自己留言 begin*/
+.myselfMsg{
+    margin-top: 20rpx;
+    background: #fff;
+    margin-bottom: 30rpx;
+}
+.myselfMsg-title{
+    display: inherit;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    margin-left: 5%;
+    color: #888;
+}
+.myselfMsg input{
+	display: inherit;
+    line-height: 80rpx;
+    margin-left: 5%;
+    width: 90%;
+    font-size: 30rpx;
+}
+.reply-input{
+margin:10rpx auto;
+width:90%;
+height:80rpx;
+font-size:32rpx;
+color: #333;
+}
+/*自己留言 end*/
+
+/*前往支付 begin*/
+.paybtn{
+	width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: rgb(245,132,47);
+  color: #eee;
+  position:relative;
+  bottom:0;
+}
+/*前往支付 end*/
+
+/*没有完成支付弹框 begin*/
+.noPay-alert{
+    position: fixed;
+    z-index: 999;
+    top: 35%;
+    background: #fff;
+    width: 80%;
+    font-size: 30rpx;
+    margin-left: 10%;
+    border-radius: 10rpx;
+    display: none;
+}
+.noPay-msg{
+    line-height: 80rpx;
+    text-align: center;
+    margin: 60rpx 100rpx;
+}
+.noPay-icon{
+	display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  background: url(../img/sad.png) no-repeat 50% 50%;
+  background-size: contain;
+}
+.noPay-msg span{
+	color: #888;
+}
+.noPay-btn{
+	line-height: 80rpx;
+    display: flex;
+}
+.noPay-btn1{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    background: rgb(243,243,243);
+    border-bottom-left-radius: 10rpx;
+}
+.noPay-btn2{
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    background: rgb(245,132,47);
+    color: #eee;
+    border-bottom-right-radius: 10rpx;
+}
+#close{
+	position: absolute;
+    top: -147rpx;
+    right: 20rpx;
+	width: 56rpx;
+    height: 56rpx;
+    border: solid 0.02rem #FFF;
+    border-radius: 50%;
+    background:url(../img/alert_close.png) no-repeat 50% 50%;
+    background-size: 20rpx;
+}
+#close:after{
+	content: "";
+    position: relative;
+    display: block;
+    width: 2rpx;
+    height: 165rpx;
+    background-color: #FFF;
+    top: 58rpx;
+    left: 50%;
+    margin-left: -1rpx;
+}
+/*没有完成支付弹框 end*/
+
+

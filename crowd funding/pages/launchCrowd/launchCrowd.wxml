@@ -1,0 +1,104 @@
+		<!--write by 陈海泉 20170731-->
+			
+		<!--选择的商品列表 begin-->
+		<view class="checkShopList">
+			
+			<!--选择了商品 begin-->
+			<view>
+				<view>
+					<!--商店名称 begin-->
+					<view class="storeName" wx:if="{{launchCrowdData.mshop_code=='1'}}">
+						<text class="storeName-icon" style="background: url({{launchCrowdData.shop_logo}}) no-repeat 50% 50%;background-size: contain;"></text>
+						<view id="storeName">{{launchCrowdData.shop_name}}</view>
+					</view>
+					<!--商店名称 end-->
+					
+					<!--商品展示 begin-->
+					<view class="checkShopList-show">
+					<image class="checkShopList-left" src="{{launchCrowdData.default_imgurl}}"></image>
+					<view class="checkShopList-right">
+						<view class="checkShopList-name">{{launchCrowdData.name}}</view>
+						<text class="checkShopList-dec">{{launchCrowdData.pro_name}}</text>
+						<text class="checkShopList-num">¥</text>
+						<text class="checkShopList-num checkShopList-num2">{{launchCrowdData.price}}</text>
+						<view class="checkShopList-time">
+							<label for="checkShopList-time">活动时间：</label>
+							<text id="checkShopList-time">{{launchCrowdData.activity_start_time}}至{{launchCrowdData.activity_end_time}}</text>
+						</view>
+					</view>
+					</view>
+					<!--商品展示 end-->
+										
+				</view>
+			</view>
+			<!--选择了商品 end-->
+	
+		</view>
+		<!--选择的商品列表 end-->
+		
+    <!--默认留言 begin-->
+		<view class="leMsg">
+			<text class="leMsg-title">默认留言：</text>
+			<view>
+        <radio-group class="radio-group" size="16" bindchange="radioChange">
+          <view class="radio" wx:for-items="{{launchCrowdData.default_message}}">
+              <text class="leMsg-left">{{item}}</text>
+              <radio class="leMsg-right"  color="rgb(245,132,47)"  value="{{item}}" name="chq"/>
+          </view>
+      </radio-group>
+			</view>
+		</view>
+		<!--默认留言 end-->
+		
+		<!--自己留言 begin-->
+		<view class="myselfMsg">
+			<text class="myselfMsg-title">自己留言  :</text>
+      <textarea class="reply-input" placeholder="请输入你的留言" placeholder-style="font-size:30rpx; color:#ccc;" bindblur="inputblur" bindconfirm="inputconfirm" confirm-type="done" focus="{{isfocus}}" />
+		</view>
+		<!--自己留言 end-->
+		
+		<!--同意协议 begin-->
+		<view class="sureAgreement" wx:if="{{launchCrowdData.protocol_status==1}}">
+        <icon class="sureAgreement-icon" bindtap="issuccess" size="20" type="{{isuccess}}"  color="rgb(245,132,47)"/>
+        <text class="sureAgreement-text">阅读并同意协议</text>
+	    	<text class="sureAgreement-alt" bindtap="tabprol" >《众筹项目发起协议》</text>
+		</view>
+		<!--同意协议 end-->
+		
+		<!--合计-确认发起 begin-->
+		<view class="totalSure">
+			<view class="totalSure-left">
+				<label for="toal-Mnum">合计：</label>
+				<text class="toal-Mnum">¥</text>
+				<text id="toal-Mnum">{{launchCrowdData.price}}</text>
+				<view class="toal-shopNum">
+					共<text>1</text>件商品
+				</view>
+			</view>
+			<view class="totalSure-right" data-protocolstatus="{{launchCrowdData.protocol_status}}" bindtap="tapdetails">确认发起</view>
+		</view>
+		<!--合计-确认发起 end-->
+
+    <!-- 弹出众筹成功确认框   -->
+    <view class="truealert" style="display:none;">
+      <text>you are good!众筹成功</text>
+      <button>确定</button>>
+    </view>
+
+		<!--提示框 begin-->
+    <toast hidden="{{hiddenToast}}" icon="{{icon}}" duration="3000" bindchange="toastHidden" >{{ToastContent}}</toast>
+		<!--提示框 end-->
+		
+		<!--遮罩层 begin-->
+		<!-- <mask hidden="{{maskflag}}"  style="z-index:1" hover-style="none"/> -->
+		<!--遮罩层 end-->
+
+    <!-- 协议内容 -->
+    <view class="toprol" style="width:{{maskflag?'0':'100%'}};height:{{maskflag?'0':'auto'}};" bindtap="tabhiddentoprol">
+    <view class="toprol-title" style="display:{{maskflag?'none':'block'}}" >众筹协议书</view>
+      <scroll-view class="toprolscroll">
+         <text>{{launchCrowdData.protocol_text_no_html}}</text>
+      </scroll-view>
+      <view class="toprol-btn" style="display:{{maskflag?'none':'block'}}">我知道了</view>
+    </view>
+		

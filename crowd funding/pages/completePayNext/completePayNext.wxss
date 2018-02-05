@@ -1,0 +1,66 @@
+/* completePayNext.wxss */
+
+/*write by 陈海泉 20170802*/
+page{
+   font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;-webkit-text-size-adjust:none;
+   background: #fff;
+}
+/*谢谢支持 begin*/
+.thankSupport{
+	font-size: 32rpx;
+  text-align: center;
+  margin-top:25%;
+  margin-bottom:10%;
+  line-height:88rpx;
+  color: rgb(245,150,47);
+}
+.thankSupport-icon{
+	display: block;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto;
+}
+.dispatching-alt{
+	width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
+  border-top: solid 1rpx #fff;
+  border-right: solid 1rpx #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*谢谢支持 end*/
+
+/*返回 begin*/
+.comeBack{
+	margin: 0 auto;
+    color: #eee;
+    background: rgb(245,132,47);
+    font-size: 30rpx;
+    text-align: center;
+    width: 45%;
+    line-height: 80rpx;
+}
+.comeBack em{
+	width: 18rpx;
+    height: 18rpx;
+    display: inline-block;
+    border-top: solid 1rpx #eee;
+    border-right: solid 1rpx #eee;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*返回 end*/
+
+/*查看记录 begin*/
+.kan{
+	margin: 50rpx auto;
+    font-size: 30rpx;
+    text-align: center;
+    width: 45%;
+    line-height: 80rpx;
+    border: 2rpx solid #ccc;
+    border-bottom: none;
+}
+/*查看记录 end*/
+

@@ -1,0 +1,55 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar { 
+  content: "write by chq";
+  width: 5rpx;  
+}  
+.tabbar-main{
+  position:fixed;
+  display:flex;
+  bottom:0;
+  width:100%;
+  background:#fff;
+  border-top:1px solid #eee;
+  padding: 10rpx 0;
+}
+.tabbar-index{
+  text-align: center;
+  width: 33.3%;
+}
+.tabbar-index-icon{
+  display: inline-table;
+  width:55rpx;
+  height:55rpx;
+}
+.tabbar-mycrowd{
+  text-align: center;
+  width: 33.3%;
+}
+.tabbar-mycrowd-icon{
+  display: inline-table;
+  width:55rpx;
+  height:55rpx;
+}
+
+.tabbar-personal{
+  text-align: center;
+  width: 33.3%;
+}
+.tabbar-personal-icon{
+  display: inline-table;
+  width:55rpx;
+  height:55rpx;
+}
+.tabbar-index-text,.tabbar-mycrowd-text,.tabbar-personal-text{
+  font-size: 30rpx;
+  color: #999;
+}
