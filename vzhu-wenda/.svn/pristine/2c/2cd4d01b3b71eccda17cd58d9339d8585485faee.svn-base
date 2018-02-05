@@ -1,0 +1,30 @@
+
+<template name="choosedate">
+    <view class='picker-view' style="bottom: ;background: #fff;height: 525rpx;position:fixed;bottom:{{datepickerbottom}};">
+        <view class='picker-view-l' bindtap='canceldate'>取消</view>
+        <view class='picker-view-r' bindtap='suredate'>确定</view>
+        <view class='clear xian'></view>
+    <view class='picker-value-show'>
+         <text class='value-show-date' style='color:{{dateflag?"#999":"#333"}}' bindtap='tapbegindate'>
+         <text class='value-show-font'>＜</text>{{beginyear}}-{{beginmonth}}-{{beginday}}<text class='value-show-font'>＞</text></text>
+         
+         <text class='value-show-font'>至</text>
+
+         <text class='value-show-date' style='color:{{dateflag?"#333":"#999"}}' bindtap='tapenddate'>
+         <text class='value-show-font'>＜</text>{{endyear}}-{{endmonth}}-{{endday}}<text class='value-show-font'>＞</text></text>
+    </view>
+    <view class='picker-view-content'>
+        <picker-view indicator-style="height: 50rpx;" style="width: 100%; height: 300rpx;" value="{{datevalue}}" bindchange="binddateChange">
+            <picker-view-column>
+            <view wx:for="{{years}}" wx:key='index' style="line-height: 68rpx">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{months}}" wx:key='index' style="line-height: 68rpx">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+            <view wx:for="{{days}}" wx:key='index' style="line-height: 68rpx">{{item}}日</view>
+            </picker-view-column>
+        </picker-view>   
+    </view>
+   </view>
+</template>

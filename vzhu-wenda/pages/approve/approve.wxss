@@ -1,0 +1,92 @@
+/* pages/approve/approve.wxss */
+.approve-h{
+    width: 100%;
+    text-align: center;
+}
+.approve-h image{
+    width:250rpx;
+    margin:10rpx;
+    height:250rpx;
+}
+
+.approve-money{
+    text-align: center;
+}
+.approve-money-icon{
+    padding-right:10rpx;
+}
+.approve-money text{
+    font-size: 52rpx;
+    color:rgb(91, 117, 238);
+}
+.approve-msg{
+    font-size:30rpx;
+    text-align:center;
+    margin-top:8rpx;
+}
+
+.approve-desc{
+    width:90%;
+    margin:40rpx 5%;
+    font-size:28rpx;
+    margin-bottom:20rpx;
+}
+
+.approve-desc-text{
+    font-size: 28rpx;
+    color: #666;
+}
+.approve-desc-content{
+    color: #666;
+    margin-top:20rpx;
+    text-indent:2em;
+    overflow: hidden;
+    ext-overflow:ellipsis;
+    word-wrap:break-word;
+    word-break:break-all;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+   
+}
+
+.approve-look-all,.approve-look-part{
+    color:rgb(90,114,238);
+    margin-left:5%;
+    font-size:28rpx;
+}
+
+.agree-agreement{
+    text-align:center;
+    width:100%;
+}
+.agree-agreement text{
+    font-size: 32rpx;
+}
+.agree-icon{
+    display:inline-block;
+    margin-right:10rpx;
+    border-radius:50%;
+    border:2rpx solid #ccc;
+    background:blue;
+    width:30rpx;
+    height:30rpx;
+    position:relative;
+    top:6rpx;
+}
+.agree-icon image{
+    width:20rpx;
+    height:20rpx;
+    position:relative;
+    top:-5rpx;
+}
+.agreement-apply{
+    color:#fff;
+    background:rgb(91, 117, 238);
+    text-align:center;
+    line-height:100rpx;
+    margin-top:20rpx;
+    width:90%;
+    margin-left:5%;
+    border-radius:10rpx;
+    margin-bottom:20rpx;
+}

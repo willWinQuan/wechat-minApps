@@ -1,0 +1,67 @@
+<!--pages/mine/mine.wxml-->
+<!--头像 ID  -->
+<view class='personal_wrap'  style="background:{{bgColor}}">
+  <view class='ring'>
+  <view class='avatar' style="background: url({{weixin_headimgurl==''? '../../image/via.png':weixin_headimgurl}}) no-repeat;background-size:130rpx 130rpx"></view>
+  </view>
+  <view>{{weixin_name}}</view>
+</view>
+<!--我的信息列表  -->
+<view class='personal_list'>
+  <view class='personal_item personal_add' bindtap='bindmyresume'>
+    <image class='my_collect' src='../../image/my_collect.png'></image>
+    <view class='item_right'>
+      <text>我的收藏</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+    <view class='bottomLine'></view>
+  </view>
+
+  <view class='personal_item' bindtap='myQuiz'>
+    <image class='my_collect' src='../../image/my_question.png'></image>
+    <view class='item_right'>
+      <text>我的提问</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+    <view class='bottomLine'></view>
+  </view>
+
+  <view wx:if="{{status==1}}" class='personal_item'   bindtap='ask_me'>
+    <image class='my_collect' src='../../image/ask_me.png'></image>
+    <view class='item_right'>
+      <text>向我提问</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+  </view> 
+
+  <view class='personal_item myqianbao' bindtap='my_wallet'>
+    <image class='purse' src='../../image/my_wallet.png'></image>
+    <view class='item_right'>
+      <text>我的钱包</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+  </view>
+
+</view>
+<!--认证申请通过  -->
+<view class='personal_list'>
+
+  <view class='personal_item myqianbao'  wx:if="{{(status==0 || status==2) && role_type==1  && apply_sw==1 }}"  bindtap='bindapprove'>
+    <image class='my_collect' src='../../image/appraisal_mine.png'></image>
+    <view class='item_right'>
+      <text>申请认证</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+  </view>
+
+  <view class='personal_item myqianbao' wx:if="{{status==1}}" bindtap='bindsetting'>
+    <image class='my_collect' src='../../image/answerer_info.png'></image>
+    <view class='item_right'>
+      <text>答主信息设置</text>
+      <image src="../../image/arrow_left.png"></image>
+    </view>
+  </view> 
+  
+</view>
+
+

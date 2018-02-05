@@ -1,0 +1,50 @@
+<template name="answered" >
+<view class='nav'>
+<view class='box' bindtap='navigator' wx:for='{{list}}' wx:key='{{}}' data-id='{{item.id}}'>
+  <view class='box_nav'>
+    <view class='top_img'>
+      <view class='image' style="background:url('{{item.question_users.headurl}}');background-size:120rpx 120rpx;" wx:if="{{list_type==0}}"></view>
+      <view class='image' style="background:url('{{item.answer_users.userinfo.headurl}}');background-size:120rpx 120rpx;" wx:if="{{list_type==1}}"></view>
+      <image src='../../image/appraisal.png' class='img' wx:if='{{item.question_users.role_type==2}}'></image>
+    </view>
+    <view class='top_right'>
+      <view class='right_text1' wx:if="{{list_type==0}}">{{item.question_users.nickname}}</view>
+      <view class='right_text1' wx:if="{{list_type==1}}">{{item.answer_users.userinfo.nickname}}</view>
+      <view class='right_text2'>{{item.content}}</view>
+      <view class='right_time'>{{item.createtime}}</view>
+      <!--  -->
+      <view class='right_box' wx:if='{{item.status==2||item.status==3}}'>
+        <view class='box_box' wx:if='{{item.answer.type==1}}'>
+          <text class='box_text2'><text class='box_text1' style='color:{{background}}'>回答:</text>{{item.answer.content}}</text>
+        </view>
+        <view class='box_voice' wx:if='{{item.answer.type==2}}'>
+          <view class='voice_img1' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd2.png) no-repeat;background-size: contain' catchtap='voice' data-index='{{index}}' data-seconds='{{item.answer.seconds}}'>
+              <view class='voice_play' wx:if='{{item.answer.v_type==0}}'>点击播放</view>
+              <view class='voice_play' wx:if='{{item.answer.v_type==1}}'>点击暂停</view>
+              <view class='voice_play' wx:if='{{item.answer.v_type==2}}'>点击继续</view>
+              <view class='voice_play' wx:if='{{item.answer.v_type==3}}'>点击重放</view> 
+              <image src='../../image/voice_3.png' wx:if='{{item.answer.v_type!=1}}'></image> 
+              <image src='../../image/recording.gif' wx:if='{{item.answer.v_type==1}}'></image>
+          </view>
+          <text>{{item.answer.seconds_time}}</text>
+          <!--  -->
+          <view class='voice_img2' style='width:{{item.answer.v_time}}rpx'>
+            <view class='img2_img' catchtap='voice' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd1.png) no-repeat;background-size: contain;' data-index='{{index}}' data-seconds='{{item.answer.seconds}}'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>  
+</view>
+    <!-- 加载 -->
+    <view class="loging" wx:if="{{loging==1}}">
+      <image src="../../image/time.gif" class="loging"></image>
+      正在加载中...
+    </view>
+    <!-- 没有更多数据 -->
+    <view class="no_more" wx:if="{{no_more==1}}">
+      没有更多数据...
+    </view>
+</template>
+

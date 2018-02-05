@@ -1,0 +1,96 @@
+/* pages/mine/mine.wxss */
+page{
+  background: #efeff4;
+}
+/*头像 ID  */
+.personal_wrap{
+  /* background: linear-gradient(left, #5a72ee, #628df6); 
+  background: -webkit-linear-gradient(left, #5a72ee, #628df6);  */
+  padding: 100rpx 0;
+  font-size: 29rpx;
+}
+.ring{
+  width: 130rpx;
+  height: 130rpx;
+  border: 5rpx solid #FFF; 
+  border-radius: 130rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  position: relative;
+  z-index: 999;
+  background: #fff;
+}
+.personal_wrap .avatar{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 130rpx;
+}
+.personal_wrap view{
+  text-align: center;
+  color:#ffffff;
+}
+/*我的信息列表  */
+.personal_add{
+  padding-top: 20rpx;
+  margin-top: 20rpx;
+}
+.personal_item{
+  padding: 30rpx 0 0 40rpx;
+  background: #ffffff;
+}
+.bottomLine{
+  height: 1px;
+  background: #efeff4;
+  width:660rpx;
+}
+.myqianbao{
+  margin-top: 20rpx;
+  
+}
+.myqianbao .item_right{
+  border-bottom: none;
+}
+.personal_item image:first-child{
+  display: inline-block;
+  vertical-align: -6rpx;
+}
+#online{
+  border-bottom: none;
+}
+.my_collect{
+  width: 39rpx;
+  height: 39rpx;
+}
+.purse{
+  width: 36rpx;
+  height: 36rpx;
+}
+.my_email{
+  width: 33rpx;
+  height: 27rpx;
+}
+.post_position{
+  width: 45rpx;
+  height: 45rpx;
+}
+.item_right{
+  width: 88%;
+  display: inline-block;
+   vertical-align: top; 
+  margin-left: 20rpx;
+   padding-bottom: 30rpx; 
+  /* line-height: 30rpx; */
+}
+.item_right text{
+  width: 92%;
+  display: inline-block;
+  font-size: 29rpx;
+}
+ .personal_item image:last-child{
+  width: 14rpx;
+  height: 25rpx;
+  text-align: right;
+} 
+.person_item_position{
+  margin-bottom: 20rpx;
+}

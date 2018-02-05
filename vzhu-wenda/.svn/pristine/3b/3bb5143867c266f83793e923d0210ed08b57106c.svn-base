@@ -1,0 +1,140 @@
+<!--pages/setting/setting.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<view class='setting-msg'>
+
+    <view class='setting-item' bindtap='tabheadImg'>
+        <view class='settimg-item-r' style='padding-top:30rpx;'>头像</view>
+        <view class='settimg-item-l'>
+        <image src='{{headImg}}'></image>
+        </view>
+    </view>
+
+    <view class='setting-item'>
+        <view class='settimg-item-r'>昵称</view>
+        <view class='settimg-item-l'>
+           <input name='sexname' value='{{sexname}}' maxlength='20' placeholder-class='placeholder-class' placeholder='请输入昵称'></input>
+        </view>
+    </view>
+
+    <view class='setting-item'>
+        <view class='settimg-item-r'>手机号码</view>
+        <view class='settimg-item-l' style='margin-left:6.6%;width:40%;margin-top:10rpx;'>
+           <input name='phone' type='number' maxlength='11' placeholder-class='placeholder-class' value='{{phonenumber}}'  placeholder='请输入你的手机号码'></input>
+        </view>
+         <button class='getphone'  open-type="getPhoneNumber" style='color:{{color}}' bindgetphonenumber="getPhoneNumber">获取手机号码</button>
+    </view>
+
+    <view class='setting-item' style='display:block;'>
+        <view class='settimg-item-r'>简介(<text>{{myself_content_num}}</text>/300)</view>
+        <view class='settimg-item-l' style='margin-left:5%;height:180rpx;'>
+           <textarea name='intro'  hidden='{{textareahidden}}' value='{{intro}}' bindinput="textareainput" maxlength='{{textareamaxlength}}'  style='height:180rpx;width:150%;bottom:16rpx;' placeholder='填写您的简介...'></textarea>
+           <scroll-view  wx:if="{{textareahidden}}" class='text-scroll'  scroll-y='true'>
+           <view style='color:{{intro==""?"#999":"#333"}}'>{{intro==''?"填写您的简介...":intro}}</view>
+           </scroll-view>
+        </view>
+    </view>
+
+    <view class='setting-item' style='position:relative;' bindtap='bindchooseClass'>
+        <view class='settimg-item-r'>标签</view>
+        <!-- <input hidden='true' name='chooseClass' value=''></input> -->
+        <view class='settimg-item-l' style='width:71%;'>   
+            <view class='tag-list'>
+               <view wx:if="{{tagList.length ==0}}" class='tag-nolist'>选择相关的标签</view> 
+               <block wx:if="{{tagList.length !=0}}" wx:for='{{tagList}}' wx:key='index'>
+                  <text wx:if="{{item != '' && item != undefined}}" style='border-color:{{color}};color:{{color}}'>{{item}}</text>
+               </block> 
+               <view class='arrows-icon'>
+                 <image src='../../image/arrow_left.png'></image>
+              </view>
+            </view>  
+        </view>
+    </view>
+</view>
+
+<!-- 提问 -->
+
+<view class='setting-question' wx:if='{{isShowQuestion}}'>
+   <view class='setting-item' style='border:none;'>
+        <view class='settimg-item-r'>免费提问</view>
+        <view class='settimg-item-l'>
+           <switch color='{{color}}' checked='{{feeswitchChecked}}' bindchange='bindfeeswitch'></switch>
+        </view>
+    </view>
+ </view>
+
+ <view class='setting-question' wx:if='{{isShowQuestion}}'>
+   <view class='setting-item' style='border:none;'>
+        <view class='settimg-item-r'>付费提问</view>
+        <view class='settimg-item-l'>
+           <switch color='{{color}}' checked='{{nofeeswitchChecked}}' bindchange='bindonfeeswitch'></switch>
+        </view>
+    </view>   
+    <view class='setting-item' wx:if="{{nofeeswitchChecked}}" style='border:none;'>
+        <view class='settimg-item-r'>提问金额</view>
+        <view class='settimg-item-l'>
+           <input name='questionMoney' type='digit' value='{{questionMoney}}' style='margin-top:4%;width:92%;display:inline-block;' placeholder-class='placeholder-class' placeholder='请输入用户向你提问的金额'></input>
+           <text style='position:absolute;margin-top:26rpx;'>元</text>
+        </view>
+    </view>
+ </view>
+
+<!--  -->
+
+<!-- 证件 -->
+    <view class='seeting-credentials' wx:if='{{!isShowQuestion}}'>
+      <view class='setting-item' style='border:none;'>
+        <view class='settimg-item-r' style='width:40%;'>{{licence_name}}</view>
+        <view class='settimg-item-l' style='width:40%;text-align:right;margin-right:4%'>
+            <text class='credentials-text'>最少两张，最多9张</text>
+        </view>
+      </view>
+      <view class='credentials-imgs'>
+        <!--证件展示list  -->
+         <block wx:for='{{imagerray}}' wx:key='index'>
+         <view class='imagerray-item'>
+          <image class='chooseImg' src='{{item}}'></image>
+          <image class='del-pic' data-imagerrayindex='{{index}}' src='../../image/del_pic.png' bindtap='delpic'></image>
+         </view> 
+         </block>
+         <!--  -->
+
+         <image wx:if="{{iscanchooseImg}}"  class='chooseImg' bindtap='chooseImg' src='../../image/add_pic.png'></image>
+      </view>
+      <view class='credentials-msg'>上传您的证件照片,请提供清晰,无遮挡的证件图片</view>
+    </view>
+<!--  -->
+
+<view style='height:124rpx;'></view>
+
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>
+
+ <input hidden='true' name='isShowQuestion' value='{{isShowQuestion}}'></input>
+
+ <view class='setting-btn' wx:if='{{isShowQuestion}}'>
+      <button bindtap='queestionReset' class='canel-btn'>取消</button>
+      <button formType="submit" class='save-btn' style='background:{{color}};color:#fff;'>保存</button>
+ </view>
+  
+ <view class='setting-btn' wx:if='{{!isShowQuestion}}' >
+      <button formType="submit" style='background:{{color}};color:#fff;width:88%;'>提交申请</button>
+ </view>
+
+</form>
+
+<view class='choose-class' style='bottom:{{choosebottom}}; opacity: {{chooseClassOpacity}}'>
+    <scroll-view style='height:400rpx;' scroll-y='true'>
+        <view class='class-content'>
+            <block wx:for='{{classList}}' wx:key='index'>
+                <text data-classindex='{{index}}' style='color:{{tagListflag[index]?color:"#333"}};border-color:{{tagListflag[index]?color:"#333"}};' bindtap='bindchoose'>{{item.cate_name}}</text>
+            </block>
+        </view>
+    </scroll-view>
+   <view class='sure-class' style='color:{{color}}' bindtap='surechoose'>确定</view>
+</view>
+
+ <mask hidden="{{maskhidden}}" bindtap="bindmask" style="z-index: 5;" hover-style="none"/>
+
+
+ 

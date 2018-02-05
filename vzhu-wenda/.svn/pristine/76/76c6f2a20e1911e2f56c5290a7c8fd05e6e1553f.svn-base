@@ -1,0 +1,152 @@
+<!--pages/experts_detail/experts_detail.wxml-->
+<!--举报  -->
+<view wx:if="{{is_self==0}}" class='report_wrap' bindtap='report_click'>
+  <image src='../../image/report.png'></image>
+  <text>举报</text>
+</view>
+<!--专家信息  -->
+ <view class='experts_info_wrap'>
+  <view class='experts_info_left'>
+    <!-- <image src='{{headurl}}'></image> -->
+    <view class='logo' style="background:url('{{headurl}}');background-size:140rpx 140rpx;"></view> 
+    <image src='../../image/appraisal.png'></image>
+  </view>
+  <view class='experts_info_middle'>
+    <view class='experts_info'> <text>{{nickname}}</text>  <image src="{{sex==2?'../../image/female.png':'../../image/male.png'}}"></image> </view>
+    <view class='attention'>关注 {{favori_count}}</view>
+    <view class='star'>
+      <view  class='no_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/no_star.png') repeat-x;background-size:32rpx 26rpx;"></view> 
+        <view  class='full_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/full_star.png') repeat-x;background-size:32rpx 26rpx;width:{{star_length}}rpx;"></view>    
+        <view class='star_text'>{{que_av}}</view>   
+    </view>  
+  </view>
+  <view wx:if="{{is_self==0}}" class="experts_info_right" style="color:{{collect_status==0?color:'#bababa'}};border-color:{{collect_status==0?color:'#eee'}};" bindtap='bindcollect'>{{collect_status==0?'+ 收藏':'已收藏'}}</view>
+  <view class='experts_des'>{{self_intro}}</view>
+  <view class='see_all' style='color:{{color}}' bindtap='see_all'>查看全部</view>
+  <view class='experts_label'>
+    <view wx:for="{{category}}" wx:if="{{item != '' && item != undefined}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+</view> 
+<!--ta的回答  -->
+<view class='answer_wrap'>
+  <view class='answer_title'>ta的回答</view>
+  <view class='answer_search_wrap'>
+    <input placeholder='搜索ta的回答' bindinput='search'></input>
+    <image src='../../image/search.png'></image>
+  </view> 
+  <!--最新 选项  -->
+  <view class='newest' bindtap="newest_click" style="color:{{color}}">{{newest_text}} 
+    <view class='triangle' style='border-top-color:{{color}}'></view>
+    <view class='newest_item_wrap' wx:if="{{newest_status==1}}">
+      <view wx:for="{{newest_data}}" wx:key="{{index}}"  data-index="{{index}}" bindtap="newest_item" style="color:{{newest_index==index?color:'#000'}}">{{item}}</view>
+    </view>   
+  </view> 
+  <!--回答列表  -->
+  <view class='answer_content' wx:for="{{expert_data}}" wx:key="{{index}}" bindtap='question_detail' data-id="{{item.id}}">
+    <view class='answer_avatar'>
+      <image class='avatar_img' src='{{item.question_users.headurl}}'></image>
+      <image class='appraisal_img' wx:if="{{item.question_users.role_type==2}}" src='../../image/appraisal.png'></image>
+    </view>
+    <view class='answer_right'>
+      <view class='answer_info'>
+        <text class='answer_name'>{{item.question_users.nickname}}</text>
+        <view class='star answer_star'>
+          <view wx:if="{{http_host}}" class='no_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/no_star.png') repeat-x;background-size:32rpx 26rpx;"></view> 
+        <view wx:if="{{http_host}}" class='full_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/full_star.png') repeat-x;background-size:32rpx 26rpx;width:{{(item.score/5)*154}}rpx;"></view>    
+        <view class='star_text'>{{item.score}}</view>    
+        </view>
+        <view class='clear'></view>
+      </view> 
+      <view class='answer_des'>{{item.content}}</view>
+      <!--语音偷听  -->
+      <view class='record_wrap' wx:if="{{item.answer.type==2 && item.is_need_pay==1}}"> 
+        <image class='record' src='../../image/record.png'></image>
+        <image wx:if="{{voice_status[index]==2}}" class='recording' src='../../image/recording.gif'></image>   
+        <image wx:if="{{voice_status[index]==0||voice_status[index]==1}}" class='record_no' src='../../image/voice_3.png'></image>
+        <text class='record_time'>{{show_seconds[index]}}</text> 
+        <view class='record_mask' style="width:{{voice_length[index]}}rpx;"></view>
+        <text wx:if="{{pay_success[index]==0}}" data-index="{{index}}" data-id="{{item.id}}" data-seconds="{{item.answer.seconds}}" catchtap='answer_pay'>{{item.money+'元偷听'}}</text>
+        <text wx:if="{{pay_success[index]==1 && voice_status[index]==0}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击播放</text>
+        <text wx:if="{{pay_success[index]==1 && voice_status[index]==1}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击继续</text>
+        <text wx:if="{{pay_success[index]==1 && voice_status[index]==2}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击暂停</text>
+      </view> 
+      <!--语音免费听  -->
+      <view class='record_wrap' wx:if="{{item.answer.type==2 && item.is_need_pay==0}}"> 
+        <image class='record' src='../../image/free_record.png'></image>
+        <image wx:if="{{voice_status[index]==2}}" class='recording' src='../../image/recording.gif'></image>   
+        <image wx:if="{{voice_status[index]==0||voice_status[index]==1}}" class='record_no' src='../../image/voice_3.png'></image>
+        <text class='record_time'>{{show_seconds[index]}}</text> 
+        <view class='record_mask' style="width:{{voice_length[index]}}rpx;"></view>
+        <text wx:if="{{voice_status[index]==0}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击播放</text>
+        <text wx:if="{{voice_status[index]==1}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击继续</text>
+        <text wx:if="{{voice_status[index]==2}}" data-index="{{index}}" data-seconds="{{item.answer.seconds}}" catchtap='bindplay'>点击暂停</text>
+      </view> 
+      <!--文字免费看  -->
+      <view wx:if="{{item.is_need_pay==0 && item.answer.type==1}}" class='free_text'><text style='color:{{color}}'>回答:</text>{{item.answer.content}}</view> 
+      <!--文字偷看  -->
+      <view wx:if="{{item.is_need_pay==1 && item.answer.type==1 && pay_success[index]==0}}" class='peek_text' data-id="{{item.id}}" data-success="{{pay_success}}" data-index="{{index}}" catchtap='answer_pay'>{{item.money}}元 我要偷看<view wx:if="{{pay_success[index]==1}}" class='peek_text'>{{item.answer.content}}</view></view>
+      <view class='answer_time'>{{item.createtime}}</view>
+    </view>
+  </view>
+  <button class='loading' wx:if="{{expert_status==0}}" loading='{{loading_status}}'>{{loading_status==true?'加载中':'没有更多了'}}</button>
+  <view class='no_data' wx:if="{{expert_status==1}}">--暂无数据--</view>
+</view>
+<!--分享 向ta提问  -->
+<view wx:if="{{is_self==0}}" class='share_wrap'>
+  <view class='share' bindtap='share_code'>
+    <image src='../../image/share.png'></image>
+    <view>分享</view>
+  </view>
+  <!-- <button class='to_ask' wx:if="{{phone_number==''}}" bindgetphonenumber="getPhoneNumber" open-type="getPhoneNumber" style='background:{{color}}'>向TA提问</button>   -->
+  <button class='to_ask' bindtap="to_ask" style='background:{{color}}'>向TA提问</button>
+</view>
+<view wx:if="{{is_self==1}}" class='share_wrap'>
+  <view class='share' style='width:100%;' bindtap='share_code'>
+    <image style="vertical-align:middle;" src='../../image/share.png'></image>
+    <text style='margin-left:30rpx;vertical-align:middle;color:{{color}}'>分享</text>
+  </view>
+</view> 
+<!--遮罩层  -->
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:500;width:100%;height:100%;top:0;" hover-style="none"/>
+<!--遮罩层  -->
+<mask hidden="{{codemask}}" bindtap="bindmask" style="z-index:500;width:100%;height:100%;top:0;" hover-style="none"/>
+<!--二维码弹框  -->
+ <view class='code_wrap' wx:if="{{code_status==1}}">
+  <image bindlongtap='save_code' class='share_img' src='{{qr_code}}'></image>
+  <image class='share_del' src='../../image/share_del.png' bindtap="share_del"></image>
+  <view>长按图片保存下来，分享给好友吧</view>
+  <!-- <view class='code_title'>分享二维码</view>
+  <view class='share_info'>
+    <view class='share_avatar'>
+      <image src='{{headurl}}'></image>
+      <image src='../../image/appraisal.png'></image>
+    </view>
+    <view class='share_name'>
+      <text>{{nickname}}</text>
+      <image src="{{sex==2?'../../image/female.png':'../../image/male.png'}}"></image>
+      <view>关注 {{favori_count}}</view>
+    </view>
+  </view>
+  <view class='code_img'   bindlongtap='save_code'>
+    <image src='{{qr_code}}'></image>
+    <view>长按保存图片发送给好友</view>
+  </view>  -->
+</view> 
+<!--获取手机号码弹框  -->
+<view wx:if="{{phone_status==1}}" class='get_phonenumber'>
+  <view class='phone_title'>提示</view>
+  <view class='phone_content'>将获取您的手机号码，方便答主回答问题后通知您</view>
+  <button class='getPhoneNumber' bindgetphonenumber="getPhoneNumber" open-type="getPhoneNumber">确定</button>
+</view>
+<!--查看全部  -->
+<view wx:if="{{see_status==1}}" class='code_wrap see_all_wrap'>
+  <view class='des_title'>答主简介</view>
+  <view class='des_content'>{{self_intro}}</view>
+  <button class='see_btn' style='color:{{color}}' bindtap='see_all_sure'>确定</button>
+</view>
+<!--去首页  -->
+<view wx:if="{{is_share==1}}" class='go_index' style='background:{{color}};' bindtap='go_index'>
+  <image src='../../image/go_index.png'></image>
+</view>
+
+<toast hidden="{{toast_status}}" icon="warn" duration="1000" bindchange="toastChange">{{toast}}</toast>

@@ -1,0 +1,194 @@
+<view class='box'>
+  <view class='content'>
+    <view>
+      <view class='img_box'>
+          <!-- <image src='{{weixin_headimgurl}}'></image> -->
+          <view class='image' style="background:url('{{weixin_headimgurl}}');background-size:120rpx 120rpx;"></view>
+      </view>
+      <!-- <view class='clear'></view> -->
+      <view class='text_box'>  
+          <view class='myrt'>
+            <view class='top'>
+              {{weixin_name}}
+            </view> 
+          <view class='time'>
+            <text>{{createtime}}</text> 
+          </view>
+          </view>
+      </view>
+    </view>
+      <view class='clear'></view>
+  </view>
+  <view class='bottom_line'></view>
+  <view class='content'>
+    <view class='main_top'>
+      <view class='lf'>问题描述</view>
+      <!-- <view class='rt money' wx:if='{{is_free==0}}'>￥{{money}}</view>
+      <view class='rt money' style='color:{{background}}' wx:if='{{is_free==1}}'>免费提问</view> -->
+    </view>
+    <view class='clear'></view>
+    <view class='main_txt'>
+      <view class='txt'>
+        {{content}}
+      </view>
+      <view  class="upload" wx:for='{{question_photo}}'>
+          <image src='{{item.url}}' bindtap='previewImage1' data-src='{{item.url}}'></image>
+      </view>
+      <view class='clear'></view>
+    <view class='clear'></view>
+      <view>
+        <code wx:for='{{category}}'>{{item.name}}</code>
+      </view>
+    </view>
+  </view>
+  <view class='content' wx:if='{{status!=1&&status!=4}}'>  
+    <view class='square'></view>
+    <view class='answer'>
+      <view class='img_box answer_img'>
+          <!-- <image src='{{headurl}}'></image> -->
+          <view class='image' style="background:url('{{headurl}}');background-size:120rpx 120rpx;"></view>
+          <view class='authentication'>
+              <image src='../../image/appraisal.png'></image>
+          </view> 
+      </view>  
+      <view class='myrt'>
+          <view class='top'>
+              {{nickname}}
+          </view> 
+          <view class='time'>
+            <text>{{answer_createtime}}</text> 
+          </view>
+      </view>
+      <view class='rt already_answer' style='background:{{background}}'>已回答</view>
+    <view class='clear'></view>      
+    <view class='answer_txt' wx:if='{{type==1}}'>
+      {{answer_content}}
+    </view>
+     <view  class="upload" wx:for='{{answer_photo}}'>
+          <image src='{{item.url}}' bindtap='previewImage' data-src='{{item.url}}'></image>
+      </view>
+      <view class='clear'>
+          <!-- 语音 -->
+          <view class='dz_nav_voice' wx:if='{{type==2}}'>
+              <view class='voice_img1' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd2.png) no-repeat;background-size: contain' bindtap='voice_tap'>
+                  <view class='voice_play' wx:if='{{show==1}}'>点击播放</view>
+                  <view class='voice_play' wx:if='{{show==0}}'>点击暂停</view>
+                  <image src='../../image/voice_3.png' wx:if='{{show==1}}'></image>
+                  <image src='../../image/recording.gif' wx:if='{{show==0}}'></image>
+              </view>
+              <text>{{seconds_time}}</text>
+              <!--  -->
+              <view class='voice_img2' style='width:{{lent}}rpx'>
+                <view class='img2_img' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd1.png) no-repeat;background-size: contain;' bindtap='voice_tap'></view>
+              </view>
+          </view>
+    <!--  -->
+      </view>
+
+    </view>
+  </view>
+  <!--  -->
+  <view class='strat' wx:if='{{status==3}}'>
+    <image src='../../image/full_star.png' wx:for='{{score}}'></image>
+    <image src='../../image/no_star.png' wx:for='{{score1}}'></image>
+    <text>{{score}}.0</text>
+  </view>
+</view>
+<!--弹窗-->
+<view  class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title" wx:if="{{imgIndex==0}}">
+    <text bindtap='bindChange' data-index="0" style="color:{{curIndex === 0?'#5772f3':'#6f6f71'}};">文字</text>
+    <text bindtap='bindChange' data-index="1"  style="color:{{curIndex === 1?'#5772f3':'#6f6f71'}};">语音</text>
+  </view>
+  <!-- 语音回答 -->
+  <view wx:if="{{curIndex === 1&&imgIndex == 0}}" class='record_box'>
+    <view class='img_count'>{{length}}</view>
+      <view bindtap='binImg' style="color:{{curIndex === 2?'#5772f3':'#000'}};" class="modal-content lf">
+      <image src='../../image/pic.png' ></image>
+    </view>
+  <view class='clear'></view>
+    <!-- 开始录音 -->
+     <view>
+      <view class="record" data-stadus="1">
+        <view>
+          <text wx:if="{{recordIndex === 1 }}">点击录音 可录制5分钟</text>
+        </view>
+        
+        <view wx:if="{{recordIndex === 0 }}">
+          <text>录音中 </text> <text>{{mintue}}:{{seconds}}</text>/<text>5:00</text>
+        </view>
+        
+        <view wx:if="{{recordIndex === 2 }}">
+          <text>录音完成</text><text>{{mintue}}:{{seconds}}</text>
+        </view>
+        <!--  -->
+        <view wx:if="{{recordIndex === 3 }}">
+          <text>播放中</text><text>{{mintue1}}:{{seconds1}}</text>
+        </view>
+      </view>
+       <view class="modal_record_btn modal_record_start">
+        <image  wx:if="{{ recordll == 0 }}" src='../../image/click_record.png' bindtap='playBtn'></image>
+        <image  wx:if="{{ recordll == 1 }}" src='../../image/recording.png' bindtap='playBtn'></image>
+        <image  wx:if="{{ recordll == 2 }}" src='../../image/finish_record.png' bindtap='playBtn'></image>
+        <image  wx:if="{{ recordll == 3 }}" src='../../image/pause.png' bindtap='playBtn'></image>
+        <view wx:if="{{recordIndex == 2 || recordIndex == 3}}">
+          <text class='timeClick'>{{shiting}}</text>
+        </view>
+      </view>
+      <view class='play'></view>
+    </view> 
+    <view class='btn_box_record' wx:if="{{ recordll == 2 || recordll == 3 }}">
+      <text  bindtap="onConfirm1" data-status="confirm">重新录制</text>
+      <text  bindtap="onConfirm2" data-status="confirm" bindtap='submit'>确认发送</text>
+    </view>
+</view>
+<!--图片回答-->
+<view wx:if="{{imgIndex === 1}}" class='img_answer'>
+  <view class="modal-chooseImg" >
+    <text>选择图片</text>
+    (
+    <text>{{length}}</text>
+    <text>/</text>
+    <text>9</text>
+    )
+  </view>
+  <!-- 上传图片 -->
+  <view class='sctp' >
+      <view class='imgList'>
+        <view  class="upload" wx:for='{{upimgs}}' wx:key='{{}}'>
+            <image src='{{item}}'></image>
+            <view class='delet'>
+              <image src='../../image/del_pic.png' bindtap='deleteImg' data-index='{{index}}'></image>
+            </view>
+        </view>
+        <!--  -->
+        <view  class="upload" bindtap="chooseImg">
+          <image src="../../image/license.png" /> 
+        </view>
+    </view>
+  </view>
+  <view class='imgBtn' bindtap="onConfirm">添加完成</view>
+</view> 
+<!-- 文字回答 -->
+  <view wx:if="{{imgIndex == 0&&curIndex==0}}">
+    <!-- <view class='textarea'> -->
+      <textarea placeholder-style='color:#AAA;font-size:33rpx;' placeholder='请填写答案' cursor-spacing='{{wid_het}}' fixed="{{fixed}}" class='textarea' name="textarea" bindinput='textarea' value='{{value}}' maxlength='500'>
+       </textarea> 
+    <!-- </view> -->
+  </view>
+  <view wx:if="{{imgIndex == 0&&curIndex==0}}">
+    <view class='btn_img_box'>
+      <view  catchtap='binImg'> 
+        <view class="modal-content lf" data-index="2" >
+          <view class='img_count1'>{{length}}</view>
+          <image src='../../image/pic.png'></image>
+        </view>  
+        <text  data-index="2" >添加图片</text>
+      </view>
+      <button  bindtap="onConfirm" data-status="confirm" bindtap='submit' style='background:{{background}}'>确认发送</button>
+    </view>
+  </view>
+</view>
+<view class='btn' bindtap="modal" wx:if='{{status==1}}' style='background:{{background}}'>回答</view>
+<toast hidden="{{lenMore}}" icon="warn" duration="1000" >{{toast}}</toast>  

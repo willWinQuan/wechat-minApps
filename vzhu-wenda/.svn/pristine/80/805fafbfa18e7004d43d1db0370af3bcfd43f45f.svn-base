@@ -1,0 +1,56 @@
+/* pages/my-quiz/my-quiz.wxss */
+ @import "../common/answered.wxss"; 
+page{
+  background: #efeff4;
+}
+.clear{
+  clear: both;
+}
+.lf{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.deliver-nav ul{
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    font-size: 11pt;
+    color: #717171;
+    margin-bottom: 26rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.deliver-nav ul li{
+  line-height: 86rpx;
+  width: 25%;
+  text-align: center;
+  position: relative;
+  font-size: 26rpx;
+}
+.deliver-nav ul .active text{
+  position: absolute;
+  top:75rpx;
+  left:79rpx;
+  display: block;
+  width: 36rpx;
+  height: 10rpx;
+  background: #5777eb;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  margin: 0 auto;
+}
+.active{
+  color: #5777eb;
+}
+.nav{
+  margin-top: 90rpx;
+  margin-bottom: 20rpx;
+}
+
+

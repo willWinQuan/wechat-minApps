@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/ask_me/ask_me",
+    "pages/my-quiz/my-quiz",
+    "pages/question_details/question_details",
+    "pages/expert_questions/expert_questions",
+    "pages/approve/approve",
+    "pages/questions_send_txt/questions_send_txt",
+    "pages/search/search",
+    "pages/experts_detail/experts_detail",
+    "pages/report/report", 
+    "pages/setting/setting",
+    "pages/set-apply/set-apply",
+    "pages/my-wallet/my-wallet",
+    "pages/classify/classify",
+    "pages/my-collection/my-collection"   
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "selectedColor": "#50A4FE",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "image/home.png",
+      "selectedIconPath": "image/home_select.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "image/mine.png",
+      "selectedIconPath": "image/mine_select.png"
+    }]
+  }
+}

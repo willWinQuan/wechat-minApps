@@ -1,0 +1,142 @@
+<!--pages/my-wallet/my-wallet.wxml-->
+<import src="../common/datePicker.wxml" />
+
+<view class='myWallet-h'>
+   <view class='myWallet-h-money'>
+      <text class='myWallet-hm-icon'>¥</text>
+      <text style='font-size:60rpx;'>{{myWalletMoney}}</text>
+   </view>
+   <view class='myWallet-h-msg'>我的余额</view>
+   <view class='mywallet-h-depositBtn' style='background:{{color}}' bindtap='getmoney'>
+        <text>去提现</text>
+        <image src='../../image/arrow_left.png'></image>
+   </view>
+</view>
+
+<view class='myWallet-h-income'>
+    <view class='myWallet-h-incomel'>
+       <view class='myWallet-h-inlmoney'>
+         <text class='myWallet-h-inlmoneyIcon'>¥</text>
+         <text class='myWallet-h-inlmoneyNum'>{{myWalletin_total}}</text>
+       </view>
+       <view class='myWallet-h-inlmsg'>总收益</view>
+    </view>
+    <view class='myWallet-h-incomeline'></view>
+    <view class='myWallet-h-incomer'>
+       <view class='myWallet-h-inrmoney'>
+         <text class='myWallet-h-inrmoneyIcon'>¥</text>
+         <text class='myWallet-h-inrmoneyNum'>{{myWalletin_today}}</text>
+       </view>
+       <view class='myWallet-h-inrmsg'>今日收益</view>
+    </view>
+</view>
+
+<view class='myWallet-m-nav'>
+   <view class='myWallet-m-tab'>
+      <view class='myWallet-m-income' style='color:{{tabinout ? color:""}}' bindtap='tabin'>
+         我的收入
+         <view wx:if='{{tabinout}}' style='background:{{tabinout ? color:""}}' class='myWallet-border-line'></view>
+      </view>
+      <view class='myWallet-m-outcome' style='color:{{tabinout ? "":color}}' bindtap='tabout'>
+         我的支出
+         <view wx:if='{{!tabinout}}' style='background:{{tabinout ? "":color}}' class='myWallet-border-line'></view>
+      </view>
+   </view>
+</view>
+
+<view class='myWallet-m-date'>
+    <view class='myWallet-mdate-l' bindtap='showdatepicker'>
+        <view class='myWallet-mdate-begin' wx:if="{{tabinout}}">{{show_in_beginyear}}-{{show_in_beginmonth}}-{{show_in_beginday}}</view>
+        <view class='myWallet-mdate-begin' wx:if="{{!tabinout}}">{{show_out_beginyear}}-{{show_out_beginmonth}}-{{show_out_beginday}}</view>
+        <text>至</text>
+        <view class='myWallet-mdate-end' wx:if="{{tabinout}}">{{show_in_endyear}}-{{show_in_endmonth}}-{{show_in_endday}}</view>
+        <view class='myWallet-mdate-end' wx:if="{{!tabinout}}">{{show_out_endyear}}-{{show_out_endmonth}}-{{show_out_endday}}</view>
+        <image src='../../image/arrow_left.png'></image>
+    </view>
+    <view class='myWallet-mdate-r'>
+        <view class='myWallet-mdate-control' style='color:{{chooseshowflag?color:"#333"}}' bindtap='tapshowchoose'>筛选</view>
+        <view class='myWallet-mdate-choose' wx:if='{{chooseshowflag}}'>
+        <block wx:for='{{chooselist}}' wx:key='index'>
+            <view class='myWallet-mdate-item' style='color:{{classIndex[index]?color:""}}' data-classindex='{{index}}' bindtap='chooseclasskeyword'>{{item}}</view>
+        </block>
+        </view>
+    </view>
+</view>
+
+<view class='myWallet-list'>
+<view class='nodata' wx:if='{{myWallet_list.length ==0}}'>
+<image style='width:30rpx;height:30rpx;' wx:if="{{datastauts=='加载中...'}}" src='../../image/time.gif'></image>
+{{datastauts}}</view>
+ <block wx:if='{{myWallet_list.length !=0}}' wx:for="{{myWallet_list}}" wx:key='index'>
+
+  <view class='myWallet-list-item' data-questionid='{{item.question_id}}' bindtap='toquestionDetail' wx:if='{{item.show_type !=5 && item.show_type != 6}}'>
+    <view class='myWallet-list-l'>
+        <view class='myWallet-list-ltitle'>{{item.content}}</view>
+         <view class='myWallet-list-ltime'>{{item.createtime}}</view> 
+    </view>
+    <view class='myWallet-list-r'>
+        <view class='mywallet-list-raddmoney'>
+           <text class='mywallet-list-raddicon1' wx:if="{{tabinout}}">+</text>
+           <text class='mywallet-list-raddicon1' wx:if='{{!tabinout}}'>-</text>
+           <text class='mywallet-list-raddicon2'>¥</text>
+           <text class='mywallet-list-raddnum'>{{item.money}}</text>
+        </view>
+        <view class='mywallet-list-raddtype' wx:if='{{item.show_type==1}}'>我去提问</view>
+        <view class='mywallet-list-raddtype' wx:if="{{item.show_type==2}}">去偷听偷看</view>
+        <view class='mywallet-list-raddtype' wx:if='{{item.show_type==3}}'>我的回答</view>
+        <view class='mywallet-list-raddtype' wx:if="{{item.show_type==4}}">被偷听偷看</view>
+    </view>
+   </view> 
+
+   <view class='myWallet-list-item' wx:if='{{item.show_type ==5 || item.show_type == 6}}'>
+    <view class='myWallet-list-l'>
+        <view class='myWallet-list-ltitle'>
+           提现申请
+           <view class='myWallet-list-lmsg'>说明:{{item.remark}}</view>
+        </view>
+         <view class='myWallet-list-ltime'>{{item.createtime}}</view> 
+    </view>
+    <view class='myWallet-list-r'>
+        <view class='mywallet-list-raddmoney'>
+           <text class='mywallet-list-raddicon1' wx:if="{{tabinout}}">+</text>
+           <text class='mywallet-list-raddicon1' wx:if='{{!tabinout}}'>-</text>
+           <text class='mywallet-list-raddicon2'>¥</text>
+           <text class='mywallet-list-raddnum'>{{item.money}}</text>
+        </view>
+        <view class='mywallet-list-raddtype' wx:if="{{item.show_type==5}}">提现成功</view>
+        <view class='mywallet-list-raddtype' wx:if="{{item.show_type==6}}">提现失败</view>
+    </view>
+   </view> 
+   </block>
+   <view class='nomore' wx:if="{{nomore}}">没有更多了...</view>
+</view>
+
+<view class='getmoney-module' wx:if="{{isshowgetmoney}}">
+   <view class='getmoney-module-text'>申请提现</view>
+   <view class='getmoney-module-num'>
+    <view class='getmoney-module-icon'>¥</view>
+    <input name='getmoney'  type='digit' bindinput='inMoneyNumber'></input>
+   </view>
+   <view class='getmoney-sure-btn' style='color:{{color}}' bindtap='{{tapgetmoneySureBtn}}'>确定提现</view>
+</view>
+
+<view class='getmoney-module-next' wx:if='{{isshowgetmoneynext}}'>
+   <view class='getmoney-moduleN-text'>温馨提示</view>
+   <view class='getmoney-moduleN-msg' >仅{{cash_date}}可以提现哦</view>
+    <view class='getmoney-sure-btn' style='color:{{color}}' bindtap='getmoneymsgSureBtn'>确认</view>
+</view>
+
+<view class='getmoney-module-success' wx:if='{{isshowgetmoneysuccess}}'>
+    <view class='getmoney-moduleS-true'>
+       <image src='../../image/getmoney-success-true.png'></image>
+    </view>
+    <view class='getmoney-modulS-msg1'>申请成功</view>
+    <view class='getmoney-modulS-msg2' wx:if="{{cash_sw==1}}">等待审核，请注意消息通知哦</view>
+    <view class='getmoney-modulS-msg2' wx:if="{{cash_sw==0}}">此次提现免审核，请注意消息通知哦</view>
+</view>
+
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:5;" hover-style="none" />
+<toast hidden="{{toastHidden}}" icon="warn" duration="1000" bindchange="toastChange">{{toastcontent}}
+</toast>
+
+<template is="choosedate" data="{{years,months,days,beginyear,beginmonth,beginday,endyear,endmonth,endday,datevalue,dateflag,datepickerbottom}}"/>

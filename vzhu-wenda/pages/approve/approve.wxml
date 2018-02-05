@@ -1,0 +1,31 @@
+<!--pages/approve/approve.wxml-->
+<view class='approve-h'>
+   <image src='../../image/arenzheng01.png'></image>
+</view>
+
+<view class='approve-m'>
+   <view class='approve-money'>
+       <text class='approve-money-icon' style='color:{{color}}'>¥</text>
+       <text style='color:{{color}}'>{{apply_money}}</text>
+   </view>
+   <view class='approve-msg'>申请成为答主需支付</view>
+</view>
+
+<view class='approve-desc' wx:if="{{apply_protocol!=''}}">
+    <view class='approve-desc-text'>说明:</view>
+    <view class='approve-desc-content' style='-webkit-line-clamp:{{isshowall?"1000":"12"}}'>
+      {{apply_protocol}}
+    </view>
+</view>
+
+<view class='approve-look-all' wx:if='{{!isshowall && apply_protocol.length > 280 }}' bindtap='showall' style='color:{{color}}'>查看全部</view>
+<view class='approve-look-part' wx:if='{{isshowall && apply_protocol.length > 280 }}' bindtap='shownoall' style='color:{{color}};'>收起</view>
+<view style='margin-top: 20%;'></view>
+<view class='agree-agreement' wx:if="{{apply_protocol != ''}}">
+    <view class='agree-icon' style='background:{{protocol_sw==1?color:"#fff"}}' bindtap='isagreement'>
+        <image src='../../image/white-checked.png'></image>
+    </view>
+    <text>我已阅读并同意以上规则</text>
+</view>
+
+<view class='agreement-apply' style='background:{{color}}' bindtap='toSetting'>申请</view>

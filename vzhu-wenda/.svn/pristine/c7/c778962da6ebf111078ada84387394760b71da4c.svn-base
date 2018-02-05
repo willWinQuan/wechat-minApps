@@ -1,0 +1,91 @@
+<!--pages/question_details/question_details.wxml-->
+<view class='details'>
+<view class='body'>
+  <view class='details_top'>
+    <image src='{{weixin_headimgurl}}'></image>
+    <view class='top_xinxi'>
+      <view class='xinxi_top'>{{weixin_name}}</view>
+      <view class='xinxi_time'>{{createtime}}</view>
+    </view>
+  </view>
+  <!--  -->
+  <view class='details_nav'>
+    <view class='nav_top'>
+      <view class='top_left'>问题描述</view>
+      <!-- <view class='top_right' wx:if='{{is_free==0}}'>￥{{money}}</view>
+      <view class='top_right' style='color:{{background}}' wx:if='{{is_free==1}}'>免费提问</view> -->
+    </view>
+    <!--  -->
+    <view class='nav_nav'>
+      {{content}}
+    </view>
+    <!--  -->
+    <view class='nav_img'>
+      <image src='{{item.url}}' class='img_img' wx:for='{{question_photo}}' bindtap='previewImage' data-src='{{item.url}}'></image>
+    </view>
+    <!--  -->
+    <view class='nav_bq'>
+      <text wx:for='{{category}}'>{{item.name}}</text>
+    </view>
+  </view>
+  <!--  -->
+  <view wx:if='{{is_see==0}}' class='peek_money' bindtap='paymoney'>{{peek_money}}元 我要查看</view>
+  <!--  -->
+  <view class='details_dz' wx:if='{{status!=4&&status!=1&&is_see==1}}'>
+    <view class='dz_box'>
+      <!--  -->
+      <view wx:if='{{oneself}}' class='complete' style='background:{{background}};'>已回答</view>
+      <view class='dz_top'>
+          <image src='{{headurl}}' class='image'></image>
+          <image src='../../image/appraisal.png' class='bottom_img'></image>
+          <view class='top_xinxi'>
+            <view class='xinxi_top'>{{nickname}}</view>
+            <view class='xinxi_time'>{{answer_createtime}}</view>
+          </view>
+      </view>
+      <!--  -->
+      <view class='dz_nav' wx:if='{{type==1}}'>
+      {{answer_content}}
+      </view>
+      <!--  -->
+      <view class='dz_nav_img'>
+        <image src='{{item.url}}' class='img_img' wx:for='{{answer_photo}}' bindtap='previewImage1' data-src='{{item.url}}'></image>
+      </view>
+      <!--  -->
+      <view class='dz_nav_voice' wx:if='{{type==2}}'>
+          <view class='voice_img1' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd2.png) no-repeat;background-size: contain' bindtap='voice'>
+              <view class='voice_play' wx:if='{{show==1}}'>点击播放</view>
+              <view class='voice_play' wx:if='{{show==0}}'>点击暂停</view>
+              <image src='../../image/voice_3.png' wx:if='{{show==1}}'></image>
+              <image src='../../image/recording.gif' wx:if='{{show==0}}'></image>
+          </view>
+          <text>{{seconds_time}}</text>
+          <!--  -->
+          <view class='voice_img2' style='width:{{lent}}rpx'>
+            <view class='img2_img' style='background: url(https://825.dev.wsy010.cn/mini_program/applets/static/answer/img/wd_jd1.png) no-repeat;background-size: contain;' bindtap='voice'></view>
+          </view>
+      </view>
+    </view>  
+  </view>
+  <!--  -->
+  <view class='strat' wx:if='{{status==3&&is_see==1}}'>
+    <image src='../../image/full_star.png' wx:for='{{score}}'></image>
+    <image src='../../image/no_star.png' wx:for='{{score1}}'></image>
+    <text>{{score}}.0</text>
+  </view> 
+</view>  
+  <!-- 评价 -->
+  <view class='evaluate' bindtap='evaluateShow' wx:if='{{status==2&&is_see==1}}' style='background:{{background}};'>评价</view>
+  <view class='mask' wx:if='{{mask}}' bindtap='maskHinde'>
+    <view class='evaluate_strat' catchtap='evaluate_strat'>
+      <view class='text1'>评价</view>
+      <view class='text2'>请你对本次回答做出评价</view>
+      <view class='pj_img'>
+        <image src='../../image/full_star.png' wx:for='{{Pjstar1}}' catchtap='evaluate' data-index='{{index}}' class='Pjstar1'></image>
+        <image src='../../image/no_star.png' wx:for='{{Pjstar2}}' catchtap='evaluate' data-tindex='{{index}}' ></image>
+      </view>
+      <view class='queding' catchtap='evaluateHide' style='color:{{background}};'>确定评价</view>
+    </view>
+  </view>
+</view>
+<toast hidden="{{lenMore}}" icon="{{icon}}" duration="700" >{{toast}}</toast>

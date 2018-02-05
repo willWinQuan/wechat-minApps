@@ -1,0 +1,25 @@
+<view bindtap='test'> ces </view>
+<template name="common" >
+    <view bindtap='experts_detail' data-id="{{expert_id}}">
+      <view class='content' data-id="{{expert_id}}">
+          <view class='img_box'data-id="{{expert_id}}">
+              <image wx:if="{{expert_id==''}}" src='../../image/pineapple.png'></image>
+              <image wx:if="{{expert_id !=''}}"  src='{{http}}{{headurl}}'></image>
+              <view class='authentication' data-id="{{expert_id}}">
+                <image src='../../image/appraisal.png'></image>
+              </view>   
+          </view>
+          <!-- <view class='clear'></view> -->
+          <view class='text_box'data-id="{{expert_id}}">
+              <view class='top' data-id="{{expert_id}}">
+                  <view class='lf company'>{{nickname}}</view>
+                  <!-- <view wx:if="myShow ==true? "true" : 'false' >显示隐藏</view> user.headurl  {{realm}}-->
+                  <view class='clear'></view>
+              </view>
+            <text class='nopd' wx:key="{index{}}" data-id="{{expert_id}}">{{self_intro}}</text>
+          </view>
+          <view class='clear'></view>
+      </view>
+    </view>
+    
+</template>

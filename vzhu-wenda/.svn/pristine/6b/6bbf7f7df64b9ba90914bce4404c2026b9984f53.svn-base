@@ -1,0 +1,19 @@
+/* pages/set-apply/set-apply.wxss */
+.set-apply-img{
+    width: 100%;
+}
+.set-apply-img image{
+    width:50%;
+    height:340rpx;
+    margin:30% 25%;
+    margin-bottom: 15%;
+}
+.backmine{
+    width:60%;
+    background:blue;
+    text-align:center;
+    color:#fff;
+    margin:0 auto;
+    line-height:80rpx;
+    border-radius:15rpx;
+}

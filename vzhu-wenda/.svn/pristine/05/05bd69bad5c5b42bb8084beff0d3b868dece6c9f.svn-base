@@ -1,0 +1,342 @@
+/* pages/my-wallet/my-wallet.wxss */
+
+.picker-view {
+    background: #fff;
+    z-index: 999;
+    width: 100%;
+    transition: all 0.3s;
+    
+}
+
+.picker-view-r {
+    float: right;
+    margin-right: 5%;
+    font-size: 35rpx;
+    line-height: 80rpx;
+    color: rgb(35, 176, 34);
+}
+
+.picker-view-l {
+    float: left;
+    margin-left: 5%;
+    font-size: 35rpx;
+    line-height: 80rpx;
+    color: #999;
+}
+
+.mywallet-h-depositBtn{
+    text-align:center;
+    width:22%;
+    margin:0 auto;
+    background:blue;
+    color:#eee;
+    font-size:26rpx;
+    line-height:50rpx;
+    border-radius:30rpx;
+    margin-top:10px;
+}
+
+.xian {
+    width: 100%;
+    height: 2rpx;
+    background: #eee;
+}
+.clear{
+    clear: both;
+}
+.picker-value-show{
+    text-align:center;
+    line-height:80rpx;
+    font-size:32rpx;
+    margin-bottom:20rpx;
+    color:#999;
+}
+.value-show-font{
+    margin:0 20rpx;
+    color:#999;    
+}
+.picker-view-content{
+    font-size:32rpx;
+}
+picker-view-column{
+    text-align: center;
+}
+
+
+
+page{
+   background:rgb(240,239,244); 
+}
+
+.myWallet-h{
+    border-bottom:1rpx solid #eee;
+    padding-top:20rpx;
+    padding-bottom:50rpx;
+    background:#fff;
+}
+
+.myWallet-h-money{
+    text-align:center;
+    color:#333;
+    margin-top:10rpx;
+}
+.myWallet-hm-icon{
+    font-size:45rpx;
+    margin-right:10rpx;
+}
+.myWallet-h-msg{
+    text-align:center;
+    font-size:28rpx;
+    color:#999;
+}
+.mywallet-h-depositBtn image{
+    width:15rpx;
+    height:20rpx;
+    margin-top:12rpx;
+    margin-left:18rpx;
+}
+
+.myWallet-h-income{
+    background:#fff; 
+}
+.myWallet-h-incomel,.myWallet-h-incomer{
+    display:inline-block;
+    width:49.5%;
+    text-align:center;
+    padding:20rpx 0;
+}
+.myWallet-h-inlmoney,.myWallet-h-inrmoney{
+    font-size:35rpx;
+}
+.myWallet-h-inlmoneyIcon,.myWallet-h-inrmoneyIcon{
+    margin-right:8rpx;
+}
+.myWallet-h-inlmsg,.myWallet-h-inrmsg{
+    font-size:29rpx;
+    color:#999;
+}
+.myWallet-h-incomeline{
+    display:inline-block;
+    width:2rpx;
+    height:50rpx;
+    background:#eee;       
+}
+
+.myWallet-m-nav{
+    margin-top:10px;
+    background:#fff;
+    padding-top:25rpx;      
+}
+.myWallet-m-tab{
+    display:flex;
+    border-bottom:1rpx solid #eee;
+}
+.myWallet-m-income,.myWallet-m-outcome{
+    width:50%;
+    text-align:center;
+    font-size:32rpx;
+    letter-spacing:6rpx;      
+}
+.myWallet-border-line{
+    height:8rpx;
+    margin-top:20rpx;
+    width:30rpx;
+    border-radius:5rpx;
+    margin:20rpx auto 0 auto;
+}
+.myWallet-m-date{
+    background:#fff;
+    border-bottom:1rpx solid #eee;
+}
+.myWallet-mdate-l{
+    font-size:31rpx;
+    line-height:80rpx;
+    padding-left:5%;
+    display:inline-block;
+}
+.myWallet-mdate-begin,.myWallet-mdate-end{
+    display:inline-block;
+}
+.myWallet-mdate-l text{
+    padding:0 10rpx;
+}
+.myWallet-mdate-l image{
+    width:20rpx;
+    height:25rpx;
+    margin-left:8rpx;      
+}
+.myWallet-mdate-r{
+    display:inline-block;
+    float:right;
+    margin-right:5%;
+    margin-top:20rpx;
+    font-size:31rpx;
+    text-align:center;
+}
+.myWallet-mdate-control{
+    text-align:right;
+    margin-bottom:18rpx;
+}
+.myWallet-mdate-choose{
+    background:#fff;
+    border:1rpx solid #eee;
+    width:25%;  
+    position:absolute;
+    z-index:3;
+    right: 3%;
+}
+.myWallet-mdate-item{
+    line-height:80rpx;
+    border-bottom:1rpx solid #eee;       
+}
+
+.myWallet-list{
+    background:#fff;
+    padding-bottom:68rpx;       
+}
+.myWallet-list-item{
+    padding:23rpx 0;
+    border-bottom:1rpx solid #eee;
+}
+.myWallet-list-l{
+    display:inline-block;
+    margin-left:5%;
+    font-size:32rpx;
+    width:66%;       
+}
+.myWallet-list-ltime{
+    margin-top:10rpx;
+    font-size:30rpx;
+    color:#999;  
+}
+.myWallet-list-r{
+    float:right;
+    margin-right:4%;
+    color:rgb(246,157,139);
+}
+.mywallet-list-raddicon1{
+    font-size:35rpx;
+}
+.mywallet-list-raddicon2{
+    padding:0 5rpx;
+}
+.mywallet-list-raddtype{
+    font-size:30rpx;
+    color:#999;
+}
+
+.getmoney-module,.getmoney-module-next{
+    background:#fff;
+    position:fixed;
+    width:76%;
+    margin-left:12%;
+    border-radius:20rpx;
+    top:30%;
+    font-size:35rpx;
+    letter-spacing:5rpx;  
+    z-index:888;
+  
+}
+.getmoney-module-text{
+    line-height:120rpx;
+    text-align:center;  
+}
+.getmoney-module-num{
+    width:80%;
+    background:rgb(244,244,244);
+    margin-left:10%;
+    border:1rpx solid #eee;
+    height:90rpx;
+    position:relative;
+}
+.getmoney-module-icon{
+    font-size:45rpx;
+    display:inline-block;
+    position:absolute;
+    line-height:90rpx;
+    margin-left:5%;   
+}
+
+.getmoney-module-num input{
+    display:inline-block;
+    height:90rpx;
+    margin-left:15%;
+    font-size:40rpx;
+    min-height:0;
+    width:84%;
+    line-height:90rpx;
+}
+.getmoney-sure-btn{
+    margin-top:30rpx;
+    text-align:center;
+    border-top:1rpx solid #eee;
+    line-height:88rpx;
+    color:blue;  
+}
+.getmoney-moduleN-text{
+    font-size:35rpx;
+    text-align:center;
+    line-height:80rpx;
+    margin-top:25rpx;   
+}
+.getmoney-moduleN-msg{
+    text-align:center;
+    color:#999;
+    font-size:30rpx;      
+}
+.getmoney-module-success{
+    background:rgba(0,0,0,.66);
+    position:fixed;
+    top:25%;
+    border-radius:20rpx;
+    color:#eee;
+    width:60%;
+    margin-left:20%;  
+}
+.getmoney-moduleS-true{
+    width:25%;
+    margin:10% auto;
+    margin-bottom:1%;
+}
+.getmoney-moduleS-true image{
+    width:100%;
+    height:88rpx;  
+}
+.getmoney-modulS-msg1{
+    text-align:center;
+    line-height:60rpx;   
+}
+.getmoney-modulS-msg2{
+    text-align:center;
+    margin-bottom:30rpx;
+    font-size:27rpx;  
+}
+.nodata{
+    text-align:center;
+    line-height:250rpx;
+    color:#999;
+    padding-bottom:40%;
+}
+.myWallet-list-lmsg{
+    color:#999;
+    font-size:30rpx; 
+}
+.nomore{
+    text-align:center;
+    line-height:80rpx;
+    color:#999;
+}
+/*  */
+.myWallet-list-ltitle{
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2; 
+}
+.inmoney{
+    display:inline-block;
+    width: 80%;
+}
+.mywallet-list-raddmoney{
+    text-align: center;
+}

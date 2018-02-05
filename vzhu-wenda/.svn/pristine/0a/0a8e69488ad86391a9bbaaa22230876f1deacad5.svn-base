@@ -1,0 +1,91 @@
+
+.clear{
+  clear: both;
+}
+.lf{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.content{
+  background: #fff;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+.img_box{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 3rpx;
+   margin-right: 20rpx;  
+   float: left; 
+}
+.img_box>image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.img_box .authentication{
+  position: relative;
+}
+.img_box .authentication image{
+  width:39rpx;
+  height:39rpx;
+  z-index:100;
+  position:absolute;
+  top:-45rpx;
+  left:90rpx;
+}
+.text_box{
+  padding-top: 15rpx;
+  padding-bottom:40rpx; 
+  border-bottom: 1px solid #eee;
+
+}
+.text_box text{
+  font-size: 28rpx;
+  color: #747474;
+  border-right: 1px solid #F1EFF5;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+.text_box text:last-child{
+  border: none;
+}
+.text_box .noborder{
+  border-right: none;
+}
+.text_box view{
+  border-right: none;
+}
+.text_box .noborder{
+  border-right: none;
+}
+.text_box view{
+  border-right: none;
+}
+.top{
+  width: 100%;
+  height: 50rpx;
+}
+.company{
+  padding: 0 20rpx;
+  font-size: 33rpx;
+}
+.modal{
+  width:160rpx;
+  line-height:160rpx;
+  border-radius: 6rpx;
+  background:rgba(201, 201, 201, 0.32);
+  position:fixed;
+  text-align:center;
+  top:16%;
+  left:39%;
+}

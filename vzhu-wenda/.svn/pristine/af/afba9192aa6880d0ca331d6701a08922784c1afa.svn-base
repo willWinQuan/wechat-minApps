@@ -1,0 +1,28 @@
+<import src="../common/answered.wxml" />
+  <!-- <import src="../common/common.wxml" /> -->
+  <nav class="deliver-nav">
+    <ul>
+      <li class="{{active === 0 ?'active':''}}" bindtap="bindTap" data-index="0" style="color:{{active === 0 ?background:''}}">未回答({{count_1}})
+        <text style='background:{{background}};'></text>
+      </li>
+      <li class="{{active === 1 ?'active':''}}" bindtap="bindTap" data-index="1" style="color:{{active === 1 ?background:''}}">未评价({{count_2}})
+        <text style='background:{{background}};'></text>
+      </li>
+      <li class="{{active === 2 ?'active':''}}" bindtap="bindTap" data-index="2" style="color:{{active === 2 ?background:''}}">已回答({{count_3}})
+        <text style='background:{{background}};'></text>
+      </li>
+      <li class="{{active === 3 ?'active':''}}" bindtap="bindTap" data-index="3" style="color:{{active === 3 ?background:''}}">已失效({{count_4}})
+        <text style='background:{{background}};'></text>
+      </li>
+    </ul>      
+  </nav>
+
+  <template  is="answered" data="{{list,loging,no_more,lent,list_type,background}}"  /> 
+  <toast hidden="{{lenMore}}" icon="{{icon}}" duration="1000" >{{toast}}</toast>
+
+
+
+
+
+
+

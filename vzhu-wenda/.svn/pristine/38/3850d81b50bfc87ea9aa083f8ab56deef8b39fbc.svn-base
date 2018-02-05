@@ -1,0 +1,20 @@
+
+<import src="../common/common.wxml" />
+<view wx:for="{{dataList}}" wx:key="*this" >
+  <template is="common" data="{{...item,index,myCollection,loading,dataList,realm,hidden,http}}"  /> 
+</view>   
+
+<view class="loging" wx:if="{{loging==1}}">
+    <image src="../../image/time.gif" class="loging"></image>
+      正在加载中...
+</view>
+
+<view class="no_more" wx:if="{{no_more==1}}">
+      没有更多数据...
+</view>
+
+<view class='nodata' wx:if="{{dataList.length==0}}">
+     <image src='../../image/my-collection.png'></image>
+</view> 
+<loading wx:if='{{loading_hidden==true}}'>正在加载</loading>
+ 

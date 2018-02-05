@@ -1,0 +1,6 @@
+<!--pages/set-apply/set-apply.wxml-->
+<view class='set-apply-img'>
+  <image src='../../image/submit_apply.png'></image>
+</view>
+ <view class='backmine' style='background:{{color}}' bindtap='comebackmine'>确定</view>
+

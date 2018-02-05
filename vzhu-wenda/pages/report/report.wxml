@@ -1,0 +1,111 @@
+<!--pages/report/report.wxml-->
+<view>
+  <!-- <scroll-view  bindscroll='placeholder1' style='height:calc(100vh - 120rpx)'> -->
+  <view class='expert_questions' style='position: {{fixed}}'>
+    <view class='expert'>
+      <view class='nav'>
+        <view class='report'>
+          <!-- <image src='../../image/report.png'></image>
+          <text>举报</text> -->
+        </view>
+        <!--  -->
+        <view class='nav_information'>
+          <view class='information_img'>
+            <image src='{{expert_headurl}}' class='tx'></image>
+            <image src='../../image/appraisal.png' class='bottom'></image>
+          </view>
+          <!--  -->
+          <view class='information_xinxi'>
+            <view class='xinxi_top'>
+              <text class='text1'>{{expert_nickname}}</text>
+              <!-- <text class='text2'>{{expert_nickname}}</text> -->
+              <image src='../../image/female.png' wx:if='{{sex==2}}' class='img'></image>
+              <image src='../../image/male.png' wx:if='{{sex==1}}' class='img'></image>
+            </view>
+            <!--  -->
+            <view class='xinxi_content'>
+              <text>关注</text>
+              <text class='number'>{{favori_fans}}</text>
+            </view>
+            <!-- 星星评价 -->
+            <view class='xinxi_bottom'>
+                <view class='bg1' style='background:url({{http_host}}/mini_program/applets/static/answer/img/full_star.png) repeat-x;background-size:32rpx 26rpx;width:{{lenght}}rpx'></view>
+                <view class='bg2' style='background:url({{http_host}}/mini_program/applets/static/answer/img/no_star.png) repeat-x;background-size:32rpx 26rpx;'></view>
+                <text>{{star}}</text>
+            </view>
+          </view>
+          <!-- 收藏 -->
+          <view class='collection' wx:if='{{favori_status==0}}' bindtap='favori' style='color:{{color}};border-color:{{color}}'>
+            + 收藏
+          </view>
+          <!-- 已收藏 --> 
+          <view class='collection1' wx:if='{{favori_status==1}}' bindtap='favori'>
+            已收藏
+          </view>
+        </view>
+        <!-- 介绍详情 -->
+        <view class='nav_xinxi'>
+          {{self_intro}}
+        </view>
+        <view class='xinxi_chakan' style='color:{{color}}' bindtap='see_xinxi'>查看全部</view>
+        <!-- 标签 -->
+        <view class='nav_bq'>
+          <text wx:for='{{cate}}' wx:key="{{}}">{{item.cate_name}}</text>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class='nav_answer'>
+        <view class='answer_xinxi'>
+            <view class='answer_text'>
+              <view class='text1'>问题描述</view>
+              <view class='text2'>
+                (<text>{{let1}}</text>/300)
+              </view>
+              <!--  -->
+              <!-- <view class='text3'>￥{{money}} 提问</view> -->
+            </view>
+            <textarea maxlength='300' animation="{{animationData}}" bindinput='textarea' wx:if='{{textarea==0}}' value='{{value}}'></textarea>
+            <view class='textarea' wx:if='{{textarea==1}}' bindfocus='textareaFocus' bindblur='textareaBlur'>{{value}}</view>
+            <!--  -->
+            <view class='answer_img'>
+              <view class='answer_img_cz' wx:for='{{upimgs}}' wx:key="{{}}">
+                <image src='{{item}}' class='img_img' bindtap='previewImage' data-src='{{item}}'></image>
+                <image src='../../image/del_pic.png' class='del_img' bindtap='deleteImg' data-index='{{index}}'></image>
+              </view>
+              <image src='../../image/add_pic.png' class='add_img' bindtap='chooseImg'></image>
+            </view>
+            <view class='answer_img_sm'>
+              <text style='margin-right: 20rpx;'>添加图片</text><text>(限制9张)</text>
+            </view>
+        </view>
+    </view>
+    <!--  -->
+    <view class='phone'>
+      <view class='phone_nav'>
+        <view class='phone_phone'>联系电话</view>
+        <input type='number' placeholder='请输入电话号码' bindinput='user_tel' maxlength='11' style='width:{{input_wit}}%' focus='{{focus}}' bindblur='bindblur'></input>
+         <view class='placeholder' bindtap='placeholder' wx:if='{{input_wit1}}'>{{value1}}</view> 
+      </view>  
+    </view> 
+  </view>
+  <!-- </scroll-view>   -->
+  <!--  -->
+  <view class='bottom_button'>
+      <view class='button_right' bindtap='report' style='background:{{color}}'>确定提交</view>
+      <view class='button_left' bindtap='return'>取消返回</view>
+  </view>
+</view>
+<!-- 弹框 -->
+  <view class='mask' wx:if='{{mask==1 }}'>
+      <view class='mask_box'>
+          <view  class='wenan_top'>答主简介</view>
+          <view class='wenan'>
+          <scroll-view  scroll-y  style="height:600rpx;" scroll-top='0'>
+            <view>{{self_intro}}</view>
+          </scroll-view>  
+          </view>
+          <view class='button' bindtap='mask_hide'>确定</view> 
+      </view> 
+  </view>
+<toast hidden="{{lenMore}}" icon="{{icon}}" duration="700" >{{toast}}</toast>

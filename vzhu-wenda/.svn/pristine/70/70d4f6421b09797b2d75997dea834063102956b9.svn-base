@@ -1,0 +1,162 @@
+<!--pages/expert_questions/expert_questions.wxml-->
+<form bindsubmit="formSubmit">
+<view style='position: {{fixed}}'>
+<!-- <scroll-view scroll-y="true" bindscroll='placeholder1' style='height:100vh'> -->
+  <view class='expert_questions'>
+    <view class='expert'>
+      <view class='nav'>
+        <view class='report' bindtap='bindreport'>
+          <image src='../../image/report.png'></image>
+          <text>举报</text>
+        </view>
+        <!--  -->
+        <view class='nav_information'>
+          <view class='information_img'>
+            <image src='{{expert_headurl}}' class='tx'></image>
+            <image src='../../image/appraisal.png' class='bottom'></image>
+          </view>
+          <!--  -->
+          <view class='information_xinxi'>
+            <view class='xinxi_top'>
+              <text class='text2'>{{expert_nickname}}</text>
+               <image wx:if="{{sex==2}}" src='../../image/female.png'></image>
+              <image wx:if="{{sex==1}}" src='../../image/male.png'></image>
+            </view>
+            
+            <!--  -->
+            <view class='xinxi_content'>
+              <text>关注</text>
+              <text class='number'>{{favori_fans}} </text>
+            </view>
+            <!-- 星星评价 -->
+            <view class='xinxi_bottom'>
+                <view class='bg1' style="background-image:url({{http_host}}/mini_program/applets/static/answer/img/full_star.png);background-size:32rpx 26rpx;width:{{score}}rpx;background-repeat: repeat-x"></view>
+                 <view class='bg2' style='background-image:url({{http_host}}/mini_program/applets/static/answer/img/no_star.png);background-size:32rpx 26rpx;background-repeat: repeat-x'></view> 
+             <!--  -->
+                <text>{{star}}</text>
+            </view>
+          </view>
+          <!-- 收藏 -->
+          <view bindtap='favoriStatus'>
+            <view class='collection' wx:if="{{favori == 0}}" style='color:{{color}};border-color:{{color}}'>
+              + 收藏
+            </view>
+            <view class='collectioned' wx:if="{{favori == 1}}">
+              已收藏
+            </view>
+          </view>
+        </view>
+        <!-- 介绍详情 -->
+        <view class='introduce'>
+          <view class="section">
+            {{self_intro}}
+          </view>
+          <view class='showBtn' bindtap='showMore' style='color:{{bgColor}};border-color:{{bgColor}}'>查看全部</view>
+        </view>
+        
+
+        <!-- 标签 -->
+        <view class='nav_bq'>
+          <view class='health'>
+            <text  wx:for="{{cate}}" wx:if="{{item.cate_name != '' && item.cate_name != undefined}}" wx:key="{{*this}}">{{item.cate_name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class='nav_answer'>
+        <view class='answer_xinxi'>
+            <view class='answer_text'>
+              <view class='text1'>问题描述</view>
+              <view class='text2'>
+                (<text>{{len}}</text>/300)
+              </view>
+              <!--  -->
+                <view wx:if="{{money > 0}}" class='text3'>￥{{money}} 提问</view>
+                <view  wx:if="{{money <= 0}}" class='text3'>免费提问</view>
+              <!-- <view class='text33'>免费提问</view> -->
+            </view>
+            <!--  -->
+            <textarea hidden="{{areaChange}}" animation="{{animationData}}" name='textarea' maxlength='300' cursor-spacing='170' wx:if='{{textarea==1}}' bindinput='textarea' value='{{value}}' bindfocus='textareaFocus' bindblur='textareaBlur'></textarea>
+            <view class='textarea' wx:if='{{textarea==0}}' bindtap='click'></view>
+            <!--  -->
+            <view class='sctp'>
+                <!-- <view class='yyzz'></view> -->
+                <view class='imgList'>
+                <view  class="upload" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                    <input hidden='true' name="logoimg" value='{{imgs}}' ></input>
+                    <image src="{{item}}"  data-index="{{index}}" mode="aspectFill"  bindtap="previewImg"></image>
+                  <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg"><image src='../../image/del_pic.png'></image></view>
+                </view>
+                <view  class="upload add" bindtap="chooseImg">
+                  <image src="../../image/add_pic.png" /> 
+                </view>
+                <view class='clear'></view>
+              </view>
+            </view>
+            <view class='imgTxt'>
+                  <text>添加图片 (限制9张)</text>
+            </view>
+          <!--  -->
+        </view>
+    </view>
+    <!--  -->
+    <view class='nav_end'>
+      <view class='end_bottom'>
+        <view class='end_top'>
+          <view class='text'>
+            是否设置每位用户付费偷听/偷看
+          </view>
+          <!--  -->
+          <switch checked bindchange="switch1Change" class='switch' color='{{color}}'/>
+        </view>
+        <view class='end_cotent' wx:if="{{listen_ratio_sw ==1}}">
+             <view class="{{item==index1?'chooce':'view'}}" bindtap='choiceText'  wx:for="{{listen_ratio}}" wx:key="{{index}}" data-value="{{item}}" data-index='{{index}}' style="color:{{index2==index? bgColor :''}};border-color:{{index2==index? bgColor :''}}">
+                ￥{{item}}
+            </view> 
+        </view>
+      </view>
+    </view>
+    <!--  index == 0?peek_money:-->
+    <view class='end_end' wx:if="{{listen_ratio_sw ==1}}">
+        <view>金额<text style='color:{{bgColor}}'>{{answer_percent}}%</text>将分给回答者，每位用户付费</view>
+        <view>偷听或者偷看您可获得<text style='color:{{bgColor}}'>{{defauMoney?defauValue:index1}}元</text></view>
+    </view>
+  </view>
+<!-- </scroll-view>  -->
+  <!--  -->
+  <view class='bottom_button'>
+     <view class='button_left' bindtap='mask_show' wx:if='{{answer_remind_sw == 1}}'>
+        <image src='../../image/know.png'></image>
+        <view>
+          提问须知
+        </view>
+     </view>
+  <!--  -->
+    <view  wx:if="{{money > 0}}" bindtap='paymentBtn' class="{{answer_remind_sw==1?'button_right':'button_right1'}}" style='background:{{color}}'> ￥{{money}}支付并提问</view>
+    <view  wx:if="{{money <= 0}}" bindtap='paymentBtn' class="{{answer_remind_sw==1?'button_right':'button_right1'}}" style='background:{{color}}'> 免费提问</view>
+  </view>
+ 
+  <!-- 弹框 -->
+  <view class='mask' wx:if='{{mask==1 }}'>
+      <view class='mask_box'>
+          <view  class='wenan_top'>提问须知</view>
+          <view class='wenan'>
+           <view>{{answer_remind}}</view>
+          </view>
+          <view style="color:{{color}}" class='button' bindtap='mask_hide'>确定</view>
+      </view> 
+  </view>
+  
+</view>
+
+</form>
+<toast hidden="{{imgMAX}}" icon="warn" duration="1000" >最多只能上传9张图片</toast>
+<!--查看全部  -->
+<view wx:if="{{show_more == 1}}" class='code_wrap see_all_wrap'>
+  <view class='des_title'>答主简介</view>
+  <view class='des_content'>{{self_intro}}</view>
+  <button class='see_btn' style='color:{{color}}' bindtap='see_all_sure'>确定</button>
+</view>
+<!--遮罩层  -->
+<mask hidden="{{hiddenmask}}" bindtap="bindmask" style="z-index:558;width:100%;height:100%;top:0;" hover-style="none"/>

@@ -1,0 +1,223 @@
+/* pages/classify/classify.wxss */
+page{
+  background: #eee;
+}
+.clear{
+  clear:both;
+}
+/*搜索框  */
+.search_wrap{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+  position: fixed; 
+  top: 0;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.search_input{
+  background: #eee;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10rpx;
+}
+.search_img{
+  width: 26rpx;
+  height: 26rpx;
+  background-size: 26rpx 26rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 41%;
+  z-index: 99;
+}
+/*分类 筛选  */
+.screen_wrap{
+  background: #fff;
+  margin-top: 115rpx;
+  position: relative;
+}
+.screen_title{
+  position: relative;
+}
+.screen_title .classify{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.classify image{
+  width:16rpx;
+  height: 8rpx;
+  vertical-align: middle;
+}
+.line{
+  width: 4%;
+  border-top: 3px solid #5a72ed;
+  border-radius: 5px;
+}
+/*内容列表  */
+.screen_content{
+  margin-left: 30rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.screen_left{
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+.screen_left .logo{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50px;
+}
+.screen_left .appraisal{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.screen_right{
+  width: 80%;
+  padding-left:40rpx;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+
+}
+.person_info{
+  margin-bottom: 10rpx;
+}
+.person_info view{
+  float: right;
+  color: #ff7e60;
+}
+.person_des{
+  color: #707070;
+  font-size: 24rpx;
+  display:-webkit-box;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+/*星星  */ 
+.star{
+  margin: 15rpx 0;
+  width: 300rpx;
+  position: relative; 
+}
+.star .star_text{
+  font-size: 24rpx;
+  color: #ffbc08;
+  margin-left: 20rpx; 
+  display: inline-block;
+  vertical-align: top;
+  line-height: 26rpx;
+}
+.star .no_star{
+  width: 154rpx;
+  height:26rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.star .full_star{
+  width: 32rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 0rpx;
+}
+.attention{
+  color: #707070;
+  font-size: 24rpx;
+}
+.attention text:first-child{
+  margin-right: 20rpx;
+}
+/*分类内容选项  */
+.classify_wrap{
+  width: 100%;
+  position: absolute;
+  top: 88rpx;
+  z-index: 99;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.screen_content_wrap{
+  width: 100%;
+  position: absolute;
+  top: 88rpx;
+  z-index: 99;
+  background: #fff;
+  border-top: 1px solid #eee;
+}  
+.classify_item{
+  padding:0 30rpx;
+}
+.classify_item text{
+  line-height: 90rpx;
+}
+.check_bg{
+  width: 35rpx;
+  height: 23rpx;
+  float: right;
+  line-height: 50rpx;
+  margin-top: 30rpx;
+  position: relative;
+  background: skyblue;
+}
+.classify_item image{
+  width: 35rpx;
+  height: 23rpx;
+  position: absolute;
+  line-height: 50rpx;
+  top: 0;
+  left: 0;
+}
+/* 筛选 */
+.screen_item{
+  width: 28%;
+  display: inline-block;
+  border: 1px solid #eee;
+  padding: 10rpx;
+  margin: 4%;
+  text-align:center;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.screen_item:nth-child(2){
+  margin: 4% 0;
+}
+.screen_item:last-child{
+  margin-top: 0;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 88rpx;
+  background: rgba(0,0,0,.3);
+  z-index: 2;
+}
+/*加载中  */
+.loading{
+  font-size: 26rpx;
+  background: #eee;
+  border: none;
+  border-radius: 0;
+  color: #bababa;
+}
+.loading::after{
+   border: none; 
+}
+/*没有数据  */
+.no_data{
+  font-size: 30rpx;
+  color: #bababa;
+  text-align: center;
+  background:#eee;
+}

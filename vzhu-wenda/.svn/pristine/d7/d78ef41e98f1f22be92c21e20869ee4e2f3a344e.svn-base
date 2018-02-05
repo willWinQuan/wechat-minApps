@@ -1,0 +1,146 @@
+/* pages/search/search.wxss */
+page{
+  background: #eee;
+}
+.clear{
+  clear:both;
+}
+/*搜索框  */
+.search_wrap{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+  position: fixed; 
+  top: 0;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.search_input{
+  background: #eee;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10rpx;
+}
+.search_img{
+  width: 26rpx;
+  height: 26rpx;
+  background-size: 26rpx 26rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 41%;
+  z-index: 99;
+}
+/*分类 筛选  */
+
+/*内容列表  */
+.screen_wrap{
+  background: #fff;
+  margin-top: 108rpx;
+}
+.screen_content{
+  margin-left: 30rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.screen_left{
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+.screen_left .logo{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50px;
+}
+.screen_left .appraisal{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.screen_right{
+  width: 80%;
+  padding-left:40rpx;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.person_info{
+  margin-bottom: 10rpx;
+}
+.person_info view{
+  float: right;
+  color: #ff7e60;
+}
+.person_des{
+  color: #707070;
+  font-size: 24rpx;
+  display:-webkit-box;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+/*星星  */ 
+.star{
+  margin: 15rpx 0;
+  width: 300rpx;
+  position: relative; 
+}
+.star .star_text{
+  font-size: 24rpx;
+  color: #ffbc08;
+  margin-left: 20rpx; 
+  display: inline-block;
+  vertical-align: top;
+  line-height: 26rpx;
+}
+.star .no_star{
+  width: 154rpx;
+  height:26rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.star .full_star{
+  width: 32rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 0rpx;
+}
+.attention{
+  color: #707070;
+  font-size: 24rpx;
+}
+.attention text:first-child{
+  margin-right: 20rpx;
+}
+/*遮罩层  */
+.mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 88rpx;
+  background: rgba(0,0,0,.3);
+}
+/*加载中  */
+.loading{
+  font-size: 26rpx;
+  background: #eee;
+  border: none;
+  border-radius: 0;
+  color: #bababa;
+}
+.loading::after{
+   border: none; 
+}
+/*没有数据  */
+.no_data{
+  font-size: 30rpx;
+  color: #bababa;
+  text-align: center;
+  background:#eee;
+}

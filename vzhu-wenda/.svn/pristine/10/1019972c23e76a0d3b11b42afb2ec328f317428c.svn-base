@@ -1,0 +1,39 @@
+<!--pages/search/search.wxml-->
+<!--搜索框  -->
+<view class='search_wrap'>
+    <input class='search_input' placeholder='搜索' bindinput='search' value='{{name}}' focus='{{true}}'></input>
+    <image wx:if="{{name==''}}" class='search_img' src='../../image/search.png'></image>     
+</view>
+
+<view class='screen_wrap'>
+  <!--列表内容  -->
+  <view class='screen_content' wx:for="{{expert_data}}" wx:key="{{index}}" bindtap="experts_detail" data-id="{{item.id}}">
+    <view class='screen_left'>
+      <!-- <image src='{{item.logo}}'></image> -->
+      <view class='logo' style="background:url('{{item.logo}}');background-size:140rpx 140rpx;"></view> 
+      <image class='appraisal' src='../../image/appraisal.png'></image>
+    </view>
+    <view class='screen_right'>
+      <view class='person_info'>
+        <text>{{item.nickname}}</text>  
+        <view wx:if="{{item.is_free==1}}">￥{{item.money}} 提问</view>
+        <view class='is_free' style='color:{{color}}' wx:if="{{item.is_free==0}}">免费提问</view>
+        <view class='clear'></view>
+      </view>
+      <view class='person_des'>{{item.self_intro}}</view>
+      <view class='star'>
+        <view wx:if="{{http_host}}" class='no_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/no_star.png') repeat-x;background-size:32rpx 26rpx;"></view> 
+        <view wx:if="{{http_host}}" class='full_star' style="background:url('{{http_host}}/mini_program/applets/static/answer/img/full_star.png') repeat-x;background-size:32rpx 26rpx;width:{{(item.scores/5)*154}}rpx;"></view>    
+        <view class='star_text'>{{item.scores}}</view>   
+      </view>
+      <view class='attention'>
+        <text>关注 {{item.favori}} </text>
+        <text>已回答 {{item.answer}}</text>
+      </view>
+    </view>
+  </view>
+  <!--遮罩层  -->
+  <view class='mask' wx:if="{{mask_status}}" bindtap='bindmask'></view>
+  <button class='loading' wx:if="{{expert_status==0}}" loading='{{loading_status}}'>{{loading_status==true?'加载中':'没有更多了'}}</button>
+  <view class='no_data' wx:if="{{expert_status==1}}">--暂无数据--</view>
+</view>
